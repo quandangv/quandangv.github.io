@@ -2,8 +2,8 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/mstile-150x150.png"/>
-            <TileColor>#71c9ff</TileColor>
+            <square150x150logo src="/webdialer/mstile-150x150.png"/>
+            <TileColor>#ff7ca8</TileColor>
         </tile>
     </msapplication>
 </browserconfig>

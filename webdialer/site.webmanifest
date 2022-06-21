@@ -1,19 +1,19 @@
 {
     "name": "Dialer Monitor",
-    "short_name": "Dialer Monitor",
+    "short_name": "Dialer Monitor Application",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/webdialer/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/webdialer/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#ff94cb",
+    "background_color": "#ff94cb",
     "display": "standalone"
 }
