@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="import" href="enter.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-10..0,300..1000,0..1,0..1,0..1&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      const iconTemplate = '<svg width="{size}" height="{size}" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path style="fill:none;stroke:{stroke};stroke-width:{strokeWidth};stroke-linecap:round;stroke-linejoin:round" d="{path}"/></svg>'
+      const inlineIconTemplate = iconTemplate.replaceAll('{size}', '12').replaceAll('{stroke}','#fff').replaceAll('{strokeWidth}', '6')
+      const iconPaths = {enter:'M23,28 9,42 23,56 M52,9 V42 H9'}
+      const getIconUrl = (templateStr, pathStr) => `url("data:image/svg+xml,${encodeURIComponent(templateStr.replace('{path}', pathStr))}")`
+      const inlineIcons = structuredClone(iconPaths)
+      for (const name in inlineIcons)
+        inlineIcons[name] = getIconUrl(inlineIconTemplate, iconPaths[name])
+    </script>
+    <script>
+      function selectElement(elem) {
+        const range = document.createRange();
+        range.selectNodeContents(elem);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    </script>
+    <div id="root">
+      <div class='suggestions'>
+        <span><script>
+          const errors = document.scripts[document.scripts.length - 1].parentNode;
+          errors.removeChild(errors.lastChild)
+          errors.createElement = function() {
+            const elem = document.createElement('span')
+            elem.className = 'strong suggestion'
+            return elem
+          }
+          errors.setItemText = function(item, text) {
+            item.innerText = text
+          }
+          errors.update = function(list) {
+            for (let i = this.childElementCount; i < list.length; i++)
+              this.appendChild(this.createElement())
+            for (let i = list.length; i < this.childElementCount; i++) {
+              this.childNodes[i].classList.toggle('hidden', true)
+            }
+            for (let i = 0; i < list.length; i++) {
+              const item = this.childNodes[i]
+              item.classList.toggle('hidden', false)
+              if (typeof list[i] === 'string') {
+                this.setItemText(item, list[i])
+              } else {
+                this.setItemText(item, list[i].text)
+              }
+            }
+          }
+        </script></span>
+        <span><script>
+          function appendCmd(text) {
+            let cmd = input.innerText
+            if (cmdError.startsWith('unexpected '))
+              cmd = cmd.trim().substring(0, cmd.lastIndexOf(' '))
+            input.changeText(cmd.trim() + ' ' + text)
+          }
+          const childOptions = document.scripts[document.scripts.length - 1].parentNode;
+          childOptions.removeChild(childOptions.lastChild)
+          childOptions.createElement = function() {
+            const elem = document.createElement('span')
+            elem.className = 'suggestion'
+            elem.onclick = () => appendCmd(elem.innerText)
+            return elem
+          }
+          childOptions.setItemText = function(item, text) {
+            item.innerText = text
+          }
+          childOptions.update = errors.update
+        </script></span>
+        <span><script>
+          const paramOptions = document.scripts[document.scripts.length - 1].parentNode;
+          paramOptions.removeChild(paramOptions.lastChild)
+          paramOptions.createElement = function() {
+            const elem = document.createElement('span')
+            elem.className = 'suggestion'
+            elem.contentEditable = false
+            const text = document.createElement('span')
+            text.className = 'unstyled'
+            text.onkeydown = function(e) {
+              if (e.keyCode === enterKey) e.preventDefault()
+            }
+            text.onkeyup = function(e) {
+              if (e.keyCode === enterKey && this.innerText.trim !== '') {
+                appendCmd(elem.paramName + ' ' + this.innerText)
+              }
+            }
+            elem.textElem = text
+            elem.appendChild(text)
+            const enterBtn = document.createElement('span')
+            enterBtn.innerText = '\u00A0?'
+            enterBtn.className = 'icon'
+            enterBtn.style.display = 'none'
+            elem.appendChild(enterBtn)
+            elem.onclick = function() {
+              if (this.paramName == null) {
+                this.paramName = this.textElem.innerText
+                this.textElem.contentEditable = true
+                this.textElem.innerText = this.textElem.innerText.substring(2)
+                this.classList.toggle('active', true)
+                selectElement(this.textElem)
+                enterBtn.style.display = null
+              }
+            }
+            elem.textElem.onblur = function() {
+              elem.classList.toggle('active', false)
+              elem.textElem.innerText = elem.paramName
+              elem.paramName = null
+              elem.textElem.contentEditable = false
+              enterBtn.style.display = 'none'
+            }
+            return elem
+          }
+          paramOptions.setItemText = function(item, text) {
+            item.textElem.innerText = text
+          }
+          paramOptions.update = childOptions.update
+        </script></span>
+      </div>
+      <div id="shell">
+        <script>
+          const shell = document.scripts[document.scripts.length - 1].parentNode;
+          shell.sendCommand = function() {
+            if (this.input.innerText.trim()) {
+              this.input.parentNode.oncommand(input.innerText)
+              this.input.changeText('')
+            } else {
+              input.focus()
+            }
+          }
+        </script>
+        <span id='shellPrefix' class='title'>wpw&gt; </span><span class="unstyled" contenteditable>generate<script>
+          const input = document.scripts[document.scripts.length - 1].parentNode
+          // Tie parent's command with input content
+          input.parentNode.input = input
+          input.resetSelection = function () {
+            // Select the end of input text
+            input.focus()
+            const range = document.createRange();
+            range.selectNodeContents(this);
+            range.setStart(range.startContainer, this.innerText ? 1 : 0)
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+          }
+          input.resetSelection()
+          // Redirect parent click to focus input
+          document.getElementById('shellPrefix').onclick = function() {
+            input.resetSelection()
+          }
+          const enterKey = 13
+          const downKey = 40
+          const upKey = 38
+          // Intercept Enter, Up, and Down key
+          input.onkeydown = function(e) {
+            if ([enterKey, upKey, downKey].includes(e.keyCode)) {
+              e.preventDefault()
+            }
+          }
+          input.changeText = function(text) {
+            if (text != this.innerText) {
+              this.innerText = text
+              input.resetSelection()
+              this.onchange(text)
+            }
+          }
+          input.onkeyup = function(e) {
+            if (e.keyCode === enterKey) {
+              this.parentNode.sendCommand()
+              e.preventDefault()
+            }
+            if (e.keyCode === downKey)
+              this.onnavigate(-1)
+            if (e.keyCode === upKey)
+              this.onnavigate(1)
+            this.onchange(this.innerText)
+          }
+          input.onblur = function() {
+            this.onchange(input.innerText)
+          }
+        </script></span>&nbsp;<span class='tooltiptrigger icon button' onclick='this.parentNode.sendCommand()'>&nbsp;<span class='tooltip'>execute the command</span>
+        <script>
+          input.enterBtn = document.scripts[document.scripts.length - 1].parentNode
+          input.enterBtn.style.backgroundImage = inlineIcons.enter
+        </script></span>
+      </div>
+      <div id='doubleBuffer'>
+        <div id='cmdBuffer' class='shellBuffer'>
+          <script>
+            const nonbreakHyphen = '\u2011'
+            const cmdBuffer = document.scripts[document.scripts.length - 1].parentNode;
+            const doubleBuffer = cmdBuffer.parentNode
+            doubleBuffer.selected = null
+            cmdBuffer.count = 0
+            cmdBuffer.add = function(command) {
+              const elem = document.createElement('div')
+              elem.innerText = command.replaceAll('-', nonbreakHyphen)
+              elem.id = 'c' + this.count++
+              elem.onclick = function() {
+                this.draftCommand = input.innerText
+                doubleBuffer.setSelected(Number(this.id.substring(1)), window.getSelection().toString() === '')
+              }
+              this.prepend(elem)
+              return elem
+            }
+            input.onnavigate = function(delta) {
+              let selected = doubleBuffer.selected
+              if (selected == null) {
+                if (delta < 0 && cmdBuffer.count > 0) {
+                  selected = cmdBuffer.count + delta
+                  cmdBuffer.draftCommand = input.innerText
+                }
+              } else
+                selected += delta
+              if (selected >= cmdBuffer.count) {
+                doubleBuffer.setSelected(null)
+                input.changeText(cmdBuffer.draftCommand)
+                return
+              }
+              if (selected === null) return
+              doubleBuffer.setSelected(selected, true)
+            }
+          </script>
+        </div>
+        <div class='bufferMap'></div>
+        <div id='resultBuffer' class='shellBuffer'>
+          <script>
+            const outputs = document.scripts[document.scripts.length - 1].parentNode;
+            outputs.count = 0
+            outputs.add = cmdBuffer.add
+            doubleBuffer.setSelected = function(value, setCmd) {
+              if (this.selected != null) {
+                cmdBuffer.querySelector('#c' + this.selected)?.classList?.toggle('selected', false)
+                outputs.querySelector('#c' + this.selected)?.classList?.toggle('selected', false)
+              }
+              let newSel = null
+              if (value != null) {
+                newSel = cmdBuffer.querySelector('#c' + value)
+                newSel?.classList?.toggle('selected', true)
+                outputs.querySelector('#c' + value)?.classList?.toggle('selected', true)
+                if (setCmd)
+                  input.changeText(newSel?.innerText || '')
+              }
+              this.selected = value
+            }
+          </script>
+        </div>
+      </div>
+      <script type="text/javascript" src='wordlist/wordlist.json'></script>
+      <script type="text/javascript" src='wordlist/generator.js'></script>
+      <script>
+        commands = {children:{
+          generate:{
+            base:generator.phrase.rand,
+            param:{
+              groupCount:{positional:true, default:3, type:{name:'int', min:1}},
+              groupSize:{positional:true, default:5, type:{name:'int', min:1, max:5}},
+              lastGroupSize:{positional:true, default:undefined, type:{name:'int', min:1, max:5}},
+            },
+            children:{entropy:{
+              base:generator.minEntropy,
+              param:{
+                bitCount:{positional:true, required:true}
+              },
+            }},
+          },
+        }}
+        function addParamVariant(params, sourceName, variantName) {
+          params[variantName] = {variantOf:sourceName}
+          if (params[sourceName].variants)
+            params[sourceName].variants.push(variantName)
+          else
+            params[sourceName].variants = [variantName]
+        }
+        function prepParams(commands) {
+          if ('param' in commands)
+            for (key of Object.keys(commands.param)) {
+              commands.param['--'+key] = commands.param[key]
+              addParamVariant(commands.param, '--'+key, nonbreakHyphen+nonbreakHyphen+key)
+              delete commands.param[key]
+            }
+          if ('children' in commands)
+            for (child in commands.children)
+              prepParams(commands.children[child])
+        }
+        prepParams(commands)
+        let cmdError = ''
+        input.onchange = function(text) {
+          input.enterBtn.classList.toggle('inactive', !text.trim())
+          let currentCmd = commands
+          cmdError = ''
+          let childLocked = false
+          let excludedParams = []
+          let expectingParams = 0
+          const errorArr = []
+          for (let word of text.split(' ')) {
+            word = word.trim()
+            if (word === '') continue
+            if (errorArr.length > 0) {
+              currentCmd = null
+              break
+            }
+            if (expectingParams > 0) {
+              if (!word.startsWith('-')) {
+                expectingParams--
+                continue
+              }
+            }
+            if (currentCmd.children && word in currentCmd.children)
+              currentCmd = currentCmd.children[word]
+            else if (currentCmd.param && word in currentCmd.param) {
+              childLocked = true
+              if ('variantOf' in currentCmd.param[word])
+              word = currentCmd.param[word].variantOf
+              excludedParams.push(word)
+              const param = currentCmd.param[word]
+              if ('default' in param || 'required' in param)
+                expectingParams++
+            } else {
+              errorArr.push(`unexpected "${word}"`)
+            }
+          }
+          let childArr = []
+          let paramArr = []
+          if (currentCmd !== null) {
+            if (!childLocked && currentCmd.children != null) childArr.push(...Object.keys(currentCmd.children))
+            if (currentCmd.param != null)
+              paramArr.push(...Object.keys(currentCmd.param)
+                .filter(item => !excludedParams.includes(item) && !('variantOf' in currentCmd.param[item]))
+                .map(item => ({text:item, type:currentCmd.param[item].type || {name:'string'}}))
+              )
+          }
+          errors.update(errorArr)
+          paramOptions.update(paramArr)
+          childOptions.update(childArr)
+        }
+        input.onchange(input.innerText)
+        shell.oncommand = function(cmd) {
+          cmdBuffer.add(cmd)
+          outputs.add(generator.minEntropy(100)[0])
+        }
+      </script>
+    </div>
+  </body>
+</html>
