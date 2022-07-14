@@ -50,10 +50,9 @@ html {
   border-radius: 1em;
 }
 ::selection {
-  color:var(--colorBg);
+  color:white;
   background:var(--selColor);
 }
-
 #shell {
   width:max-content;
   font-variation-settings: 'MONO' 1;
@@ -82,13 +81,46 @@ html {
   font-variation-settings: 'CASL' 1;
 }
 .suggestions > span > span {
+  animation: var(--medAnimTime) ease-out 0s 1 growIn;
+  transition:all var(--animTime) ease;
+  color:var(--color1);
+  border-radius:0.3em;
+  border:0.1em solid var(--color1);
+  cursor:pointer;
+  background-color:transparent;
+  padding:0.2em;
   margin:0 0.3em;
+  background:transparent;
+}
+.suggestions > span > span.hidden {
+  animation: var(--medAnimTime) ease-out 0s 1 shrinkOut;
+  font-size:0;
+}
+.suggestions > span > span:hover {
+  color:var(--color1Hover);
+  border-color:var(--color1Hover);
+  font-weight:800;
+}
+.suggestions > span > span:active {
+  color:var(--color1Focus);
+  border-color:var(--color1Focus);
+  font-weight:900;
 }
 .suggestions > span > span:first-child {
   margin-left:0;
 }
 .suggestions > span > span:last-child {
   margin-right:0;
+}
+.suggestions > span > span.active {
+  font-weight:800;
+}
+.suggestions > span > span.strong {
+  transition:all var(--animTime) ease;
+  color:var(--colorBg);
+  padding:0.3em;
+  border:0;
+  background:var(--color1);
 }
 .unstyled {
   border:0;
@@ -115,40 +147,6 @@ html {
 .button:active {
   opacity:1;
   background-color:var(--color1Focus);
-}
-.suggestion.active {
-  font-weight:700;
-}
-.suggestion.strong {
-  transition:all var(--animTime) ease;
-  color:var(--colorBg);
-  padding:0.3em;
-  border:0;
-  background:var(--color1);
-}
-.suggestion {
-  animation: var(--medAnimTime) ease-out 0s 1 growIn;
-  transition:all var(--animTime) ease;
-  color:var(--color1);
-  border-radius:0.3em;
-  border:0.1em solid var(--color1);
-  cursor:pointer;
-  background-color:transparent;
-  padding:0.2em;
-}
-.suggestion.hidden {
-  animation: var(--medAnimTime) ease-out 0s 1 shrinkOut;
-  font-size:0;
-}
-.suggestion:hover {
-  color:var(--color1Hover);
-  border-color:var(--color1Hover);
-  font-weight:800;
-}
-.suggestion:active {
-  color:var(--color1Focus);
-  border-color:var(--color1Focus);
-  font-weight:900;
 }
 .icon {
   background-repeat:no-repeat;
@@ -201,6 +199,6 @@ html {
   margin:0 0.5em;
 }
 #cmdBuffer {
-  min-width:10em;
+  min-width:7em;
   font-variation-settings: 'MONO' 1, 'CASL' 1;
 }

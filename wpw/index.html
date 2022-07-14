@@ -37,7 +37,7 @@
           errors.removeChild(errors.lastChild)
           errors.createElement = function() {
             const elem = document.createElement('span')
-            elem.className = 'strong suggestion'
+            elem.className = 'strong'
             return elem
           }
           errors.setItem = function(elem, item) {
@@ -67,7 +67,6 @@
           childOptions.removeChild(childOptions.lastChild)
           childOptions.createElement = function() {
             const elem = document.createElement('span')
-            elem.className = 'suggestion'
             const text = document.createElement('span')
             text.className = 'unstyled'
             elem.appendChild(text)
@@ -105,7 +104,6 @@
             enterBtn.style.display = 'none'
             elem.appendChild(enterBtn)
             elem.onclick = function() {
-              elem.style.pointerEvents = 'none'
               if (this.paramName == null) {
                 this.paramName = this.textElem.innerText
                 this.textElem.contentEditable = true
@@ -116,11 +114,11 @@
               }
             }
             elem.textElem.onblur = function() {
+              console.log('blue')
               elem.classList.toggle('active', false)
               elem.textElem.innerText = elem.paramName
               elem.paramName = null
               elem.textElem.contentEditable = false
-              elem.style.pointerEvents = null
               enterBtn.style.display = 'none'
             }
             return elem

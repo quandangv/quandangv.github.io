@@ -25,9 +25,11 @@ html {
   --dark-cyanFocus:#0EF;
   /* dark */
   --darkBg:#000;
+  --darkBg2:#223;
   --darkFg:#FFF;
   /* light */
   --lightBg:#FFF;
+  --lightBg2:#FFF;
   --lightFg:#000;
   /* ACTIVE */
   --color1:var(--dark-cyan);
@@ -35,5 +37,6 @@ html {
   --color1Focus:var(--dark-cyanFocus);
   --selColor:var(--pink);
   --colorBg:var(--darkBg);
+  --colorBg2:var(--darkBg2);
   --colorFg:var(--darkFg);
 }

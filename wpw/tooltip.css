@@ -1,10 +1,13 @@
+.tooltiptrigger {
+  user-select:none;
+}
 .tooltip {
   transition-property:opacity;
   transition-duration:var(--medAnimTime);
   transition-timing-function:ease;
   font-size:0.75em;
   opacity:0;
-  background:var(--colorBg);
+  background:var(--colorBg2);
   z-index:1000;
   position:absolute;
   padding:0.3rem;
@@ -15,9 +18,18 @@
   font-weight:400;
   font-variation-settings: 'CASL' 1, 'slnt' -15;
   white-space:break-spaces;
+  display:block;
 }
 .tooltiptrigger:hover .tooltip {
   transition-duration:var(--longAnimTime);
   transition-timing-function:cubic-bezier(0.8, 0, 0.2, 1);
   opacity:1;
+}
+.tooltiptrigger {
+  --hover:true;
+  display:inline;
+}
+.tooltiptrigger:hover {
+  --hover:false;
+  display:unset;
 }
