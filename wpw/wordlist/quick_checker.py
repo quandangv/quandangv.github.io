@@ -2,7 +2,7 @@ from common import *
 from wiktionaryparser import WiktionaryParser
 import sys
 
-wordlist = load_wordlist(sys.argv[1])
+wordlist = load_wordlist('wordlist.md')
 parser = WiktionaryParser()
 nouns = []
 singular_nouns = set()
@@ -36,5 +36,24 @@ for item in list(wordlist['plural noun']):
     print("Can't find singular of", item)
 
 print('errors', errors)
-save_wordlist(sys.argv[1] if len(sys.argv) <= 2 else sys.argv[2], wordlist)
+wordlist['plural noun'] = []
+with open('wordlist.md', 'wt') as wordlist_file:
+  for category in wordlist:
+    print('#', category, file=wordlist_file)
+    for word in wordlist[category]:
+      print(word, file=wordlist_file)
+with open('wordlist.json', 'wt') as wordlist_file:
+  print('const wordlist=', end='', file=wordlist_file,flush=True)
+  for i in range(len(wordlist['noun'])):
+    split = wordlist['noun'][i].split()
+    wordlist['noun'][i] = split if len(split) >= 3 else split + [split[0]]
+  wordlist.pop('plural noun', None)
+  wordlist['verb'] = list(wordlist['verb']) + list(wordlist['nocap verb'])
+  wordlist['adjective'] = list(wordlist['adjective']) + list(wordlist['nocap adjective'])
+  wordlist.pop('nocap verb', None)
+  wordlist.pop('nocap adjective', None)
+  def serialize_sets(obj):
+    if isinstance(obj, set):
+      return list(obj)
+  json.dump(wordlist, wordlist_file, default=serialize_sets)
 print_stat(wordlist)

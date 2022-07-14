@@ -1,18 +1,19 @@
-body {
+html {
   margin:1em;
   font-family:-apple-system, BlinkMacSystemFont, 'Recursive', 'Courier New', monospace;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  --color1:#B00;
-  --color1Hover:#D44;
-  --color1Focus:#F00;
   --ihatethis:187,0,0;
   --animTime:0.2s;
+  --medAnimTime:0.3s;
   --longAnimTime:1.5s;
   stroke-linecap:round;
   stroke-linejoin:round;
   font-variation-settings: 'CASL' 1;
   font-weight:370;
+  background:var(--colorBg);
+  color:var(--colorFg);
+  transition:all var(--animTime) ease;
 }
 
 @keyframes growIn {
@@ -25,52 +26,56 @@ body {
 }
 @keyframes fadeInDown {
   0% {transform:translateX(-10rem);font-size:0;opacity:0}
-  100% {transform:translateY(0);font-size:1em;opacity:1}
+  100% {transform:translateX(0);font-size:1em;opacity:1}
 }
 ::-webkit-scrollbar {
   width: 0.5em;
   height: 0.5em;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background:transparent;
+  border:1px solid transparent;
+  border-radius: 1em;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0008;
+  background:var(--color1);
   border-radius: 1em;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #000b;
+  background:var(--color1Hover);
+  border-radius: 1em;
+}
+::-webkit-scrollbar-thumb:active {
+  background:var(--color1Focus);
+  border-radius: 1em;
+}
+::selection {
+  color:var(--colorBg);
+  background:var(--selColor);
 }
 
 #shell {
   width:max-content;
   font-variation-settings: 'MONO' 1;
 }
+#shellPrefix {
+  transition:all var(--animTime) ease;
+  font-variation-settings: 'CASL' 0;
+}
+#shellPrefix:hover {
+  font-variation-settings: 'CASL' 1;
+}
+#shellPrefix > .hidden {
+  transition:all var(--animTime) ease;
+  font-size:0;
+}
+#shellPrefix:hover > .hidden {
+  font-size:1em;
+}
 #root > * {
   margin: 0.5rem 0;
 }
-.tooltip {
-  transition:all var(--animTime) linear;
-  font-size:0;
-  opacity:0;
-  background:white;
-  z-index:1000;
-  position:absolute;
-  padding:0.3em;
-  color:var(--color1);
-  border-radius:0.3em;
-  border:1px dashed var(--color1);
-  overflow-wrap:anywhere;
-  pointer-events:none;
-  font-variation-settings: 'CASL' 1, 'slnt' -15;
-}
-.tooltiptrigger:hover .tooltip {
-  transition:all var(--longAnimTime) cubic-bezier(1, 0, 0.8, 1);
-  font-size:1em;
-  opacity:1;
-}
 .suggestions {
-  transition:opacity var(--animTime) linear;
   padding:0.3em 0;
   overflow-x:scroll;
   white-space:nowrap;
@@ -90,12 +95,12 @@ body {
   outline:0;
 }
 .button.active {
-  transition:all var(--animTime) linear;
+  transition:all var(--animTime) ease;
   opacity:1;
 }
 .button {
-  transition:all var(--animTime) linear;
-  color:white;
+  transition:all var(--animTime) ease;
+  color:var(--colorBg);
   border-radius:0.3em;
   cursor:pointer;
   background-color:var(--color1);
@@ -103,7 +108,7 @@ body {
   opacity:0.3;
 }
 .button:hover {
-  transition:all var(--animTime) linear;
+  transition:all var(--animTime) ease;
   opacity:1;
   background-color:var(--color1Hover);
 }
@@ -115,15 +120,15 @@ body {
   font-weight:700;
 }
 .suggestion.strong {
-  transition:all var(--animTime) linear;
-  color:white;
+  transition:all var(--animTime) ease;
+  color:var(--colorBg);
   padding:0.3em;
   border:0;
   background:var(--color1);
 }
 .suggestion {
-  animation: var(--animTime) ease-out 0s 1 growIn;
-  transition:all var(--animTime) linear;
+  animation: var(--medAnimTime) ease-out 0s 1 growIn;
+  transition:all var(--animTime) ease;
   color:var(--color1);
   border-radius:0.3em;
   border:0.1em solid var(--color1);
@@ -132,7 +137,7 @@ body {
   padding:0.2em;
 }
 .suggestion.hidden {
-  animation: var(--animTime) ease-out 0s 1 shrinkOut;
+  animation: var(--medAnimTime) ease-out 0s 1 shrinkOut;
   font-size:0;
 }
 .suggestion:hover {
@@ -151,7 +156,7 @@ body {
   user-select:none;
 }
 .inactive {
-  transition:all var(--animTime) linear;
+  transition:all var(--animTime) ease;
   opacity:0.1;
 }
 .title {
@@ -164,8 +169,8 @@ body {
   width: fit-content;
 }
 .shellBuffer > div {
-  animation: var(--animTime) ease-out 0s 1 fadeInDown;
-  transition:all var(--animTime) linear;
+  animation: var(--medAnimTime) ease-out 0s 1 fadeInDown;
+  transition:all var(--animTime) ease;
   padding:0.5rem;
   overflow-wrap:anywhere;
   opacity:1;
@@ -192,7 +197,7 @@ body {
   display:flex;
 }
 .hsep {
-  border-left:1px solid black;
+  border-left:1px solid var(--colorFg);
   margin:0 0.5em;
 }
 #cmdBuffer {

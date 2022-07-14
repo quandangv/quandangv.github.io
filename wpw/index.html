@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="color.css"/>
     <link rel="stylesheet" href="index.css"/>
-    <link rel="import" href="enter.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-10..0,300..1000,0..1,0..1,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tooltip.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-10..0,300..1000,0..1,0..1,0..1&display=swap">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -28,6 +29,7 @@
         sel.addRange(range);
       }
     </script>
+    <script src='tooltip.js'></script>
     <div id="root">
       <div class='suggestions'>
         <span><script>
@@ -38,8 +40,8 @@
             elem.className = 'strong suggestion'
             return elem
           }
-          errors.setItemText = function(item, text) {
-            item.innerText = text
+          errors.setItem = function(elem, item) {
+            elem.innerText = item
           }
           errors.update = function(list) {
             for (let i = this.childElementCount; i < list.length; i++)
@@ -50,11 +52,7 @@
             for (let i = 0; i < list.length; i++) {
               const item = this.childNodes[i]
               item.classList.toggle('hidden', false)
-              if (typeof list[i] === 'string') {
-                this.setItemText(item, list[i])
-              } else {
-                this.setItemText(item, list[i].text)
-              }
+              this.setItem(item, list[i])
             }
           }
         </script></span>
@@ -70,11 +68,21 @@
           childOptions.createElement = function() {
             const elem = document.createElement('span')
             elem.className = 'suggestion'
-            elem.onclick = () => appendCmd(elem.innerText)
+            const text = document.createElement('span')
+            text.className = 'unstyled'
+            elem.appendChild(text)
+            const tooltip = document.createElement('span')
+            tooltip.className = 'tooltip'
+            elem.appendChild(tooltip)
+            elem.textElem = text
+            elem.tooltip = tooltip
+            elem.onclick = () => appendCmd(text.innerText)
+            makeTooltipTrigger(elem)
             return elem
           }
-          childOptions.setItemText = function(item, text) {
-            item.innerText = text
+          childOptions.setItem = function(elem, item) {
+            elem.textElem.innerText = item.text
+            elem.tooltip.innerText = item.help
           }
           childOptions.update = errors.update
         </script></span>
@@ -82,31 +90,26 @@
           const paramOptions = document.scripts[document.scripts.length - 1].parentNode;
           paramOptions.removeChild(paramOptions.lastChild)
           paramOptions.createElement = function() {
-            const elem = document.createElement('span')
-            elem.className = 'suggestion'
-            elem.contentEditable = false
-            const text = document.createElement('span')
-            text.className = 'unstyled'
-            text.onkeydown = function(e) {
+            const elem = childOptions.createElement()
+            elem.textElem.onkeydown = function(e) {
               if (e.keyCode === enterKey) e.preventDefault()
             }
-            text.onkeyup = function(e) {
+            elem.textElem.onkeyup = function(e) {
               if (e.keyCode === enterKey && this.innerText.trim !== '') {
-                appendCmd(elem.paramName + ' ' + this.innerText)
+                appendCmd(elem.paramName.includes('<') ? this.innerText : elem.paramName + ' ' + this.innerText)
               }
             }
-            elem.textElem = text
-            elem.appendChild(text)
             const enterBtn = document.createElement('span')
             enterBtn.innerText = '\u00A0?'
             enterBtn.className = 'icon'
             enterBtn.style.display = 'none'
             elem.appendChild(enterBtn)
             elem.onclick = function() {
+              elem.style.pointerEvents = 'none'
               if (this.paramName == null) {
                 this.paramName = this.textElem.innerText
                 this.textElem.contentEditable = true
-                this.textElem.innerText = this.textElem.innerText.substring(2)
+                this.textElem.innerText = this.textElem.innerText.replaceAll(/<|>|-/g, '')
                 this.classList.toggle('active', true)
                 selectElement(this.textElem)
                 enterBtn.style.display = null
@@ -117,12 +120,14 @@
               elem.textElem.innerText = elem.paramName
               elem.paramName = null
               elem.textElem.contentEditable = false
+              elem.style.pointerEvents = null
               enterBtn.style.display = 'none'
             }
             return elem
           }
-          paramOptions.setItemText = function(item, text) {
-            item.textElem.innerText = text
+          paramOptions.setItem = function(elem, item) {
+            elem.textElem.innerText = item.text
+            elem.tooltip.innerText = item.help
           }
           paramOptions.update = childOptions.update
         </script></span>
@@ -139,7 +144,7 @@
             }
           }
         </script>
-        <span id='shellPrefix' class='title'>wpw&gt; </span><span class="unstyled" contenteditable>generate<script>
+        <span id='shellPrefix' class='title'>W<span class='hidden'>ord</span>P<span class='hidden'>ass</span>W<span class='hidden'>ord</span>&gt; </span><span class="unstyled" contenteditable>generate<script>
           const input = document.scripts[document.scripts.length - 1].parentNode
           // Tie parent's command with input content
           input.parentNode.input = input
@@ -170,9 +175,9 @@
           input.changeText = function(text) {
             if (text != this.innerText) {
               this.innerText = text
-              input.resetSelection()
               this.onchange(text)
             }
+            input.resetSelection()
           }
           input.onkeyup = function(e) {
             if (e.keyCode === enterKey) {
@@ -188,10 +193,11 @@
           input.onblur = function() {
             this.onchange(input.innerText)
           }
-        </script></span>&nbsp;<span class='tooltiptrigger icon button' onclick='this.parentNode.sendCommand()'>&nbsp;<span class='tooltip'>execute the command</span>
+        </script></span>&nbsp;<span class='icon button' onclick='this.parentNode.sendCommand()'>&nbsp;<span class='tooltip'>execute the command</span>
         <script>
           input.enterBtn = document.scripts[document.scripts.length - 1].parentNode
           input.enterBtn.style.backgroundImage = inlineIcons.enter
+          makeTooltipTrigger(input.enterBtn)
         </script></span>
       </div>
       <div id='doubleBuffer'>
@@ -261,47 +267,59 @@
       <script>
         commands = {children:{
           generate:{
+            help:'generate random word passwords',
             base:generator.phrase.rand,
             param:{
-              groupCount:{positional:true, default:3, type:{name:'int', min:1}},
-              groupSize:{positional:true, default:5, type:{name:'int', min:1, max:5}},
-              lastGroupSize:{positional:true, default:undefined, type:{name:'int', min:1, max:5}},
+              groupCount:{
+                positional:true,
+                default:3,
+                type:{name:'int', min:1},
+                help:'set the number of noun groups',
+              },
+              groupSize:{
+                positional:true,
+                default:5,
+                type:{name:'int', min:1, max:5},
+                help:'set the size of each noun group',
+              },
+              lastGroupSize:{
+                positional:true,
+                default:undefined,
+                type:{name:'int', min:1, max:5},
+                help:'set the size of the last noun group, to further control the size of the password',
+              },
             },
             children:{entropy:{
               base:generator.minEntropy,
+              help:'set a target number of bits of entropy',
               param:{
-                bitCount:{positional:true, required:true}
+                bitCount:{
+                  positional:true,
+                  required:true,
+                  help:'set the target number of bits',
+                }
               },
             }},
           },
         }}
-        function addParamVariant(params, sourceName, variantName) {
-          params[variantName] = {variantOf:sourceName}
-          if (params[sourceName].variants)
-            params[sourceName].variants.push(variantName)
-          else
-            params[sourceName].variants = [variantName]
-        }
-        function prepParams(commands) {
-          if ('param' in commands)
-            for (key of Object.keys(commands.param)) {
-              commands.param['--'+key] = commands.param[key]
-              addParamVariant(commands.param, '--'+key, nonbreakHyphen+nonbreakHyphen+key)
-              delete commands.param[key]
-            }
-          if ('children' in commands)
-            for (child in commands.children)
-              prepParams(commands.children[child])
-        }
-        prepParams(commands)
         let cmdError = ''
         input.onchange = function(text) {
           input.enterBtn.classList.toggle('inactive', !text.trim())
-          let currentCmd = commands
+          let currentCmd = null
+          let paramNames = null
+          let paramIndex = 0
+          function setCurrentCmd(value) {
+            currentCmd = value
+            paramNames = currentCmd.param
+            paramIndex = 0
+            if (paramNames)
+              paramNames = Object.keys(paramNames)
+          }
+          setCurrentCmd(commands)
           cmdError = ''
           let childLocked = false
-          let excludedParams = []
-          let expectingParams = 0
+          let expectingParamName = null
+          let paramValues = {}
           const errorArr = []
           for (let word of text.split(' ')) {
             word = word.trim()
@@ -310,35 +328,73 @@
               currentCmd = null
               break
             }
-            if (expectingParams > 0) {
+            if (expectingParamName) {
               if (!word.startsWith('-')) {
-                expectingParams--
+                paramValues[expectingParamName] = word
+                expectingParams = null
                 continue
+              } else
+                errorArr.push(`expecting value for "${expectingParamName}"`)
+            }
+            if (currentCmd.children && word in currentCmd.children) {
+              setCurrentCmd(currentCmd.children[word])
+              continue
+            } else if (paramNames) {
+              if (word.startsWith('--')) {
+                word = word.substring(2)
+                if (word in currentCmd.param) {
+                  childLocked = true
+                  if ('variantOf' in currentCmd.param[word])
+                    word = currentCmd.param[word].variantOf
+                  paramValues[word] = true
+                  const param = currentCmd.param[word]
+                  if ('default' in param || param.required)
+                    expectingParamName = word
+                  continue
+                }
+              } else {
+                for (; paramIndex < paramNames.length; paramIndex++) {
+                  const paramName = paramNames[paramIndex]
+                  if (currentCmd.param[paramName].positional) {
+                    paramValues[paramName] = word
+                    word = null
+                    paramIndex++
+                    break
+                  }
+                }
+                if (word == null) continue
               }
             }
-            if (currentCmd.children && word in currentCmd.children)
-              currentCmd = currentCmd.children[word]
-            else if (currentCmd.param && word in currentCmd.param) {
-              childLocked = true
-              if ('variantOf' in currentCmd.param[word])
-              word = currentCmd.param[word].variantOf
-              excludedParams.push(word)
-              const param = currentCmd.param[word]
-              if ('default' in param || 'required' in param)
-                expectingParams++
-            } else {
-              errorArr.push(`unexpected "${word}"`)
-            }
+            errorArr.push(`unexpected "${word}"`)
           }
           let childArr = []
           let paramArr = []
           if (currentCmd !== null) {
-            if (!childLocked && currentCmd.children != null) childArr.push(...Object.keys(currentCmd.children))
-            if (currentCmd.param != null)
-              paramArr.push(...Object.keys(currentCmd.param)
-                .filter(item => !excludedParams.includes(item) && !('variantOf' in currentCmd.param[item]))
-                .map(item => ({text:item, type:currentCmd.param[item].type || {name:'string'}}))
+            if (!childLocked && currentCmd.children != null)
+              childArr.push(...Object.keys(currentCmd.children)
+                .map(item => ({text:item, help:currentCmd.children[item]?.help}))
               )
+            if (currentCmd.param != null) {
+              let firstPositional = true
+              paramArr.push(...[...Object.keys(currentCmd.param)]
+                .map(item => {
+                  let param = currentCmd.param[item]
+                  if ('variantOf' in param || item in paramValues)
+                    return null
+                  const result = {text:'', help:param.help || ''}
+                  if (param.positional) {
+                    if (firstPositional) {
+                      firstPositional = false
+                      result.text = '<' + item + '>'
+                    }
+                  }
+                  if (!result.text)
+                    result.text = '--' + item
+                  return result
+                })
+                .filter(item => item != null)
+              )
+            }
           }
           errors.update(errorArr)
           paramOptions.update(paramArr)

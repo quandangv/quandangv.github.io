@@ -1,0 +1,23 @@
+.tooltip {
+  transition-property:opacity;
+  transition-duration:var(--medAnimTime);
+  transition-timing-function:ease;
+  font-size:0.75em;
+  opacity:0;
+  background:var(--colorBg);
+  z-index:1000;
+  position:absolute;
+  padding:0.3rem;
+  color:var(--color1);
+  border-radius:0.3rem;
+  border:1px dashed var(--color1);
+  pointer-events:none;
+  font-weight:400;
+  font-variation-settings: 'CASL' 1, 'slnt' -15;
+  white-space:break-spaces;
+}
+.tooltiptrigger:hover .tooltip {
+  transition-duration:var(--longAnimTime);
+  transition-timing-function:cubic-bezier(0.8, 0, 0.2, 1);
+  opacity:1;
+}
