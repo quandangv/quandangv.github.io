@@ -1,31 +1,22 @@
-import sys
 import secrets
 import math
 from common import *
 
-wordlist = load_wordlist(sys.argv[1])
+wordlist = load_wordlist('wordlist.md')
 quantity_count = len(wordlist['singular quantity']) + len(wordlist['plural quantity'])
 for category in wordlist:
   wordlist[category] = list(wordlist[category])
 for i in range(len(wordlist['noun'])):
   split = wordlist['noun'][i].split()
-  wordlist['noun'][i] = split if len(split) >= 3 else split + [split[0]]
-rand_quotes = False
-#wordlist['verb'] += [word.upper() for word in wordlist['verb']]
-#wordlist['adjective'] += [word.upper() for word in wordlist['adjective']]
-wordlist['verb'] += wordlist['nocap verb']
-wordlist['adjective'] += wordlist['nocap adjective']
+  wordlist['noun'][i] = split
+  wordlist['firstnoun'].append(split[0] if len(split) <= 2 else split[2])
 
-def add_rand_quotes(word):
-  if secrets.randbelow(2):
-    return word
-  return '"' + word + '"'
 def get_noun_group(size = 5):
   assert(size >= 1 and size <= 5)
   noun = secrets.choice(wordlist['noun'])
-  if size == 1: return add_rand_quotes(noun[1]) if rand_quotes else noun[1]
-  noun2 = secrets.choice(wordlist['noun'])[2]
-  noun = [ f'{noun2}-{noun1}' if not rand_quotes or secrets.randbelow(3) < 1 else f'"{noun2} {noun1}"' if secrets.randbelow(2) < 1 else f'"{noun2}"-{noun1}' for noun1 in noun ]
+  if size == 1: noun[1]
+  noun2 = secrets.choice(wordlist['firstnoun'])
+  noun = [ f'{noun2}-{noun1}' for noun1 in noun ]
   if size == 2: return noun[1]
   result = secrets.choice(wordlist['adjective']) + ' '
   if size == 3: return result + noun[1]
@@ -40,20 +31,15 @@ def get_noun_group(size = 5):
   else:
     return secrets.choice(wordlist['plural quantity']) + ' ' + result + noun[1]
 
-def calc_noun_choices(size):
-  if size <= 0: return 1
-  if size == 1:
-    return len(wordlist['noun']) * (2 if rand_quotes else 1)
-  if size == 2:
-    return len(wordlist['noun']) ** 2 * (3 if rand_quotes else 1)
-  if size == 3:
-    return len(wordlist['adjective']) * len(wordlist['noun']) ** 2 * (3 if rand_quotes else 1)
-  if size == 4:
-    return len(wordlist['adverb']) * calc_noun_choices(3)
-  return quantity_count * calc_noun_choices(4)
+noun_choices_arr = [1]*6
+noun_choices_arr[1] = noun_choices_arr[0] * len(wordlist['noun'])
+noun_choices_arr[2] = noun_choices_arr[1] * len(wordlist['firstnoun'])
+noun_choices_arr[3] = noun_choices_arr[2] * len(wordlist['adjective'])
+noun_choices_arr[4] = noun_choices_arr[3] * len(wordlist['adverb'])
+noun_choices_arr[5] = noun_choices_arr[4] * quantity_count
 
 def calc_phrase_choices(noun_group_count, base_group_size):
-  noun_choices = calc_noun_choices(base_group_size)
+  noun_choices = noun_choices_arr[base_group_size]
   if noun_group_count == 1:
     return noun_choices
   return noun_choices ** noun_group_count * len(wordlist['connector']) ** (noun_group_count - 2) * len(wordlist['verb']) * (noun_group_count - 1)
@@ -73,12 +59,12 @@ def get_targeted_phrase(target_bit_count):
     if current_bit_count >= target_bit_count:
       break
     base_group_size += 1
-  last_group_target = target_bit_count - current_bit_count + math.log(calc_noun_choices(base_group_size), 2)
+  last_group_target = target_bit_count - current_bit_count + math.log(noun_choices_arr[base_group_size], 2)
   last_group_size = 1
-  while math.log(calc_noun_choices(last_group_size), 2) < last_group_target:
+  while math.log(noun_choices_arr[last_group_size], 2) < last_group_target:
     last_group_size += 1
   print(base_group_size, noun_group_count, last_group_size)
-  print(math.log(calc_noun_choices(last_group_size-1), 2) + current_bit_count - math.log(calc_noun_choices(base_group_size), 2))
+  print(math.log(noun_choices_arr[last_group_size-1], 2) + current_bit_count - math.log(noun_choices_arr[base_group_size], 2))
   return get_phrase(noun_group_count, base_group_size, last_group_size)
 
 def get_phrase(noun_group_count, base_group_size, last_group_size):
@@ -101,5 +87,5 @@ print(get_phrase(size, 5, 5))
 print('From', calc_phrase_choices(size, 5), 'choices')
 print('With', math.log(calc_phrase_choices(size, 5), 2), 'bits of info')
 print()
-target_bit_count = 96
+target_bit_count = 64
 print('Phrase encompassing', target_bit_count, 'bits:', get_targeted_phrase(target_bit_count))

@@ -30,12 +30,12 @@ function randChoice(list) {
   return list[randbelow(list.length)]
 }
 generator.nounGroup.rand = function(size) {
-  console.assert(size >= 1 && size <= 5)
+  assert(size >= 1 && size <= 5)
   let noun = randChoice(wordlist.noun)
   if (size === 1) return noun[1]
-  noun2 = randChoice(wordlist.noun)[2]
+  noun2 = randChoice(wordlist.firstnoun)
   noun = noun.map(word => `${noun2}-${word}`)
-  if (size === 1) return noun[1]
+  if (size === 2) return noun[1]
   let result = randChoice(wordlist.adjective) + ' '
   if (size === 3) return result + noun[1]
   result = randChoice(wordlist.adverb) + ' ' + result
@@ -50,40 +50,70 @@ generator.nounGroup.rand = function(size) {
     return wordlist['plural quantity'][rand - wordlist['singular quantity'].length] + ' ' + result + noun[1]
 }
 
-generator.nounGroup.choices = function(size) {
-  console.assert(size <= 5)
-  if (size <= 0) return 1n
-  if (size === 1) return generator.nounGroup.choices(size - 1) * BigInt(wordlist.noun.length)
-  if (size === 2) return generator.nounGroup.choices(size - 1) * BigInt(wordlist.noun.length)
-  if (size === 3) return generator.nounGroup.choices(size - 1) * BigInt(wordlist.adjective.length)
-  if (size === 4) return generator.nounGroup.choices(size - 1) * BigInt(wordlist.adverb.length)
-  return generator.nounGroup.choices(size - 1) * BigInt(generator.quantityCount)
+generator.nounGroup.choices = [1]
+generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.noun.length)
+generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.firstnoun.length)
+generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.adjective.length)
+generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.adverb.length)
+generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * generator.quantityCount)
+generator.nounGroup.choices = generator.nounGroup.choices.map(num => BigInt(num)).reverse()
+console.log(generator.nounGroup.choices)
+
+generator.nounGroup.randChain = function({bitCount, groupSize}={}) {
+  assert(bitCount > 0)
+  let groupCount = 0
+  let targetChoices = 2n ** BigInt(bitCount)
+  let currentChoices = 1n
+  let groupChoices = generator.nounGroup.choices[groupSize]
+  while (currentChoices < targetChoices) {
+    groupCount += 1
+    currentChoices *= groupChoices
+  }
+  groupSize = 0
+  currentChoices = 1n
+  while (currentChoices < targetChoices) {
+    groupSize += 1
+    currentChoices = generator.nounGroup.choices[groupSize] ** BigInt(groupCount)
+  }
+  currentChoices /= generator.nounGroup.choices[groupSize]
+  targetChoices /= currentChoices
+  let firstGroupSize = 1
+  for (;generator.nounGroup.choices[firstGroupSize] <= targetChoices; firstGroupSize++);
+
+  let result = generator.nounGroup.rand(firstGroupSize)
+  for (let i = 1; i < groupCount; i++)
+    result += ', ' + generator.nounGroup.rand(groupSize)
+  return [result, currentChoices * generator.nounGroup.choices[firstGroupSize]]
 }
 
-generator.phrase.rand = function(groupCount, groupSize, lastGroupSize) {
+generator.phrase.rand = function(groupCount, groupSize, firstGroupSize) {
+  assert(groupCount > 0 && groupCount < 512)
+  if (firstGroupSize == null) firstGroupSize = groupSize
   if (groupCount <= 1)
-    return generator.nounGroup.rand(lastGroupSize)
+    return generator.nounGroup.rand(firstGroupSize)
   const connectorCount = groupCount - 1
   const verbPosition = randbelow(connectorCount)
   let result = ''
   for (let i = 0; i < connectorCount; i++)
-    result += generator.nounGroup.rand(groupSize) + ' ' + randChoice(i === verbPosition ? wordlist.verb : wordlist.connector) + ' '
-  return result + generator.nounGroup.rand(lastGroupSize)
+    result += ' ' + randChoice(i === verbPosition ? wordlist.verb : wordlist.connector) + ' ' + generator.nounGroup.rand(groupSize)
+  return generator.nounGroup.rand(firstGroupSize) + result
 }
 
-generator.phrase.choices = function(groupCount, groupSize, lastGroupSize) {
-  if (lastGroupSize === undefined) lastGroupSize = groupSize
+generator.phrase.choices = function(groupCount, groupSize, firstGroupSize) {
+  if (firstGroupSize == null) firstGroupSize = groupSize
   if (groupCount <= 1)
-    return generator.nounGroup.choices(lastGroupSize)
-  return generator.nounGroup.choices(groupSize) ** BigInt(groupCount - 1) * generator.nounGroup.choices(lastGroupSize) * BigInt(wordlist.connector.length) ** BigInt(groupCount - 2) * BigInt(wordlist.verb.length) * BigInt(groupCount - 1)
+    return generator.nounGroup.choices[firstGroupSize]
+  return generator.nounGroup.choices[groupSize] ** BigInt(groupCount - 1) * generator.nounGroup.choices[firstGroupSize] * BigInt(wordlist.connector.length) ** BigInt(groupCount - 2) * BigInt(wordlist.verb.length) * BigInt(groupCount - 1)
+}
+generator.phrase.combined = function({groupCount, groupSize, firstGroupSize}={}) {
+  return [generator.phrase.rand(groupCount, groupSize, firstGroupSize), generator.phrase.choices(groupCount, groupSize, firstGroupSize)]
 }
 
-generator.minEntropy = function(bitCount) {
+generator.minEntropy = function({bitCount}={}) {
   let groupCount = 1
   let targetChoices = 2n ** BigInt(bitCount)
   let currentChoices = 0
   while (true) {
-    console.log(groupCount)
     currentChoices = generator.phrase.choices(groupCount, 5)
     if (currentChoices >= targetChoices) break
     groupCount += 1
@@ -94,10 +124,9 @@ generator.minEntropy = function(bitCount) {
     if (currentChoices >= targetChoices) break
     groupSize += 1
   }
-  currentChoices /= generator.nounGroup.choices(groupSize)
+  currentChoices /= generator.nounGroup.choices[groupSize]
   targetChoices /= currentChoices
-  lastGroupSize = 1
-  for (;generator.nounGroup.choices(lastGroupSize) <= targetChoices; lastGroupSize++);
-  console.log(groupCount, groupSize, lastGroupSize)
-  return [generator.phrase.rand(groupCount, groupSize, lastGroupSize), currentChoices * generator.nounGroup.choices(lastGroupSize)]
+  firstGroupSize = 1
+  for (;generator.nounGroup.choices[firstGroupSize] <= targetChoices; firstGroupSize++);
+  return [generator.phrase.rand(groupCount, groupSize, firstGroupSize), currentChoices * generator.nounGroup.choices[firstGroupSize]]
 }

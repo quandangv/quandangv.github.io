@@ -1,29 +1,37 @@
-.tooltiptrigger {
-  user-select:none;
+html{
+  --tooltipFont:0.8em;
 }
 .tooltip {
-  transition-property:opacity;
+  user-select:none;
+  transition-property:opacity, font-size;
   transition-duration:var(--medAnimTime);
   transition-timing-function:ease;
-  font-size:0.75em;
+  font-size:0;
   opacity:0;
-  background:var(--colorBg2);
+  background:var(--colorBg);
   z-index:1000;
   position:absolute;
   padding:0.3rem;
-  color:var(--color1);
+  color:var(--colorFg);
   border-radius:0.3rem;
-  border:1px dashed var(--color1);
+  border:1px dashed var(--colorFg);
   pointer-events:none;
   font-weight:400;
   font-variation-settings: 'CASL' 1, 'slnt' -15;
   white-space:break-spaces;
   display:block;
 }
-.tooltiptrigger:hover .tooltip {
+.tooltiptrigger:hover > .tooltip {
   transition-duration:var(--longAnimTime);
   transition-timing-function:cubic-bezier(0.8, 0, 0.2, 1);
+  font-size:var(--tooltipFont);
   opacity:1;
+}
+.triggered > .tooltip {
+  animation: var(--medAnimTime) ease-out 0s 1 fadeIn;
+  opacity:1;
+  font-size:0.75em;
+  z-index:1001;
 }
 .tooltiptrigger {
   --hover:true;

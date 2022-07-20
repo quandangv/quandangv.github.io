@@ -28,139 +28,237 @@
         sel.removeAllRanges();
         sel.addRange(range);
       }
+      function assert(condition, message) {
+        if (!condition) {
+          throw new Error(message || "Assertion failed");
+        }
+      }
+      const nonbreakSpace = '\u00A0'
+      function similar(word1, word2) {
+        if (word1.length > word2.length) {
+          const tmp = word2
+          word2 = word1
+          word1 = tmp
+        } else if (word1.length == word2.length) {
+          for (let i = 0, error = 0; i < length; i++)
+            if (word1[i] !== word2[i])
+              if (++error > 3)
+                return false
+          return true
+        }
+        for (let i = 0, delta = 0; i < word2.length; i++)
+          if (word1[i - delta] !== word2[i])
+            if (++delta > 3)
+              return false
+        return true;
+      }
+      function log2(value, accuracy=20) {
+        let int = 0n
+        for (let tmp = value; tmp > 1n; tmp >>= 1n, int++);
+        let result = Number(int)
+        let threshold = 1n << BigInt(int)
+        const sizeLimit = 2 ** accuracy
+        for (let unit = 1, size = Number(int); value != 0; unit++, size *= 2) {
+          if (value === threshold) break
+          if (size > sizeLimit*2) {
+            threshold >>= BigInt(size - sizeLimit)
+            value >>= BigInt(size - sizeLimit)
+            size = sizeLimit
+          }
+          value *= value
+          threshold *= threshold
+          if (value > threshold * 2n) {
+            result += 2 ** -unit
+            threshold <<= 1n
+            size++
+          }
+        }
+        return result
+      }
     </script>
     <script src='tooltip.js'></script>
     <div id="root">
       <div class='suggestions'>
         <span><script>
-          const errors = document.scripts[document.scripts.length - 1].parentNode;
-          errors.removeChild(errors.lastChild)
-          errors.createElement = function() {
-            const elem = document.createElement('span')
-            elem.className = 'strong'
-            return elem
-          }
-          errors.setItem = function(elem, item) {
-            elem.innerText = item
-          }
-          errors.update = function(list) {
-            for (let i = this.childElementCount; i < list.length; i++)
-              this.appendChild(this.createElement())
-            for (let i = list.length; i < this.childElementCount; i++) {
-              this.childNodes[i].classList.toggle('hidden', true)
+            const errors = document.scripts[document.scripts.length - 1].parentNode;
+            errors.removeChild(errors.lastChild)
+            errors.createElement = function() {
+              const elem = document.createElement('span')
+              elem.className = 'strong'
+              const text = document.createElement('span')
+              elem.appendChild(text)
+              elem.textElem = text
+              makeTooltipTrigger(elem)
+              elem.onclick = function() {
+                const range = document.createRange()
+                range.selectNodeContents(input.childNodes[0])
+                range.setStart(range.startContainer, this.range[0])
+                range.setEnd(range.endContainer, this.range[1] - 1)
+                const sel = window.getSelection()
+                sel.removeAllRanges()
+                sel.addRange(range)
+              }
+              return elem
             }
-            for (let i = 0; i < list.length; i++) {
-              const item = this.childNodes[i]
-              item.classList.toggle('hidden', false)
-              this.setItem(item, list[i])
+            errors.setItem = function(elem, item, suffix) {
+              elem.textElem.innerText = item.text + suffix
+              elem.classList.toggle('tooltiptrigger', !!item.longText)
+              elem.tooltip.innerText = item.longText + suffix
+              elem.range = [item.start, item.end]
             }
-          }
-        </script></span>
-        <span><script>
-          function appendCmd(text) {
-            let cmd = input.innerText
-            if (cmdError.startsWith('unexpected '))
-              cmd = cmd.trim().substring(0, cmd.lastIndexOf(' '))
-            input.changeText(cmd.trim() + ' ' + text)
-          }
-          const childOptions = document.scripts[document.scripts.length - 1].parentNode;
-          childOptions.removeChild(childOptions.lastChild)
-          childOptions.createElement = function() {
-            const elem = document.createElement('span')
-            const text = document.createElement('span')
-            text.className = 'unstyled'
-            elem.appendChild(text)
-            const tooltip = document.createElement('span')
-            tooltip.className = 'tooltip'
-            elem.appendChild(tooltip)
-            elem.textElem = text
-            elem.tooltip = tooltip
-            elem.onclick = () => appendCmd(text.innerText)
-            makeTooltipTrigger(elem)
-            return elem
-          }
-          childOptions.setItem = function(elem, item) {
-            elem.textElem.innerText = item.text
-            elem.tooltip.innerText = item.help
-          }
-          childOptions.update = errors.update
-        </script></span>
-        <span><script>
-          const paramOptions = document.scripts[document.scripts.length - 1].parentNode;
-          paramOptions.removeChild(paramOptions.lastChild)
-          paramOptions.createElement = function() {
-            const elem = childOptions.createElement()
-            elem.textElem.onkeydown = function(e) {
-              if (e.keyCode === enterKey) e.preventDefault()
-            }
-            elem.textElem.onkeyup = function(e) {
-              if (e.keyCode === enterKey && this.innerText.trim !== '') {
-                appendCmd(elem.paramName.includes('<') ? this.innerText : elem.paramName + ' ' + this.innerText)
+            errors.list = []
+            let suffix = ' '
+            errors.update = function(list) {
+              this.list = list
+              let listI = list.length - 1
+              let i = this.childElementCount - 1
+              for (; i >= 0 && listI >= 0; i--) {
+                const elem = this.children[i]
+                if (elem.classList.contains('hidden') || similar(elem.textElem.innerText, list[listI].text+suffix, 1)) {
+                  elem.classList.toggle('hidden', false)
+                  elem.style.display = null
+                  this.setItem(elem, list[listI], suffix)
+                  listI--
+                } else {
+                  elem.classList.toggle('hidden', true)
+                }
+              }
+              for (; i >= 0; i--)
+                this.children[i].classList.toggle('hidden', true)
+              for (;listI >= 0; listI--) {
+                const elem = this.createElement()
+                this.prepend(elem)
+                elem.classList.toggle('hidden', false)
+                this.setItem(elem, list[listI], suffix)
               }
             }
-            const enterBtn = document.createElement('span')
-            enterBtn.innerText = '\u00A0?'
-            enterBtn.className = 'icon'
-            enterBtn.style.display = 'none'
-            elem.appendChild(enterBtn)
-            elem.onclick = function() {
-              if (this.paramName == null) {
-                this.paramName = this.textElem.innerText
-                this.textElem.contentEditable = true
-                this.textElem.innerText = this.textElem.innerText.replaceAll(/<|>|-/g, '')
-                this.classList.toggle('active', true)
-                selectElement(this.textElem)
-                enterBtn.style.display = null
+            function appendCmd(text) {
+              let cmd = input.innerText
+              if (errors.list.find(item => item.text.startsWith('unexpected ')))
+                cmd = cmd.trim().substring(0, cmd.lastIndexOf(' '))
+              input.changeText(cmd.trim() + ' ' + text + ' ')
+            }
+        </script></span><span><script>
+            function createSuggestion() {
+              const elem = document.createElement('span')
+              const text = document.createElement('span')
+              text.id = 'text'
+              elem.appendChild(text)
+              elem.textElem = text
+              elem.onclick = () => appendCmd(text.innerText)
+              makeTooltipTrigger(elem)
+              return elem
+            }
+            const medAnimTime = parseFloat(rootStyle.getPropertyValue('--medAnimTime'))*1000
+            const paramOptions = document.scripts[document.scripts.length - 1].parentNode;
+            paramOptions.removeChild(paramOptions.lastChild)
+            paramOptions.setItem = function(param, item, suffix) {
+              param.textElem.innerText = item.text + suffix
+              param.tooltip.innerText = item.help || ''
+              param.suggestion = item.suggestion
+              let inputHelp = ''
+              const type = item.type
+              inputHelp = 'enter ' + type.desc
+              param.enterBtn.tooltip.innerText = inputHelp
+              param.enterBtn.classList.toggle('tooltiptrigger', !!inputHelp)
+            }
+            paramOptions.createElement = function() {
+              const param = createSuggestion()
+              const input = document.createElement('span')
+              input.id = 'input'
+              input.contentEditable = true
+              param.input = input
+              param.appendChild(input)
+              function trigger() {
+                const paramName = param.textElem.innerText
+                if (!paramName.includes('<'))
+                  appendCmd(paramName)
+                appendCmd(input.innerText)
               }
+              input.onkeydown = function(e) {
+                if (e.keyCode === enterKey) e.preventDefault()
+              }
+              input.onkeyup = function(e) {
+                if (e.keyCode === enterKey && this.innerText.trim !== '')
+                  trigger()
+              }
+              const enterBtn = document.createElement('span')
+              enterBtn.innerText = nonbreakSpace + nonbreakSpace + nonbreakSpace
+              enterBtn.className = 'icon'
+              enterBtn.style.backgroundImage = inlineIcons.enter
+              enterBtn.id = 'enter'
+              makeTooltipTrigger(enterBtn, '', param)
+              enterBtn.onclick = function(e) {
+                trigger()
+                e.stopPropagation()
+              }
+              param.enterBtn = enterBtn
+              param.appendChild(enterBtn)
+              input.onmousedown = function(e) {
+                e.inputClick = true
+              }
+              param.onmousedown = function(e) {
+                if (this.classList.contains('active') && !e.inputClick)
+                  e.preventDefault()
+              }
+              param.onclick = function() {
+                if (!this.classList.contains('active')) {
+                  input.innerText = this.suggestion
+                  this.classList.toggle('active', true)
+                  this.classList.toggle('tooltiptrigger', false)
+                  setTimeout(() => this.enterBtn.triggerTooltip(2500), medAnimTime)
+                  selectElement(input)
+                }
+              }
+              input.onblur = function() {
+                param.classList.toggle('active', false)
+                param.classList.toggle('tooltiptrigger', true)
+                param.enterBtn.classList.toggle('triggered', false)
+              }
+              return param
             }
-            elem.textElem.onblur = function() {
-              console.log('blue')
-              elem.classList.toggle('active', false)
-              elem.textElem.innerText = elem.paramName
-              elem.paramName = null
-              elem.textElem.contentEditable = false
-              enterBtn.style.display = 'none'
+            paramOptions.update = errors.update
+        </script></span><span><script>
+            const childOptions = document.scripts[document.scripts.length - 1].parentNode;
+            childOptions.removeChild(childOptions.lastChild)
+            childOptions.createElement = createSuggestion
+            childOptions.setItem = function(elem, item, suffix) {
+              elem.textElem.innerText = item.text + suffix
+              elem.tooltip.innerText = item.help || ''
             }
-            return elem
-          }
-          paramOptions.setItem = function(elem, item) {
-            elem.textElem.innerText = item.text
-            elem.tooltip.innerText = item.help
-          }
-          paramOptions.update = childOptions.update
+            childOptions.update = errors.update
         </script></span>
-      </div>
+      &nbsp;</div>
       <div id="shell">
         <script>
           const shell = document.scripts[document.scripts.length - 1].parentNode;
           shell.sendCommand = function() {
             if (this.input.innerText.trim()) {
-              this.input.parentNode.oncommand(input.innerText)
+              this.oncommand(input.innerText.trim())
               this.input.changeText('')
+              cmdBuffer.draftCommand = null
             } else {
               input.focus()
             }
           }
         </script>
-        <span id='shellPrefix' class='title'>W<span class='hidden'>ord</span>P<span class='hidden'>ass</span>W<span class='hidden'>ord</span>&gt; </span><span class="unstyled" contenteditable>generate<script>
+        <span id='shellPrefix' class='title' onclick='input.resetSelection()'>M<span class='hidden'>eaningful</span>Passwords&gt; </span><span class="unstyled" contenteditable spellcheck='false'><script>
           const input = document.scripts[document.scripts.length - 1].parentNode
           // Tie parent's command with input content
           input.parentNode.input = input
           input.resetSelection = function () {
             // Select the end of input text
-            input.focus()
-            const range = document.createRange();
-            range.selectNodeContents(this);
-            range.setStart(range.startContainer, this.innerText ? 1 : 0)
-            const sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(range);
+            this.focus()
+            if (this.innerText) {
+              const range = document.createRange();
+              range.selectNodeContents(this);
+              range.setStart(range.startContainer, 1)
+              const sel = window.getSelection();
+              sel.removeAllRanges();
+              sel.addRange(range);
+            }
           }
           input.resetSelection()
-          // Redirect parent click to focus input
-          document.getElementById('shellPrefix').onclick = function() {
-            input.resetSelection()
-          }
           const enterKey = 13
           const downKey = 40
           const upKey = 38
@@ -171,6 +269,7 @@
             }
           }
           input.changeText = function(text) {
+            text = text.replaceAll(nonbreakHyphen, '-').replaceAll(nonbreakSpace, ' ')
             if (text != this.innerText) {
               this.innerText = text
               this.onchange(text)
@@ -191,11 +290,11 @@
           input.onblur = function() {
             this.onchange(input.innerText)
           }
-        </script></span>&nbsp;<span class='icon button' onclick='this.parentNode.sendCommand()'>&nbsp;<span class='tooltip'>execute the command</span>
+        </script></span><span onclick='input.resetSelection()'>&nbsp;</span><span class='icon button' onclick='this.parentNode.sendCommand()'>&nbsp;
         <script>
           input.enterBtn = document.scripts[document.scripts.length - 1].parentNode
           input.enterBtn.style.backgroundImage = inlineIcons.enter
-          makeTooltipTrigger(input.enterBtn)
+          makeTooltipTrigger(input.enterBtn, 'execute the command')
         </script></span>
       </div>
       <div id='doubleBuffer'>
@@ -206,14 +305,14 @@
             const doubleBuffer = cmdBuffer.parentNode
             doubleBuffer.selected = null
             cmdBuffer.count = 0
+            cmdBuffer.elemClick = function() {
+              doubleBuffer.setSelected(Number(this.id.substring(1)), window.getSelection().toString() === '')
+            }
             cmdBuffer.add = function(command) {
               const elem = document.createElement('div')
               elem.innerText = command.replaceAll('-', nonbreakHyphen)
               elem.id = 'c' + this.count++
-              elem.onclick = function() {
-                this.draftCommand = input.innerText
-                doubleBuffer.setSelected(Number(this.id.substring(1)), window.getSelection().toString() === '')
-              }
+              elem.onclick = this.elemClick
               this.prepend(elem)
               return elem
             }
@@ -222,13 +321,13 @@
               if (selected == null) {
                 if (delta < 0 && cmdBuffer.count > 0) {
                   selected = cmdBuffer.count + delta
-                  cmdBuffer.draftCommand = input.innerText
                 }
               } else
                 selected += delta
               if (selected >= cmdBuffer.count) {
                 doubleBuffer.setSelected(null)
-                input.changeText(cmdBuffer.draftCommand)
+                console.assert(cmdBuffer.draftCommand != null)
+                input.changeText(cmdBuffer.draftCommand || '')
                 return
               }
               if (selected === null) return
@@ -241,8 +340,27 @@
           <script>
             const outputs = document.scripts[document.scripts.length - 1].parentNode;
             outputs.count = 0
-            outputs.add = cmdBuffer.add
+            outputs.add = function(text, subtext, tooltip) {
+              const elem = document.createElement('div')
+              elem.innerText = text
+              if (subtext) {
+                const subElem = document.createElement('span')
+                subElem.className = 'subtext'
+                subElem.innerText = subtext
+                if (tooltip != null) {
+                  makeTooltipTrigger(subElem)
+                  subElem.tooltip.innerText = tooltip
+                }
+                elem.appendChild(subElem)
+              }
+              elem.id = 'c' + this.count++
+              elem.onclick = cmdBuffer.elemClick
+              this.prepend(elem)
+              return elem
+            }
             doubleBuffer.setSelected = function(value, setCmd) {
+              if (cmdBuffer.draftCommand == null)
+                cmdBuffer.draftCommand = input.innerText
               if (this.selected != null) {
                 cmdBuffer.querySelector('#c' + this.selected)?.classList?.toggle('selected', false)
                 outputs.querySelector('#c' + this.selected)?.classList?.toggle('selected', false)
@@ -263,123 +381,217 @@
       <script type="text/javascript" src='wordlist/wordlist.json'></script>
       <script type="text/javascript" src='wordlist/generator.js'></script>
       <script>
+        paramType = {
+          int: {
+            desc:'an integer',
+            shortDesc:'int',
+            check:num => !isNaN(num),
+            parse:str => Number(str),
+          },
+        }
+        paramType.intFrom = min => ({...paramType.int,
+          desc:'an integer ≥ '+min,
+          shortDesc:`intFrom(${min})`,
+          check:num => isNaN(num) || num < min,
+        })
+        paramType.intUpto = max => ({...paramType.int,
+          desc:'an integer ≤ '+max,
+          shortDesc:`intUpto(${max})`,
+          check:num => isNaN(num) || num > max,
+        })
+        paramType.intBetween = (min, max) => ({...paramType.int,
+          desc:`an integer between ${min} and ${max}`,
+          shortDesc:`intBetween(${min}, ${max})`,
+          check:num => isNaN(num) || num < min || num > max,
+        })
         commands = {children:{
           generate:{
-            help:'generate random word passwords',
-            base:generator.phrase.rand,
+            help:'generate random meaningful passwords',
+            base:generator.phrase.combined,
+            exclusions:[[['groupCount', 'groupSize', 'firstGroupSize'], 'entropy']],
+            defaultParam:{groupCount:2, groupSize:2, firstGroupSize:null},
             param:{
               groupCount:{
                 positional:true,
-                default:3,
-                type:{name:'int', min:1},
+                type:paramType.intFrom(1),
                 help:'set the number of noun groups',
               },
               groupSize:{
                 positional:true,
-                default:5,
-                type:{name:'int', min:1, max:5},
+                type:paramType.intBetween(1, 5),
                 help:'set the size of each noun group',
               },
-              lastGroupSize:{
+              firstGroupSize:{
                 positional:true,
-                default:undefined,
-                type:{name:'int', min:1, max:5},
-                help:'set the size of the last noun group, to further control the size of the password',
+                suggestion:5,
+                type:paramType.intBetween(1, 5),
+                help:'set the size of the first noun group, to further control the size of the password',
               },
             },
-            children:{entropy:{
-              base:generator.minEntropy,
-              help:'set a target number of bits of entropy',
-              param:{
-                bitCount:{
-                  positional:true,
-                  required:true,
-                  help:'set the target number of bits',
-                }
+            children:{
+              entropy:{
+                base:generator.minEntropy,
+                help:'set a target number of bits of entropy',
+                param:{
+                  bitCount:{
+                    type:paramType.intFrom(1),
+                    positional:true,
+                    required:true,
+                    suggestion:64,
+                    help:'the target number of bits',
+                  }
+                },
               },
-            }},
+              nounChain:{
+                base:generator.nounGroup.randChain,
+                help:'generate a chain of noun groups with a target number of bits of entropy',
+                defaultParam:{groupSize:2},
+                param:{
+                  bitCount:{
+                    type:paramType.intFrom(1),
+                    positional:true,
+                    required:true,
+                    suggestion:64,
+                    help:'the target number of bits',
+                  },
+                  groupSize:{
+                    type:paramType.intFrom(1),
+                    help:'maximum group size for the noun groups',
+                  },
+                },
+              },
+            },
           },
         }}
-        let cmdError = ''
+        function prepCommand(command) {
+          if (command.exclusions)
+            for (let group of command.exclusions)
+              for (let i = 0; i < group.length; i++)
+                if (typeof group[i] === 'string')
+                  group[i] = [group[i]]
+          if (command.param)
+            for (let name in command.param)
+              command.param[name].suggestion = command.param[name].suggestion || command.defaultParam[name] || name
+          for (let child in command.children)
+            prepCommand(command.children[child])
+        }
+        prepCommand(commands)
+        function getExclusions(command, name) {
+          const result = []
+          if (command.exclusions)
+            for (let group of command.exclusions) {
+              let inItem = null
+              for (let item of group)
+                if (item.includes(name)) {
+                  inItem = item
+                  break
+                }
+              if (inItem != null)
+                for (let item of group)
+                  if (item !== inItem)
+                    result.push(...item)
+            }
+          return result
+        }
         input.onchange = function(text) {
-          input.enterBtn.classList.toggle('inactive', !text.trim())
-          let currentCmd = null
+          if (text.trim() == input.oldCmd?.trim()) return
+          input.oldCmd = text
+          input.enterBtn.classList.toggle('hidden', !text.trim())
+          input.currentCmd = null
+          input.paramValues = {}
+          let noSuggestions = false
           let paramNames = null
           let paramIndex = 0
           function setCurrentCmd(value) {
-            currentCmd = value
-            paramNames = currentCmd.param
+            input.currentCmd = value
+            paramNames = input.currentCmd.param
             paramIndex = 0
             if (paramNames)
               paramNames = Object.keys(paramNames)
           }
           setCurrentCmd(commands)
-          cmdError = ''
-          let childLocked = false
           let expectingParamName = null
-          let paramValues = {}
-          const errorArr = []
-          for (let word of text.split(' ')) {
+          let excludedParams = []
+          input.errorArr = []
+          let position = 0
+          let start = 0
+          function addError(text, longText) {
+            input.errorArr.push({text, longText, start, end:position})
+          }
+          text.split(/\s/).forEach((word, i) => {
+            start = position
+            position += word.length + 1
             word = word.trim()
-            if (word === '') continue
-            if (errorArr.length > 0) {
-              currentCmd = null
-              break
-            }
+            if (word === '') return
+            if (input.errorArr.length > 0)
+              noSuggestions = true
             if (expectingParamName) {
               if (!word.startsWith('-')) {
-                paramValues[expectingParamName] = word
-                expectingParams = null
-                continue
+                const param = input.currentCmd.param[expectingParamName]
+                console.log(word)
+                word = param.type.parse(word)
+                if (param.type.check(word))
+                  addError(`${expectingParamName} must be ${param.type.shortDesc}`, `parameter ${expectingParamName} must be ${param.type.desc}`)
+                input.paramValues[expectingParamName] = word
+                expectingParamName = null
+                return
               } else
-                errorArr.push(`expecting value for "${expectingParamName}"`)
+                addError(`expecting value for "${expectingParamName}"`)
             }
-            if (currentCmd.children && word in currentCmd.children) {
-              setCurrentCmd(currentCmd.children[word])
-              continue
+            if (input.currentCmd.children && word in input.currentCmd.children) {
+              excludedParams.push(...getExclusions(input.currentCmd, word))
+              setCurrentCmd(input.currentCmd.children[word])
+              return
             } else if (paramNames) {
               if (word.startsWith('--')) {
                 word = word.substring(2)
-                if (word in currentCmd.param) {
-                  childLocked = true
-                  if ('variantOf' in currentCmd.param[word])
-                    word = currentCmd.param[word].variantOf
-                  paramValues[word] = true
-                  const param = currentCmd.param[word]
-                  if ('default' in param || param.required)
+                if (word in input.currentCmd.param) {
+                  excludedParams.push(...getExclusions(input.currentCmd, word))
+                  if ('variantOf' in input.currentCmd.param[word])
+                    word = input.currentCmd.param[word].variantOf
+                  input.paramValues[word] = true
+                  const param = input.currentCmd.param[word]
+                  if (word in input.currentCmd.defaultParam || param.required)
                     expectingParamName = word
-                  continue
-                }
+                  return
+                } else addError(`unknown switch --${word}`)
               } else {
                 for (; paramIndex < paramNames.length; paramIndex++) {
                   const paramName = paramNames[paramIndex]
-                  if (currentCmd.param[paramName].positional) {
-                    paramValues[paramName] = word
+                  const param = input.currentCmd.param[paramName]
+                  if (param.positional) {
+                    word = param.type.parse(word)
+                    if (param.type.check(word))
+                      addError(`$${paramIndex+1} must be ${param.type.shortDesc}`, `parameter ${paramIndex+1} must be ${param.type.desc}`)
+                    else
+                      excludedParams.push(...getExclusions(input.currentCmd, paramName))
+                    input.paramValues[paramName] = word
                     word = null
                     paramIndex++
                     break
                   }
                 }
-                if (word == null) continue
+                if (word == null) return
               }
             }
-            errorArr.push(`unexpected "${word}"`)
-          }
+            addError(`unexpected "${word}"`)
+          })
           let childArr = []
           let paramArr = []
-          if (currentCmd !== null) {
-            if (!childLocked && currentCmd.children != null)
-              childArr.push(...Object.keys(currentCmd.children)
-                .map(item => ({text:item, help:currentCmd.children[item]?.help}))
+          if (!noSuggestions) {
+            if (input.currentCmd.children != null)
+              childArr.push(...Object.keys(input.currentCmd.children)
+                .filter(item => !excludedParams.includes(item))
+                .map(item => ({text:item, help:input.currentCmd.children[item]?.help}))
               )
-            if (currentCmd.param != null) {
+            if (input.currentCmd.param != null) {
               let firstPositional = true
-              paramArr.push(...[...Object.keys(currentCmd.param)]
+              paramArr.push(...[...Object.keys(input.currentCmd.param)]
                 .map(item => {
-                  let param = currentCmd.param[item]
-                  if ('variantOf' in param || item in paramValues)
+                  let param = input.currentCmd.param[item]
+                  if ('variantOf' in param || item in input.paramValues || excludedParams.includes(item))
                     return null
-                  const result = {text:'', help:param.help || ''}
+                  const result = {...param, text:''}
                   if (param.positional) {
                     if (firstPositional) {
                       firstPositional = false
@@ -394,14 +606,25 @@
               )
             }
           }
-          errors.update(errorArr)
+          errors.update(input.errorArr)
           paramOptions.update(paramArr)
           childOptions.update(childArr)
         }
         input.onchange(input.innerText)
         shell.oncommand = function(cmd) {
           cmdBuffer.add(cmd)
-          outputs.add(generator.minEntropy(100)[0])
+          input.onchange(cmd)
+          if (input.errorArr.length > 0)
+            outputs.add(input.errorArr.map(item => item.text).join(', '))
+          else {
+            try {
+              const output = input.currentCmd.base({...input.currentCmd.defaultParam, ...input.paramValues})
+              outputs.add(output[0], ` - ${Math.round(log2(output[1], 16)*100)/100} bits`, `that's out of ${output[1].toLocaleString()} posible passwords`)
+            } catch (error) {
+              console.error(error)
+              outputs.add('unknown error, see console')
+            }
+          }
         }
       </script>
     </div>

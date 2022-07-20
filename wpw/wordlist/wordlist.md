@@ -1,2116 +1,4996 @@
 # plural noun
-# nocap adjective
-conservative
-artifical
-jolly
-weary
-careful
-agile
-wise
-capable
-attentive
-open
-blooming
-purple
-creative
-random
-underground
-patriotic
-vibrant
-useful
-outspoken
-noble
-nice
-quick
-short
-authentic
-small
-simplistic
-orange
-democratic
-plain
-single
-suitable
-fuzzy
-little
-dogmatic
-fresh
-manageable
-comfortable
-floppy
-teal
-complicated
-hypothetical
-busy
-massive
-quirky
-lucky
-cheerful
-silver
-meager
-bland
-fictional
-yellow
-cute
-# nocap verb
-tamed
-followed
-altered
-teased
-adopted
-served
-fed
-helped
-met
-admired
-assembled
-misheard
-heard
-made
-led
-healed
-memorized
-touched
-domesticated
-produced
-poked
-felt
-pulled
-kissed
-held
-saw
-intoxicated
-needed
-hugged
-liked
-befriended
-encouraged
-inspected
-moved
-reassured
-called
-# adjective
-glowing
-brave
-punctual
-dim
-appropriate
-recycled
-natural
-scared
-improper
-Venice
-New York
-modest
-renowned
-cheap
-tasty
-vain
-Spanish
-abrupt
-insane
-galactic
-holy
-real
-hideous
-educated
-maroon
-universal
-free
-gorgeous
-turquoise
-polar
-malicious
-terrible
-powerless
-neat
-quick
-mortal
-delusional
-dull
-imprecise
-fake
-innocent
-light
-Brazilian
-platinum
-fatal
-patient
-shiny
-thirsty
-original
-asexual
-accursed
-rare
-western
-ashamed
-boring
-glamorous
-deceiving
-strict
-icy
-squishy
-gourmet
-evil
-bright
-automatic
-careless
-illegal
-drunk
-victorious
-exotic
-abrasive
-Dublin
-juicy
-aging
-metal
-verbose
-glorious
-unimpressive
-acidic
-fun
-Romanian
-bad
-complex
-uneducated
-magnetic
-repulsive
-Korean
-Icelandic
-homosexual
-Italian
-large
-Mongolian
-Austrian
-blind
-stupid
-blazing
-gentle
-Malaysian
-sinful
-extraordinary
-successful
-awkward
-flat
-destructive
-full
-safe
-rich
-historical
-inexpensive
-Swiss
-beloved
-unnatural
-irritable
-Asian
-rough
-bewildering
-dead
-dirty
-low
-rotten
-abandoned
-lost
-fiery
-synthetic
-valiant
-curious
-prosperous
-healthy
-handsome
-blue
-lavish
-vague
-fanatical
-pink
-macho
-awesome
-polished
-loud
-ivory
-clean
-shy
-high
-ancient
-wooden
-German
-colossal
-Antartic
-exquisite
-shaky
-edible
-true
-official
-clever
-ethical
-sexy
-enjoyable
-omnipotent
-gross
-putrid
-inappropriate
-eastern
-ideal
-ferocious
-horrid
-elegant
-ugly
-tricky
-warm
-wealthy
-funky
-luxurious
-fast
-eager
-intense
-Vietnamese
-sleepy
-hurtful
-old
-bitter
-inexperienced
-jagged
-absolute
-invisible
-silly
-sympathetic
-alert
-corrosive
-tiny
-bizarre
-Moscow
-familial
-young
-feminine
-magnificent
-depressed
-maniacal
-brash
-polite
-devious
-horny
-mad
-supernatural
-selfish
-disasterous
-huge
-hostile
-obese
-perplexing
-plated
-African
-British
-sick
-sweet
-heavy
-bare
-helpful
-skinny
-odd
-incoherent
-corrupt
-cool
-legal
-agitated
-proper
-organic
-submissive
-responsive
-Norwegian
-suspicious
-bald
-friendly
-smelly
-youthful
-historic
-incredible
-abnormal
-gleeful
-overpowered
-impressive
-steel
-reluctant
-sane
-fancy
-Australian
-acceptable
-masculine
-funny
-slothful
-Japanese
-impatient
-wicked
-infamous
-abhorrent
-white
-fashionable
-mysterious
-blissful
-Egyptian
-Swedish
-usual
-giant
-good
-humble
-addictive
-advanced
-plastic
-expensive
-Irish
-angry
-abusive
-graceful
-solid
-Polish
-hairy
-appalling
-black
-salty
-aggressive
-frozen
-new
-muscular
-lovely
-Madrid
-Mexican
-frantic
-clumsy
-big
-even
-Washington
-important
-hot
-gigantic
-merry
-adorable
-Berlin
-bored
-Californian
-unusual
-refurbished
-lesbian
-elementary
-reckless
-vicious
-joyful
-Chinese
-cruel
-tedious
-raging
-nutty
-hollow
-southern
-green
-sharp
-malignant
-burning
-tremendous
-Russian
-English
-nervous
-bloody
-diligent
-irradiated
-tired
-pointless
-defiant
-ravenous
-premium
-tall
-strong
-fat
-dramatic
-delicious
-joyless
-Artic
-freezing
-confident
-smart
-fearsome
-comical
-ailing
-agreeable
-Nigerian
-gay
-basic
-unholy
-silent
-intelligent
-excessive
-lame
-ungraceful
-Bejing
-weak
-grey
-deaf
-crooked
-wonderful
-smooth
-unresponsive
-tame
-quiet
-cyan
-used
-radioactive
-hazardous
-gleaming
-tender
-lazy
-stinky
-proud
-perfect
-Danish
-simple
-judgemental
-jarring
-ripe
-Torronto
-empty
+# firstnoun
+acid
+acrylic
+air
+alcohol
+ale
+aluminium
+asphalt
+bacon
+badminton
+ballet
+barley
+basalt
+beef
+beer
+bile
+blood
+bolero
+bowling
+brandy
+brass
+buckskin
+butter
+caffeine
+catnip
+cement
+ceramic
+champagne
+cheese
+china
+cider
+cinnamon
+clay
+cloth
+coal
+cocaine
+coffee
+cola
+concrete
+copper
+corn
+cotton
+cowmilk
+cowskin
+crack
+cream
+curry
+deerskin
+denim
+dew
+diet
+drool
+ducktape
+dynamite
+ebony
+elkskin
+enamel
+excrement
+fabric
+fiberglass
+fire
+firwood
+flour
+foam
+football
+freestyle
+fur
+garlic
+gasoline
+gin
+ginger
+glass
+goatmilk
+gold
+golf
+granite
+graphene
+grass
+gravel
+gym
+ham
+hardwood
+hemp
+heroin
+hiphop
+hockey
+honey
+ink
 iron
-Greek
-hulky
-effective
-anxious
-secure
-cold-blooded
-wild
-sentient
-cold
-false
-immortal
-violet
-athletic
-deep
-European
-obscene
-kissable
-sad
-heroic
-brown
-heterosexual
-omniscient
-lonely
-powerful
-sweaty
-merciful
-affordable
-tense
-amazing
-faithful
-thin
-violent
-pityful
-wet
-disgusting
-prefect
-hapless
-queer
-Arabic
-hateful
-golden
-immense
-red
-energetic
-bold
-nuclear
-ill
-colorful
-Tokyo
-northern
-coarse
-vengeful
-weary
-Sydney
-impolite
-Indian
-bosy
-harmless
-French
-harmful
-hungry
-Chicago
-sloppy
-dedicated
-imperfect
-imaginary
-tight
-interesting
-shining
-Roman
-dark
-jumpy
-hard
-visible
-calm
-beautiful
-poor
-miserable
-playful
-slimy
-precious
-enormous
-reused
-jealous
-long
-Welsh
-Texan
-Scottish
-Canadian
-boiling
-obedient
-dumb
-electric
-horrified
+ivory
+jade
+jam
+jazz
+judo
+juice
+karate
+kendo
+ketchup
+khaki
+lavender
+lead
+leather
+linen
+liquid
+loin
+lumber
+macaroni
+marathon
+marble
+marijuana
+matcha
+mead
+menthol
+mercury
+metal
+meth
+milk
+mineral
+mint
+mist
+morphine
+mucus
+mud
+mustard
+nectar
+nicotine
+nutmeg
+nylon
+oat
+obsidian
+oil
+opera
+opium
+oxhide
+pasta
+pepper
+peppermint
+piss
+plastic
+platinum
+plywood
+poop
+porcelain
+pork
+poultry
+prose
+protein
+radium
+ramen
+ravioli
+resin
+rice
+ricin
+rum
+saliva
+salt
+sand
+sandstone
+satin
+sci-fi
+seawater
+semen
+shampoo
+silk
+silver
+sinew
+slate
+slime
+snot
+snow
+soap
+soapstone
+soccer
+soda
+softwood
+soil
+soup
+spaghetti
+sponge
+sugar
+sweat
+syrup
+taekwondo
+tar
+tea
+tennis
+tequila
+terracotta
+thyme
+tin
+toothpaste
+turmeric
+turpentine
+uranium
+urine
+vanilla
+vapor
+velvet
+vinegar
+vodka
+volleyball
+vomit
+wasabi
+water
+wax
+wheat
+whey
+wind
+wine
+wood
+wool
+yaourt
+# adjective
+African
 American
-loyal
-fantastic
-arrogant
-magenta
-furious
-alarmed
-soft
+Antarctic
+Arabic
+Arctic
+Asian
+Australian
+Austrian
+Bejing
+Berlin
+Brazilian
+British
+Californian
+Canadian
+Chicago
+Chinese
+Danish
+Egyptian
+English
+European
+French
+German
+Greek
+Icelandic
+Indian
+Irish
+Italian
+Japanese
+Jewish
+Korean
+Madrid
+Malaysian
+Mexican
+Mongolian
+Moscow
+New York
+Nigerian
+Norwegian
+Polish
+Roman
+Romanian
+Russian
+Scandinavian
+Scottish
+Spanish
+Swedish
+Swiss
+Sydney
+Texan
+Tokyo
+Torronto
+Trojan
 Turkish
-precise
-tough
-grumpy
-passionate
-scary
-# adverb
-impressively
-freely
-boldly
-ferociously
-curiously
-judgementally
-randomly
-newly
-inexorably
-exactly
-stressfully
-swiftly
-jaggedly
-delightfully
-annoyingly
-verbally
-unaccountably
-fervently
-perfectly
-naturally
-enormously
-very
-obediently
-safely
-roughly
-comically
-reluctantly
-fanatically
-wearily
-supposedly
-badly
-grumpily
-mortally
-excitedly
-fully
-cheaply
-fancifully
-continually
-unbearably
-ridiculously
-cruelly
-majestically
-nicely
-suspiciously
-privately
-effectively
-convincingly
-devilishly
-boastfully
-fairly
-externally
-valiantly
-sinfully
-optimistically
-doubtfully
-thoroughly
-cheerfully
-healthily
-hurtfully
-solemnly
-partially
-regularly
-demonstrably
-powerfully
-physically
-keenly
-thankfully
-deafeningly
-bashfully
-rapidly
-urgently
-inefficiently
-calmly
-uselessly
-vaguely
-fondly
-quickly
-officially
-wholly
-mercifully
-callously
-deceivingly
-greatly
-nearly
-coercively
-restfully
-really
-sharply
-fiercely
-catastrophically
-increasingly
-hilariously
-truthfully
-voluntarily
-awkwardly
-infinitely
-sluggishly
-blissfully
-speedily
-poorly
-quietly
-dimly
-delusionally
-lavishly
-exotically
-incompletely
-joylessly
-gracefully
-endearingly
-mechanically
-financially
-clearly
-sloppily
-fashionably
-expertly
-bitterly
-unimpressively
-inappropriately
-necessarily
-bravely
-hideously
-vainly
-fabulously
-normally
-definitely
-softly
-internally
-casually
-kindly
-loyally
-industrially
-dangerously
-miserably
-numerously
-frightfully
-instantly
-furiously
-scarily
-openly
-weakly
-stupidly
-cluelessly
-merrily
-lazily
-shyly
-briefly
-possibly
-lowly
-obscenely
-faintly
-innocently
-disjointly
-glacially
-willfully
-finely
-accidentally
-devoutly
-tightly
-enviously
-righteously
-utterly
-scarcely
-hungrily
-properly
-impossibly
-potentially
-arrogantly
-tediously
-achingly
-diligently
-criminally
-terribly
-ceaselessly
-exponentially
-neatly
-beautifully
-concerningly
-victoriously
-elegantly
-knowledgeably
-lightly
-extremely
-frankly
-gently
-inwardly
-famously
-irritably
-tenderly
-busily
-helpfully
-offensively
-deliberately
-gradually
-hastily
-nervously
-brightly
-rigidly
-leisurely
-hotly
-imprecisely
-punctually
-obnoxiously
-timely
-wrongly
-hopelessly
-foolishly
-feasibly
-vastly
-gleefully
-fatally
-automatically
-abnormally
-lively
-securely
-precisely
-energetically
-greedily
-selfishly
-abrasively
-wisely
-truly
-madly
-joyfully
-deeply
-heavily
-drunkenly
-broadly
-unethically
-zealously
-readily
-incredibly
-cleverly
-slightly
-fleetingly
-anxiously
-suddenly
-commonly
-oddly
-visibly
-firmly
-evenly
-interestingly
-sympathetically
-scientifically
-loudly
-wildly
-successfully
-falsely
-audibly
-forgivably
-highly
-excitingly
-violently
-reasonably
-honestly
-rightfully
-impactfully
-nastily
-sickly
-courageously
-fearlessly
-super
-sweetly
-smoothly
-dramatically
-extraordinarily
-expensively
-shakily
-suprisingly
-playfully
-fortunately
-carefully
-manageably
-viciously
-surprisingly
-ungracefully
-correctly
-coldly
-derisively
-deviously
-jealously
-tremendously
-intensely
-incoherently
-entirely
-easily
-knowingly
-unnecessarily
-erroneously
-fearsomely
-positively
-youthfully
-mostly
-pitifully
-femininely
-fearfully
-haplessly
-deadly
-funnily
-hazardously
-heavenly
-sternly
-mockingly
-efficiently
-rudely
-helplessly
-foreseeably
-carelessly
-silently
-repeatedly
-cautiously
-tensely
-bewilderingly
-sadly
-endlessly
-painfully
-usefully
-forgivingly
-eccentrically
-unhappily
-unnaturally
-warmly
-ethically
-angrily
-feebly
-typically
-negligently
-incorruptibly
-intentionally
-almost
-secretly
-harshly
-crazily
-noisily
-universally
-barely
-defiantly
-strictly
-slowly
-unfortunately
-intelligently
-evasively
-pointlessly
-frequently
-familially
-effortlessly
-patiently
-happily
-faithfully
-rarely
-impartially
-# connector
-of
-or
-among
-in front of
-on
-between
-behind
-and
-under
-inside
-next to
-near
-without
-with
-# verb
-ripped
-killed
-sawed
-forgave
-engaged
-confused
-disarmed
-ate
-worshipped
-bombed
-halted
-empowered
-shot
-infected
-refused
-saved
-hanged
-tricked
-smashed
-taught
-froze
-dominated
-released
-married
-rescued
-caught
-discovered
-crossed
-cursed
-attacked
-bankrupted
-loved
-stabbed
-humiliated
-revealed
-captured
-pushed
-grabbed
-crushed
-assassinated
-erased
-hit
-bashed
-outran
-impressed
-outsmarted
-accepted
-hated
-enlarged
-burned
-eviscerated
-birthed
-insulted
-euthanized
-angered
-absorbed
-grinded
-cloned
-electrocuted
-interrupted
-injured
-convicted
-infuriated
-executed
-destroyed
-flattened
-owned
-spawned
-mocked
-damaged
-stomped
-exposed
-elongated
-fired
-buried
-jailed
-summoned
-invigorated
-mislead
-bought
-derided
-misinformed
-embraced
-became
-kicked
-slashed
-interrogated
-intimidated
-beat
-slaughtered
-carried
-cured
-lifted
-licked
-revived
-squeezed
-punched
-cut
-pierced
-cooked
-broke
+Ukrainian
+Venice
+Vietnamese
+Welsh
+abandoned
+abhorrent
+ablaze
+abnormal
+abominable
+abrasive
+abrupt
+absent
+absolute
+abstract
+absurd
+abused
+abusive
+abysmal
+academic
+accelerated
+acceptable
+accursed
+acidic
+addictive
+adorable
+adulterous
+advanced
+affordable
+aggressive
+agile
+aging
+agitated
+agreeable
+ailing
+alarmed
+alcoholic
+alert
+altruistic
+amazing
+amused
+ancient
+angry
+antisocial
+anxious
+appalling
+appetizing
+appropriate
+aromatic
+arrogant
+artifical
+asexual
+ashamed
+atheistic
+athletic
+attentive
+authentic
+automatic
+awesome
+awkward
+bad
+bad-tempered
+baffling
+bald
+bare
+basic
+beautiful
+beloved
+bewildering
+big
+bisexual
+bitter
+bizarre
+black
+bland
+blazing
+blind
+blissful
+blond
+bloody
+blooming
+blue
+boiling
+bold
+bored
+boring
+bossy
+brash
+brave
+bright
+bronze
+brown
+burning
+busy
+buttery
+calm
+capable
+careful
+careless
+carsick
+catholic
+cheap
+cheerful
+chronic
+chubby
+chunky
+circular
+cisgender
+clean
+clever
+clickable
+clumsy
+coarse
+cold
+cold-blooded
+colorful
+colossal
+comfortable
+comical
+complex
+complicated
+confident
+conservative
+contaminated
+conventional
+cool
+corrosive
+corrupt
+cosmic
+courageous
+creative
+cripple
+critical
+crooked
+crucial
+cruel
+curious
+curly
+cute
+cyan
+dark
+dead
+deaf
+deathless
+dedicated
+deep
+defiant
+delicious
+delusional
+democratic
+depressed
+desirable
+destructive
+developed
+devious
+dignified
+diligent
+dim
+dirty
+disasterous
+disgusting
+disputed
+distasteful
+diverse
+divine
+dogmatic
+dominant
+dramatic
+drunk
+dull
+dumb
+eager
+eastern
+edible
+educated
+effective
+electric
+elegant
+elementary
+elliptic
+employed
+empty
+energetic
+enjoyable
+enormous
+erotic
+essential
+eternal
+ethical
+even
+everlasting
+evil
+excessive
+exotic
+expected
+expensive
+exquisite
+extraordinary
+faithful
+fake
+false
+familiar
+family-friendly
+fanatical
+fancy
+fantastic
+fashionable
+fast
+fat
+fatal
+favorable
+fearful
+fearsome
+feminine
+ferocious
+fertile
+fictional
+fiery
 finished
-found
-turned into
-unleashed
+fit
+flashy
+flat
+flavorful
+floppy
+fluid
+forgettable
+fortunate
+frantic
+free
+freezing
+fresh
+friendly
+frozen
+full
+fuming
+fun
+funky
+funny
+furious
+fuzzy
+galactic
+gas
+gay
+genderfluid
+generous
+genocidal
+gentle
+giant
+gigantic
+glamorous
+gleaming
+gleeful
+glorious
+glowing
+godly
+good
+gorgeous
+gourmet
+graceful
+greedy
+green
+grey
+gross
+grumpy
+guilty
+hairy
+handsome
+hapless
+hard
+harmful
+harmless
+hateful
+haunted
+hazardous
+healthy
+heavy
+helpful
+heroic
+heterosexual
+hideous
+high
+historic
+historical
+hollow
+holy
+homophile
+homophobic
+homosexual
+horny
+horrid
+horrified
+hostile
+hot
+huge
+hulky
+humble
+hungry
+hurtful
+hydrophobic
+hypersexual
+hypothetical
+icy
+ideal
+idiotic
+idle
+idyllic
+ignorant
+ill
+ill-advised
+ill-omened
+illegal
+illegitimate
+illiterate
+illogical
+illuminated
+illustrious
+imaginary
+imaginative
+imbecile
+imitative
+immaculate
+immaterial
+immature
+immeasurable
+immense
+immobile
+immodest
+immoral
+immortal
+immune
+impaired
+impartial
+impatient
+impeachable
+impenetrable
+imperative
+imperceptible
+imperfect
+impervious
+impious
+impolite
+important
+imposing
+impossible
+impotent
+impoverished
+imprecise
+impressive
+improper
+improving
+imprudent
+impulsive
+impure
+inaccessible
+inaccurate
+inactive
+inadequate
+inanimate
+inappropriate
+inarticulate
+inaudible
+incapable
+incendiary
+inclusive
+incognito
+incoherent
+incomparable
+incompatible
+incompetent
+incomplete
+incomprehensible
+inconceivable
+inconsiderate
+inconsistent
+inconsolable
+incorrect
+increasing
+incredible
+incredulous
+incurable
+indebted
+indecent
+indefinite
+independent
+indescribable
+indeterminate
+indifferent
+indignant
+indigo
+indirect
+indiscreet
+indiscriminate
+indispensable
+indisputable
+indistinct
+indivisible
+industrious
+inefficient
+inert
+inevitable
+inexhaustible
+inexpensive
+inexperienced
+inexplicable
+inextricable
+infamous
+infectious
+inferior
+infinite
+inflamed
+inflammable
+inflated
+inflexible
+influential
+informal
+informed
+ingenious
+ingrained
+inhospitable
+innate
+innocent
+innumerable
+inorganic
+inquiring
+inquisitive
+insane
+insatiable
+insecure
+insensible
+inseparable
+insidious
+insignificant
+insincere
+inspired
+inspiring
+instantaneous
+instructive
+instrumental
+insufferable
+insufficient
+insular
+insulated
+insulting
+insurmountable
+intact
+intangible
+integral
+intellectual
+intelligent
+intelligible
+intended
+intense
+intensive
+intentional
+interested
+interesting
+intermittent
+intimate
+intolerable
+intolerant
+intoxicated
+intoxicating
+intrepid
+intricate
+intriguing
+intrusive
+intuitive
+invalid
+invaluable
+inventive
+invincible
+inviolable
+invisible
+inviting
+involved
+iridescent
+ironic
+irradiated
+irrational
+irreconcilable
+irregular
+irrelevant
+irreligious
+irresistible
+irritable
+irritated
+isolated
+jagged
+jarring
+jaunty
+jealous
+jet-black
+jolly
+journalistic
+jovial
+joyful
+joyless
+joyous
+jubilant
+judgemental
+juicy
+jumpy
+jungle
+junior
+juvenile
+keen
+killing
+kind
+kingly
+kissable
+knightly
+known
+laborious
+ladylike
+lame
+lamentable
+landlocked
+large
+lasting
+late
+laudable
+laughable
+lavish
+law-abiding
+lawful
+lawless
+lazy
+leaky
+learned
+leathery
+left-handed
+legal
+legendary
+legislative
+legitimate
+leisurely
+lengthy
+lenient
+leprous
+lesbian
+lesser
+lethal
+lethargic
+lewd
+liberal
+liberated
+liberating
+lifeless
+light
+limited
+limitless
+limp
+linear
+linguistic
+linked
+listening
+little
+lively
+livid
+living
+loaded
+loathsome
+logical
+lonely
+lonesome
+long
+loose
+lost
+loud
+lovable
+loveless
+lovely
+loving
+low
+lowly
+loyal
+lucid
+lucky
+lucrative
+ludicrous
+lukewarm
+luminous
+lumpy
+lunatic
+lustful
+lusty
+luxurious
+luxury
+lyrical
+macho
+mad
+maddening
+magenta
+magical
+magnetic
+magnificent
+maintained
+majestic
+malevolent
+malicious
+malignant
+maligned
+malleable
+manageable
+maniacal
+manly
+manufactured
+married
+marshy
+marvellous
+masculine
+masochistic
+massive
+materialistic
+mathematical
+mature
+meager
+meaningful
+meaningless
+mechanical
+medieval
+mediocre
+megarich
+megawealthy
+memorable
+mental
+merciful
+merciless
+merry
+metallic
+meteoric
+methodical
+microscopic
+middle-aged
+middle-class
+mighty
+milky
+mindful
+miniature
+miraculous
+misandristic
+mischievous
+miserable
+misguided
+misleading
+misogynistic
+misshapen
+mistaken
+misunderstood
+mocking
+moderate
+modern
+modest
+moist
+momentary
+monotonous
+monstrous
+monumental
+moody
+moral
+morbid
+mortal
+motherless
+motherly
+motionless
+mountainous
+muddy
+mundane
+murderous
+muscular
+musty
+mute
+mysterious
+mystic
+mystical
+mythical
+naive
+naked
+narrow
+nasty
+native
+natural
+naughty
+nauseous
+nearby
+neat
+nebulous
+necessary
+necrophilic
+needy
+nefarious
+negative
+neglected
+negligent
+negligible
+nervous
+neuter
+neutral
+new
+nice
+niche
+nimble
+noble
+noisy
+nomadic
+non-existent
+nonchalant
+nondescript
+nonsensical
+normal
+northern
+notable
+noteworthy
+noticeable
+notorious
+novel
+nuclear
+nude
+numb
+numerous
+nutty
+obedient
+obese
+objectionable
+oblivious
+oblong
+obnoxious
+obscene
+obscure
+observant
+obsolete
+obtainable
+obtrusive
+octagonal
+odd
+odorous
+offensive
+official
+oily
+old
+old-fashioned
+ominous
+omnipotent
+omnipresent
+omniscient
+opaque
+open
+open-hearted
+optimistic
+optional
+opulent
+orange
+orderly
+ordinary
+organic
+organized
+oriental
+original
+ornamental
+ornate
+otherworldly
+outdated
+outgoing
+outlandish
+outrageous
+outspoken
+outstanding
+overcrowded
+overdone
+overdue
+overfed
+overgrown
+overloaded
+overpowered
+overrated
+overwhelming
+overworked
+pagan
+painful
+palatable
+parasitic
+particular
+passable
+passionate
+passive
+pathological
+patient
+patriarchal
+patriotic
+peaceful
+peculiar
+pedantic
+pent-up
+perfect
+perishable
+permanent
+perpetual
+perplexed
+perplexing
+persistent
+personal
+persuasive
+perverted
+pessimistic
+phenomenal
+philosophical
+physical
+picturesque
+pink
+pious
+pitiable
+pitiful
+pitiless
+pityful
+plain
+plated
+plausible
+playful
+pleasant
+pleased
+pleasing
+plentiful
+poetic
+pointless
+poisonous
+polar
+polished
+polite
+political
+poor
+popular
+populous
+porous
+positive
+possessed
+possessive
+potent
+powerful
+powerless
+practical
+pragmatic
+praiseworthy
+precious
+precise
+predatory
+preferable
+preferred
+pregnant
+premium
+prepared
+presumptuous
+pretentious
+pretty
+prevalent
+priestly
+primeval
+primitive
+primordial
+princely
+pristine
+privileged
+pro-gay
+productive
+professional
+proficient
+profitable
+profound
+projected
+projectile
+projecting
+prolific
+prolonged
+prominent
+promiscuous
+promising
+proper
+prophetic
+prosperous
+protective
+proud
+provocative
+psychic
+psychological
+public
+punctual
+pungent
+punished
+puny
+pure
+purified
+purple
+purposeless
+putrid
+puzzled
+qualified
+quarrelsome
+queenly
+queer
+questionable
+quick
+quick-witted
+quiet
+quirky
+quivering
+rabid
+radiant
+radical
+radioactive
+ragged
+raging
+rambling
+rancid
+random
+rapid
+rapturous
+rare
+rascal
+rational
+ravenous
+raw
+ready
+real
+realistic
+reasonable
+rebellious
+reciprocal
+reckless
+recluse
+recognizable
+rectangular
+recycled
+red
+red-hot
+redundant
+refined
+refreshing
+refurbished
+regal
+regrettable
+regular
+rejoiced
+relaxed
+relaxing
+relentless
+relevant
+reliable
+relieved
+religious
+reluctant
+remarkable
+remorseful
+remorseless
+renowned
+repentant
+reprehensible
+repressed
+repulsive
+reputable
+resentful
+reserved
+resolute
+resourceful
+respectable
+respected
+respectful
+responsible
+responsive
+restless
+restored
+restrained
+restricted
+retarded
+retiring
+retracted
+revolting
+revolutionary
+rhythmic
+rich
+ridiculous
+rigged
+right-handed
+righteous
+rigid
+rigorous
+ringing
+ripe
+risky
+roaring
+robust
+rocky
+roman
+romantic
+rosy
+rotating
+rotten
+rough
+round
+rousing
+rowdy
+royal
+rubbish
+rude
+rudimentary
+rugged
+ruined
+ruinous
+running
+rural
+rushed
+rusted
+rustic
+rusty
+ruthless
+saber-rattling
+sacred
+sacrilegious
+sad
+sadistic
+safe
+saintly
+salty
+sanctified
+sandy
+sane
+sanguine
+sanitary
+sapphire
+sarcastic
+satisfied
+satisfying
+saturated
+savage
+savory
+scandalous
+scant
+scarce
+scared
+scarlet
+scarred
+scary
+scathing
+scattered
+scenic
+scholarly
+scholastic
+scientific
+scorching
+scornful
+scratched
+scrupulous
+scurvy
+seafaring
+seasick
+seasonal
+seasoned
+secluded
+secretive
+secular
+secure
+sedative
+sedentary
+seditious
+seductive
+seething
+selected
+selective
+self-conscious
+self-made
+self-reliant
+self-satisfied
+selfish
+semicircular
+senile
+senior
+sensational
+senseless
+sensible
+sensitive
+sensual
+sentient
+sentimental
+serious
+serpentine
+settled
+severe
+sexual
+sexy
+shabby
+shadowy
+shaky
+shallow
+shameful
+shameless
+sharp
+shattered
+shining
+shiny
+shocked
+shocking
+shooting
+short
+short-lived
+shrewd
+shy
+sick
+sickening
+sickly
+silent
+silky
+silly
+similar
+simple
+simplified
+simplistic
+simulated
+simultaneous
+sinful
+single
+singular
+sinister
+skeptical
+skilled
+skillful
+skinny
+slack
+slanderous
+sleeping
+sleepless
+sleepy
+slender
+slim
+slimy
+slippery
+sloppy
+slothful
+sluggish
+sly
+small
+smart
+smashed
+smashing
+smelly
+smoking
+smoky
+smooth
+snowy
+sober
+sociable
+soft
+solemn
+solicitous
+solid
+solitary
+soluble
+sombre
+sooty
+sophisticated
+sorrowful
+sorry
+soulless
+sour
+southern
+sovereign
+spacious
+sparkling
+sparse
+spartan
+speaking
+special
+specialized
+specific
+spectacular
+speculative
+speechless
+speedy
+spent
+spherical
+spicy
+spinning
+spiral
+spirited
+spiritual
+spiteful
+splendid
+spoiled
+spongy
+spontaneous
+sporadic
+spotless
+squeamish
+squishy
+stable
+stained
+stale
+stalwart
+standard
+stark
+startled
+startling
+static
+stationary
+staunch
+steadfast
+steady
+stealthy
+steam
+steaming
+steel
+stellar
+sterile
+stern
+sticky
+stiff
+still
+stimulant
+stimulated
+stinking
+stinky
+stoical
+stony
+stormy
+stout
+straight
+straightforward
+strained
+strategic
+strict
+striking
+stringent
+stripped
+strong
+stubborn
+studied
+studious
+stunned
+stupendous
+stupid
+sturdy
+subdued
+sublime
+submissive
+subservient
+substantial
+substantive
+subterranean
+suburban
+subversive
+successful
+succinct
+succulent
+sudden
+suffering
+suggestive
+suicidal
+suitable
+sultry
+sunny
+superattractive
+superb
+superbright
+supercold
+supercomplex
+superdelicious
+superdeluxe
+superdestructive
+superdivine
+superdominant
+superfamous
+superficial
+supergigantic
+superhuman
+superior
+superluxury
+supermasculine
+supernatural
+superpopular
+supersafe
+supersonic
+superstable
+superstitious
+superstraight
+supersuccessful
+supertoxic
+superwealthy
+supreme
+surgical
+surprised
+surprising
+susceptible
+suspected
+suspicious
+sustained
+sweaty
+sweet
+swirling
+swollen
+symbolic
+symmetrical
+sympathetic
+synthetic
+systematic
+taboo
+tacit
+tactful
+tactical
+tainted
+talented
+talkative
+tall
+tame
+tangible
+tanned
+tantamount
+tasteful
+tasteless
+tasty
+tattered
+tattooed
+teal
+tearful
+technical
+technological
+tedious
+telling
+temperate
+temporary
+tempting
+tenacious
+tender
+tense
+terrestrial
+terrible
+terrific
+territorial
+thankful
+thankless
+theatrical
+theoretical
+thick
+thickening
+thin
+thirsty
+thorough
+thoughtful
+thoughtless
+threatened
+threatening
+thrifty
+thrilled
+thrilling
+thriving
+thunderstruck
+tickling
+tidy
+tight
+tiny
+tipsy
+tired
+tireless
+tiresome
+tiring
+titanic
+tolerable
+tolerant
+toothless
+tortured
+tough
+traditional
+traitorous
+tranquil
+transcendent
+transgender
+translucent
+transphobic
+travelling
+tremendous
+triangular
+tribal
+tricky
+trivial
+tropical
+troubled
+troublesome
+true
+trusting
+trustworthy
+turbulent
+turquoise
+twisted
+twisting
+twitching
+two-faced
+typical
+tyrannical
+ubersexual
+ubiquitious
+ugly
+unacceptable
+unaccompanied
+unaccomplished
+unaccountable
+unadequate
+unadulterated
+unafraid
+unaided
+unalloyed
+unaltered
+unambiguous
+unamused
+unapologetic
+unappetizing
+unapproachable
+unarmed
+unassuming
+unattainable
+unauthorized
+unaware
+unbalanced
+unbearable
+unbelievable
+unbending
+unbiased
+unborn
+unbound
+uncanny
+unceasing
+uncertain
+unchanging
+unchecked
+uncivilized
+unclean
+uncomfortable
+uncommon
+uncompromising
+unconcealed
+unconcerned
+unconscious
+unconstitutional
+uncontrollable
+uncontrolled
+unconventional
+unconvinced
+uncultivated
+undaunted
+undefined
+undeniable
+underground
+underrated
+understanding
+understood
+undesirable
+undeveloped
+undeviating
+undignified
+undisciplined
+undiscovered
+undisputed
+undivided
+unearthly
+uneasy
+uneducated
+unemployed
+unequal
+uneven
+unexpected
+unexplored
+unfair
+unfaithful
+unfamiliar
+unfashionable
+unfathomable
+unfavorable
+unfinished
+unfit
+unforeseen
+unforgettable
+unfortunate
+unfriendly
+ungenerous
+ungodly
+ungraceful
+ungrateful
+unhappy
+unhealthy
+unhindered
+unholy
+unimpeachable
+unimportant
+unimpressive
+uninformed
+unintelligible
+unintentional
+uninterested
+uninteresting
+united
+universal
+unjust
+unkind
+unknown
+unlabelled
+unlawful
+unlikely
+unlucky
+unmanned
+unmarked
+unmarried
+unmerciful
+unmindful
+unnatural
+unnecessary
+unnoticed
+unobtrusive
+unofficial
+unopened
+unpaid
+unpleasant
+unpopular
+unprecedented
+unproductive
+unprotected
+unprovoked
+unread
+unreasonable
+unrelated
+unreliable
+unresponsive
+unripe
+unruly
+unsatisfactory
+unscrupulous
+unseen
+unshaven
+unsightly
+unskilled
+unsociable
+unstable
+unsteady
+unsuccessful
+unsuitable
+unsurprised
+unsympathetic
+untamed
+untenable
+untidy
+untimely
+untouched
+untrue
+untrustworthy
+unusual
+unutterable
+unwelcomed
+unwell
+unwieldy
+unwilling
+unwise
+unworthy
+unyielding
+upright
+upsetting
+urban
+urgent
+usable
+used
+useful
+useless
+usual
+utilitarian
+vacant
+vagabond
+vague
+vain
+valiant
+valid
+valuable
+valued
+valueless
+vanishing
+variable
+vast
+vegan
+vehement
+velvet
+venerable
+vengeful
+venomous
+verbal
+verbose
+versatile
+vested
+vibrant
+vibrating
+vicious
+victorious
+vigilant
+vigorous
+vile
+villainous
+violent
+violet
+virtuous
+virulent
+visible
+visionary
+vital
+vivid
+vocal
+voiceless
+volcanic
+voluntary
+vulgar
+vulnerable
+wacky
+waking
+walking
+wanted
+warlike
+warm
+warm-hearted
+wasted
+wasteful
+waterlogged
+waterproof
+watertight
+wavy
+weak
+wealthy
+wearable
+wearisome
+weary
+weed
+weighing
+weighted
+weird
+welcomed
+welcoming
+well-dressed
+well-fed
+well-known
+well-rested
+western
+wet
+whimsical
+whirling
+whiskey
+white
+whitewashed
+whole
+wholesome
+wicked
+widespread
+wifeless
+wild
+willful
+willing
+wimpy
+winged
+wireless
+wise
+withdrawn
+withered
+withering
+withheld
+witless
+witty
+woeful
+womanly
+wonderful
+wondrous
+woody
+workaholic
+worn-out
+worrisome
+worthy
+wounded
+wrathful
+wrecked
+wrong
+wrongful
+xenophobic
+yellow
+young
+youthful
+zappy
+zealous
+zigzag
+zombified
+# adverb
+abnormally
+abrasively
+accidentally
+achingly
+almost
+angrily
+annoyingly
+anxiously
+arrogantly
+audibly
+automatically
+awkwardly
+badly
+barely
+bashfully
+beautifully
+bewilderingly
+bitterly
+blissfully
+boastfully
+boldly
+bravely
+briefly
+brightly
+broadly
+busily
+callously
+calmly
+carefully
+carelessly
+casually
+catastrophically
+cautiously
+ceaselessly
+cheaply
+cheerfully
+clearly
+cleverly
+cluelessly
+coercively
+coldly
+comically
+commonly
+concerningly
+continually
+convincingly
+correctly
+courageously
+crazily
+criminally
+cruelly
+curiously
+dangerously
+deadly
+deafeningly
+deceivingly
+deeply
+defiantly
+definitely
+deliberately
+delightfully
+delusionally
+demonstrably
+derisively
+devilishly
+deviously
+devoutly
+diligently
+dimly
+disjointly
+doubtfully
+dramatically
+drunkenly
+easily
+eccentrically
+effectively
+efficiently
+effortlessly
+elegantly
+endearingly
+endlessly
+energetically
+enormously
+entirely
+enviously
+erroneously
+ethically
+evasively
+evenly
+exactly
+excitedly
+excitingly
+exotically
+expensively
+expertly
+exponentially
+externally
+extraordinarily
+extremely
+fabulously
+faintly
+fairly
+faithfully
+falsely
+familially
+famously
+fanatically
+fancifully
+fashionably
+fatally
+fearfully
+fearlessly
+fearsomely
+feasibly
+feebly
+femininely
+ferociously
+fervently
+fiercely
+financially
+finely
+firmly
+fleetingly
+fondly
+foolishly
+foreseeably
+forgivably
+forgivingly
+fortunately
+frankly
+freely
+frequently
+frightfully
+fully
+funnily
+furiously
+gently
+glacially
+gleefully
+gracefully
+gradually
+greatly
+greedily
+grumpily
+haplessly
+happily
+harshly
+hastily
+hazardously
+healthily
+heavenly
+heavily
+helpfully
+helplessly
+hideously
+highly
+hilariously
+honestly
+hopelessly
+hotly
+hungrily
+hurtfully
+impactfully
+impartially
+impossibly
+imprecisely
+impressively
+inappropriately
+incoherently
+incompletely
+incorruptibly
+increasingly
+incredibly
+industrially
+inefficiently
+inexorably
+infinitely
+innocently
+instantly
+intelligently
+intensely
+intentionally
+interestingly
+internally
+inwardly
+irritably
+jaggedly
+jealously
+joyfully
+joylessly
+judgementally
+keenly
+kindly
+knowingly
+knowledgeably
+lavishly
+lazily
+leisurely
+lethally
+lightly
+lively
+loudly
+lowly
+loyally
+madly
+majestically
+manageably
+mechanically
+mercifully
+merrily
+miserably
+mockingly
+mortally
+mostly
+nastily
+naturally
+nearly
+neatly
+necessarily
+negligently
+nervously
+newly
+nicely
+noisily
+normally
+numerously
+obediently
+obnoxiously
+obscenely
+oddly
+offensively
+officially
+openly
+optimistically
+painfully
+partially
+patiently
+perfectly
+physically
+pitifully
+playfully
+pointlessly
+poorly
+positively
+possibly
+potentially
+powerfully
+precisely
+privately
+properly
+punctually
+quickly
+quietly
+randomly
+rapidly
+rarely
+readily
+really
+reasonably
+regularly
+reluctantly
+restfully
+ridiculously
+righteously
+rightfully
+rigidly
+roughly
+rudely
+sadly
+safely
+scarcely
+scarily
+scientifically
+secretly
+securely
+selfishly
+shakily
+sharply
+shyly
+sickly
+silently
+sinfully
+slightly
+sloppily
+slowly
+sluggishly
+smoothly
+softly
+solemnly
+speedily
+sternly
+stressfully
+strictly
+stupidly
+successfully
+suddenly
+super
+supposedly
+suprisingly
+surprisingly
+suspiciously
+sweetly
+swiftly
+sympathetically
+tediously
+tenderly
+tensely
+terribly
+thankfully
+thoroughly
+tightly
+timely
+tremendously
+truly
+truthfully
+typically
+unaccountably
+unbearably
+unethically
+unfortunately
+ungracefully
+unhappily
+unimpressively
+universally
+unnaturally
+unnecessarily
+urgently
+usefully
+uselessly
+utterly
+vaguely
+vainly
+valiantly
+vastly
+verbally
+very
+viciously
+victoriously
+violently
+visibly
+voluntarily
+warmly
+weakly
+wearily
+wholly
+wildly
+willfully
+wisely
+wondrously
+worrisomely
+wrongly
+youthfully
+zealously
+# connector
+among
+and
+behind
+between
+in front of
+inside
+near
+next to
+of
+on
+or
+under
+with
+without
+# verb
+aborted
+absorbed
+abused
+accepted
+accused
+acquainted
+acquired
+admired
+adopted
+affected
+alarmed
+alienated
+allowed
+altered
+ambushed
+amended
+amused
+analyzed
+angered
+animated
+answered
+applauded
+appointed
+apprehended
+approached
+armed
+arrested
+asked
+assailed
+assassinated
+assaulted
+ate
+attacked
+authorized
+awoke
+baited
+baked
+balanced
+bankrupted
+bashed
+battled
+beat
+beat up
+beautified
+became
+beckoned
+befriended
+begged
+beheaded
+besieged
+betrayed
+bewildered
+birthed
+bit
+blackmailed
+blamed
+blessed
+blinded
+blocked
+blurred
+boiled
+bombed
+boned
+bought
+bound
+bred
+bribed
+broadcasted
+broadened
+broke
+brought
+bruised
+brushed
+brutalized
+budged
+built
+bumped
+buried
+burned
+butchered
+called
+calmed
+cancelled
+captured
+caramelized
+caressed
+carried
+caught
+cemented
+censored
+chained
+changed
+chased
+cheered
+choked
+claimed
+cleaned
+cleansed
+clipped
+cloned
+closed
+coerced
+collected
+combated
+combed
+combined
+comforted
+compacted
+compared
+compelled
+composted
+compressed
+conceived
+confiscated
+confronted
+confused
+conjured
+connected
+consecrated
+conserved
+constrained
+constructed
+consumed
+contained
+contested
+converted
+convicted
+convinced
+cooked
+cooled
+copied
+corrected
+corrupted
+counted
+countered
+counterfeited
+covered
+cracked
+crashed
+created
+cremated
+crossed
+crucified
+crushed
+cured
+cursed
+cut
+cut down
+damaged
+debated
+deceived
+decomposed
+deconstructed
+decorated
 defeated
+defended
+defied
+defiled
+defrauded
+degraded
+deleted
+demolished
+denied
+denounced
+dented
+deposed
+derided
+described
+destroyed
+detested
 devastated
+devolved
+disarmed
+disbanded
+discarded
+disciplined
+discovered
+discredited
+disinfected
+disliked
+disobeyed
+disowned
+displayed
+dissolved
+dissuaded
+distilled
+distorted
+distracted
+distributed
+disturbed
+ditched
+dodged
+domesticated
+dominated
+doomed
+doubled
+downed
+drafted
+dragged
+dressed
+drew
+dried
+drilled
+drowned
+drugged
+dueled
+dug
+dumped
+dyed
+ejected
+elected
+electrocuted
+elongated
+embalmed
+embodied
+embraced
+empowered
+emptied
+encircled
+enclosed
+encompassed
+encountered
+encouraged
+endangered
+ended
+endured
+enforced
+engaged
+engraved
+enjoyed
+enlarged
+enlightened
+enlisted
+enriched
+enslaved
+ensured
+entangled
+entertained
+enticed
+entrapped
+enveloped
+erased
+erected
+escaped
+euthanized
+evaded
+evaporated
+eviscerated
+evolved
+exceeded
+excited
+excused
+executed
+exhaled
+exhausted
+exhumed
+expanded
+expelled
+exploited
+exported
+exposed
+extracted
+fabricated
+faced
+faked
+fastened
+fattened
+feared
+fed
+felt
+filled
+filmed
+financed
+finished
+fired
+fixed
+flattened
+flogged
+flooded
+flung
+flushed
+folded
+followed
+forgave
+forgot
+formed
+fostered
+found
+fractured
+freed
+fried
+froze
+funded
+fused
+generated
+glorified
+glued
+got
+grabbed
+greeted
+gripped
+guillotined
+gutted
+hacked
+halted
+handed
+hanged
+harpooned
+harvested
+hastened
+hated
+headbutted
+healed
+heard
+heated
+heeded
+held
+helped
+hired
+hit
+honored
+hounded
+hugged
+humiliated
+hunted
+iced
+ignored
+imaged
+impacted
+impeded
+imported
+impressed
+improved
+incarnated
+incited
+incorporated
+increased
+indulged
+infected
+infested
+inflamed
+informed
+infuriated
+infused
+inhabited
+inhaled
+inherited
+inhibited
+injured
+inquired
+inspected
+inspired
+installed
+insulted
+insured
+intensified
+interrogated
+interrupted
+interviewed
+intimidated
+intoxicated
+introduced
+investigated
+invigorated
+invited
+irritated
+isolated
+jailed
+judged
+jumped
+kept
+kicked
+kidnapped
+killed
+kissed
+knifed
+knocked
+labelled
+laid
+launched
+led
+left
+lent
+licked
+lifted
+liked
+loaded
+locked
+lost
+loved
+made
+magnified
+mailed
+marked
+marketed
+married
+masqueraded
+massacred
+mastered
+mauled
+mediated
+memorized
+mended
+mentored
+merged
+messed up
+met
+minced
+minimized
+mirrored
+misheard
+misinformed
+misled
+misused
+mitigated
+mixed
+mocked
+modelled
+moderated
+modified
+moistened
+molested
+monitored
+mortified
+mourned
+moved
+mowed down
+mugged
+murdered
+mustered
+nailed
+needed
+neglected
+neutralized
+nibbled
+obeyed
+obliterated
+occupied
+oiled
+omitted
+opened
+oppressed
+organized
+ousted
+outdid
+outlived
+outran
+outsmarted
+overthrew
+overwhelmed
+owned
+pacified
+paid
+paraded
+paralyzed
+pardoned
+parroted
+passed
+patented
+peeled
+perplexed
+persuaded
+photographed
+pierced
+pillaged
+pirated
+pleased
+plundered
+pocketed
+poisoned
+poked
+polished
+polluted
+popped
+pounced
+pranked
+pressured
+processed
+produced
+prohibited
+promoted
+propelled
+provoked
+pulled
+punched
+purchased
+purged
+purified
+pushed
+raced
+ravished
+reassured
+received
+reclaimed
+rectified
+reduced
+reformed
+refused
+regenerated
+rejected
+released
+removed
+replaced
+represented
+reproduced
+repulsed
+requested
+rescued
+resembled
+resented
+resisted
+restored
+restrained
+resurrected
+retrieved
+reused
+revealed
+revived
+ridiculed
+ripped
+ruled
+sacrified
+saved
+saw
+sawed
+scanned
+screwed
+seduced
+seized
+sent
+served
+sharpened
+shaved
+shortened
+shot
+slapped
+slashed
+slaughtered
+slew
+sliced
+smashed
+smeared
+smuggled
+softened
+sold
+spawned
+speared
+spent
+spoiled
+squeezed
+squished
+stabbed
+stabilized
+starved
+sterilized
+stole
+stomped
+straightened
+strangled
+stretched
+stripped
+struck
+subjugated
+subordinated
+subverted
+sucked
+suffered
+suffocated
+summoned
+supplied
+surrendered
+survived
+swallowed
+tamed
+targeted
+tarnished
+taught
+teased
+terrorized
+tested
+thanked
+threatened
+threw
+tickled
+tied
+tightened
+tortured
+tossed
+touched
+trampled
+transformed
+trapped
+tricked
+turned into
+uncovered
+undressed
+united
+unleashed
+unloaded
+unlocked
+upset
+vassalized
+venerated
+vibrated
+vilified
+visited
+vomited
+wakened
+walked
+weakened
+weighed
+wetted
+whipped
+whooped
+wiped
+withdrew
+withstood
+worshipped
+zombified
 # noun
-emperor emperors
-fan fans
-balloon balloons
-boss bosses
-structure structures
-plane planes
-bookshelf bookshelves
-shelter shelters
-wrench wrenches
-tooth teeth
-skeleton skeletons
-pilot pilots
-rectangle rectangles
-wombat wombats
-commie commies
-hawk hawks
-nerd nerds
-cross crosses
-doctor doctors
-bunker bunkers
-runner runners running
-toad toads
-tablespoon tablespoons
-store stores
-corporation corporations
-bailiff bailiffs
-donkey donkeys
-operator operators
-George Georges
-brother brothers
-humanoid humanoids
-hair hairs
-reporter reporters
-mango mangos
-astronomer astronomers
-supermarket supermarkets
-bone bones
-state states
-rock rocks
-calf calves
-PC PCs
-thief thieves
-slum slums
-translator translators
-sphere spheres
-kite kites
-towel towels
-apple apples
-demon demons
-worm worms
-Rick Ricks
-vine vines
-pickaxe pickaxes
-pineapple pineapples
-koala koalas
-satellite satellites
-banker bankers
-blanket blankets
-circle circles
-pizza pizzas
-prince princes
-turd turds
-oracle oracles
-lime limes
-acorn acorns
-leader leaders leading
-square squares
-shrimp shrimps
-sorcerer sorcerers
-candie candies
-pile piles
-car cars
-patron patrons
-cherry cherries
-bell bells
-cashier cashiers
-trillionaire trillionaires
-sandbox sandboxes
-tortoise tortoises
-rook rooks
-wave waves
-aide aides
-mask masks
-zombie zombies
-grandmother grandmothers
-face faces
-concept concepts
-saw saws
-lepper leppers
-octopus octopuses
-shareholder shareholders shareholding
-builder builders building
-hippo hippos
-lemon lemons
-boy boys
-Ferrari Ferraris
-bird birds
-flask flasks
-hat hats
-pentagram pentagrams
-baby babies
-battle battles
-shark sharks
-attacker attackers attacking
-cod cods
-head heads
-lynx lynxes
-glass glasses
-mosquito mosquitoes
-tag tags
-abductor abductors
-hotel hotels
-octagon octagons
-hamburger hamburgers
-fatberg fatbergs
-tool tools
-minister ministers
-cart carts
-ruler rulers
-individual individuals
-grasshopper grasshoppers
-dutchman dutchmen
-fight fights
-devil devils
-daughter daughters
-incel incels
-queen queens
-charger chargers charging
-corndog corndogs
-doll dolls
-teardrop teardrops
-wheel wheels
-dumpling dumplings
-citizen citizens
-jacket jackets
-witch witches
-maggot maggots
-marshmallow marshmallows
-chimpanzee chimpanzees
-jar jars
-traitor traitors
-firefighter firefighters
-van vans
-counselor counselors
-brick bricks
-drum drums
-cake cakes
-generator generators
-shirt shirts
-ferret ferrets
-mulberry mulberries
-player players
-baron barons
-recording recordings
-protester protesters protesting
-owner owners
-bed beds
-spy spies
-guillotine guillotines
-hotdog hotdogs
-CD CDs
-rabbit rabbits
-war wars
-tree trees
-mechanic mechanics
-douchebag douchebags
-horse horses
-goat goats
-sister sisters
-alchemist alchemists
-magician magicians
-diver divers diving
-surgeon surgeons
-executer executers
-owl owls
-giraffe giraffes
-radio radios
-banana bananas
-victim victims
-UFO UFOs
-racist racists
-mafia mafias
-gangster gangsters
-architect architects
-demigod demigods
-rooster roosters
-rod rods
-scrunchy scrunchies
-ghost ghosts
-church churches
-steak steaks
-grenade grenades
-coconut coconuts
-investor investors
-bulldog bulldogs
-meatloaf meatloaves
-guard guards
-chip chips
-producer producers
-casino casinos
-pen pens
-hyperbola hyperbolas
-pumpkin pumpkins
-shovel shovels
-quail quails
-monkey monkeys
-commander commanders commanding
-ball balls
-hole holes
-nun nuns
-forest forests
-peacock peacocks
-swan swans
-missile missiles
-handcuff handcuffs
-florist florists
-latino latinos
-pie pies
-heptagon heptagons
-extrovert extroverts
-cricket crickets
-pioneer pioneers pioneering
-Richard Richards
-millionaire millionaires
-television televisions
-necklace necklaces
-armor armors
-politician politicians
-willow willows
-chemist chemists
-saxophone saxophones
-buck bucks
-microwave microwaves
-hoe hoes
-robber robbers robbing
-duck ducks
-girl girls
-mayor mayors
-chili chilies
-company companies
-admirer admirers admiring
-crab crabs
-eggplant eggplants
-nation nations national
-housewife housewives
-popsicle popsicles
-driver drivers driving
-cousin cousins
-drumstick drumsticks
-alien aliens
-hydra hydras
-engineer engineers
-pistol pistols
-tongue tongues
-hill hills
-philosopher philosophers
-tusk tusks
-hater haters
-astronaut astronauts
-spatula spatulas
-dealer dealers
-butcher butchers
-plate plates
-baroness baronesses
-corset corsets
-wyvern wyverns
-chicken chickens
-nazi nazis
-jaw jaws
-kitty kitties
-cloak cloaks
-poem poems
-parasite parasites
-couple couples
-maiden maidens
-peasant peasants
-kettle kettles
-beach beaches
-bat bats
-flea fleas
-therapist therapists
-messenger messengers
-Mike Mikes
-bard bards
-enemy enemies
-baker bakers baking
-professor professors
-bug bugs
-codebreaker codebreakers
-carp carps
-goose geese
-basket baskets
-drawing drawings
-camel camels
-puffin puffins
-donut donuts
-hemlock hemlocks
-fairy fairies
-geologist geologists
-chopstick chopsticks
-senator senators
-spearman spearmen
-chipmunk chipmunks
-piano pianos
-otter otters
-radiologist radiologists
-panda pandas
-castle castles
-eyelash eyelashes
-machine machines
-defender defenders
-idea ideas
-dad dads
-shop shops
-mouth mouths
-illness illnesses
-cappuccino cappuccinos
-party parties
-hero heros
-fowl fowls
-sofa sofas
-actor actors
-superstar superstars
-gambler gamblers gambling
-pencil pencils
-mushroom mushrooms
-nugget nuggets
-bowl bowls
-cupcake cupcakes
-wizard wizards
-number numbers
-building buildings
-babysitter babysitters babysitting
-chain chains
-walnut walnuts
-bishop bishops
-squid squids
-locksmith locksmiths
-trap traps
-rose roses
-sausage sausages
-pill pills
-mouse mice
-dinosaur dinosaurs
-knuckle knuckles
-rat rats
-nut nuts
-rollercoaster rollercoasters
-maid maids
-trumpet trumpets
-earthworm earthworms
-plum plums
-beggar beggars
-herbivore herbivores
-fawn fawns
-merchant merchants
-sow sows
-cheeseburger cheeseburgers
-kangaroo kangaroos
-surveyor surveyors
-chair chairs
-leg legs
-gem gems
-turtle turtles
-mangrove mangroves
-truck trucks
-antelope antelopes
-group groups
-mommy mommies
-lieutenant lieutenants
+American Americans
+Australian Australians
 Bill Bills
-crane cranes
-freezer freezers
-mall malls
-bracelet bracelets
-dagger daggers
-scholar scholars
-expat expats
-mountain mountains
-killer killers killing
-nationalist nationalists
-boob boobs
-policeman policemen
-tendie tendies
-board boards
-botanist botanists
-iguana iguanas
-jester jesters
-hammock hammocks
-string strings
-bartender bartenders bartending
-guitar guitars
-mandarin mandarins
-captain captains
-town towns
-screwdriver screwdrivers
-demonstrator demonstrators demonstrating
-pangolin pangolins
-turkey turkeys
-hexagon hexagons
-mammoth mammoths
-baton batons
-pea peas
-coach coaches
-bus buses
-Philip Philips
-transporter transporters transporting
-ape apes
-fox foxes
-samurai samurais
-helmet helmets
-god gods
-tent tents
-barista baristas
-liver livers
-student students
-candidate candidates
-stool stools
-son sons
-eel eels
-blogger bloggers blogging
-programmer programmers programming
-fruit fruits
-skillet skillets
-iceberg icebergs
-ant ants
-savior saviors
-carrier carriers
-restaurant restaurants
-webpage webpages
-clock clocks
-digger diggers digging
-wing wings
-fridge fridges
-waitress waitresses
-pike pikes
-normie normies
-bottle bottles
-lock locks
-dragon dragons
-tzar tzars
-gamer gamers
-criminal criminals
-pedophile pedophiles
-dog dogs
-advertiser advertisers advertising
-cleaner cleaners cleaning
-squirrel squirrels
-leopard leopards
-hunter hunters hunting
-misogynist misogynists
-victor victors
-master masters
-pagoda pagodas
-lobster lobsters
-dictionary dictionaries
-kaiser kaisers
-daddy daddies
-moth moths
-granddaughter granddaughters
-olive olives
-director directors
-lion lions
-stag stags
-needle needles
-tail tails
-gun guns
-pirate pirates
-climber climbers climbing
-hornet hornets
-alligator alligators
-puma pumas
-physicist physicists
-toothbrush toothbrushes
-salad salads
-president presidents
-duckling ducklings
-swordman swordmen
-Tom Toms
-statue statues
-creator creators
-saber sabers
-lamp lamps
-bomb bombs
-train trains
-lord lords
-parrot parrots
-virus viruses
-Kevin Kevins
-husband husbands
-candle candles
-snake snakes
-flower flowers
-planet planets
-sandwich sandwiches
-receipt receipts
-Steve Steves
-blueberry blueberries
-leech leeches
-maple maples
-toothpick toothpicks
-murderer murderers murdering
-immigrant immigrants
-comedian comedians
-lily lilies
-grandmaster grandmasters
-beetle beetles
-kitten kittens
-slave slaves
-cooker cookers
-hand hands
-diamond diamonds
-hobo hobos
-station stations
-cat cats
-Sam Sams
-lifeform lifeforms
-chimney chimneys
-spaceship spaceships
-Susan Susans
-psychologist psychologists
-wolf wolves
-speaker speakers speaking
-racoon racoons
-village villages
-ass asses
-nipple nipples
-caudron caudrons
-attorney attorneys
-titty titties
-whale whales
-computer computers computing
-organizer organizers
-crown crowns
-father fathers
-glove gloves
-manager managers managing
-viewer viewers viewing
-booklet booklets
-cheesecake cheesecakes
-biographer biographers
-felon felons
-warrior warriors
-ax axes
-reptile reptiles
-dictator dictators
-guide guides
-lotus lotuses
-dolphin dolphins
-model models
-magpie magpies
-hare hares
-breastplate breastplates
-foot feet
-hourglass hourglasses
-avocado avocadoes
-bear bears
-bookstore bookstores
-hammer hammers
-boomer boomers
-grandpa grandpas
-fireman firemen
-oak oaks
-atom atoms
-airplane airplanes
-Karen Karens
-tourist tourists
-egg eggs
-flag flags
-designer designers designing
-shroom shrooms
-beaver beavers
-hydrant hydrants
-almond almonds
-hyena hyenas
-athlete athletes
-blade blades
-assistant assistants
-t-shirt t-shirts
-book books
-patriarch patriarchs
-singer singers singing
-mine mines
-animator animators
-mite mites
-orangutan orangutans
-intruder intruders
-rhino rhinos
-dodo dodos
-Jeff Jeffs
-lance lances
-elder elders
-ring rings
-dancer dancers dancing
-cedar cedars
-cabbage cabbages
-employee employees
-miner miners mining
-elk elks
-puddle puddles
-shield shields
-fetus fetuses
-rhombus rhombuses
-stick sticks
-lawmaker lawmakers
-eye eyes
-armpit armpits
-teaspoon teaspoons
-mermaid mermaids
-niece nieces
-dishwasher dishwashers dishwashing
-musician musicians music
-child children
-falcon falcons
-secretary secretaries
-factory factories
-knife knives
-skyscraper skyscrapers skyscraping
-maniac maniacs
-detective detectives
-grandfather grandfathers
-spiderman spidermen
-vulture vultures
-thumb thumbs
-cucumber cucumbers
+CD CDs
 CEO CEOs
-wasp wasps
-batman batmen
-hairdrier hairdriers
-facemask facemasks
-ambassador ambassadors
-angel angels
-comrade comrades
-sailor sailors sailing
-Jessica Jessicas
-heron herons
-longbowman longbowmen
-historian historians
-Tim Tims
-John Johns
-badger badgers
-gorilla gorillas
-ear ears
-viper vipers
-tunnel tunnels
-boxer boxers boxing
-vegan vegans
-market markets
-sock socks
-brush brushes
-pharmacist pharmacists
-khan khans
-customer customers
-fish fishes
-monk monks
-canoe canoes
-camera cameras
-belly bellies
-composer composers composing
-plushie plushies
-unionist unionists
-trader traders trading
-croissant croissants
-lover lovers
-jedi jedis
-eagle eagles
-salmon salmons
-lizard lizards
-nose noses
-calculator calculators
-curse curses
-coyote coyotes
-archer archers
-William Williams
-scale scales
-mole moles
-orca orcas
-coat coats
-brain brains
-villager villagers
-pomelo pomeloes
-tank tanks
-teacher teachers teaching
-mammal mammals
-tiger tigers
-Putin Putins
-youngling younglings
-locust locusts
-rioter rioters rioting
-pillow pillows
-pronoun pronouns
-buffalo buffalos
-bible bibles
-tigress tigresses
-physician physicians
-collector collectors
-icicle icicles
-nephew nephews
-telescope telescopes
-table tables
-tester testers testing
-spell spells
-mink minks
-billionaire billionaires
-aunt aunts
-tophat, alternative spelling of top hats tophats
-bathroom bathrooms
-bison bisons
-continent continents
-mule mules
-jackfruit jackfruits
-suitcase suitcases
-wallet wallets
-penguin penguins
-worker workers working
-tumor tumors
-sword swords
-dwarf dwarves
-bean beans
-prodigy prodigies
-introvert introverts
-skunk skunks
-crocodile crocodiles
-magazine magazines
-beard beards
-king kings
-mugger muggers mugging
-champion champions
-box boxes
-ferry ferries
-cello cellos
-deserter deserters
-duke dukes
-ladybug ladybugs
-plunger plungers
-rapper rappers
-molly mollies
-elf elves
-cheater cheaters cheating
-hut huts
-oyster oysters
-parabola parabolas
-boar boars
-bite bites
-napkin napkins
-crow crows
-fighter fighters fighting
-polygon polygons
-tick ticks
-meal meals
-snowball snowballs
-city cities
-plumber plumbers
-mistake mistakes
-linguist linguists
-bank banks
-TV TVs
-cosmonaut cosmonauts
-warmonger warmongers
-barber barbers
-equation equations
-bar bars
-louse lice
-counter counters counting
-caregiver caregivers caregiving
-cigar cigars
-prisoner prisoners
-geek geeks
-zebra zebras
-robe robes
-poet poets
-millipede millipedes
-author authors
-umbrella umbrellas
-spoon spoons
-raincoat raincoats
-analyzer analyzers analyzing
-streamer streamers streaming
-friend friends
-moon moons
-uncle uncles
-countess countesses
-cyclist cyclists
-mother mothers
-peanut peanuts
-spider spiders
-phone phones
-poplar poplars
-trickster tricksters
+Canadian Canadians
 Carl Carls
-star stars
-biologist biologists
-ship ships
-fly flies
-tissue tissues
-finger fingers
-seal seals
-joystick joysticks
-invader invaders invading
-microphone microphones
-cheek cheeks
-hen hens
-grandma grandmas
-katana katanas
-scientist scientists
-oven ovens
-farmer farmers farming
-bull bulls
-wall walls
-blackberry blackberries
-room rooms
-porcupine porcupines
-lemur lemurs
-elephant elephants
-dentist dentists
-cone cones
-skull skulls
-arm arms
-dove doves
-wife wives
-helper helpers
-kid kids
-superman supermen
-frog frogs
-judge judges
-vegetarian vegetarians
-cup cups
-musketeer musketeers
-pig pigs
-administrator administrators
-woodpecker woodpeckers
-pope popes
-ellipse ellipses
-headhunter headhunters headhunting
-tube tubes
-landfill landfills
-saint saints
-butterfly butterflies
-cheetah cheetahs
-carpenter carpenters
-pentagon pentagons
-notary notaries
-bra bras
-park parks
-spine spines
-winterberry winterberries
-icecream icecreams
-rocket rockets
-artist artists
-sparrow sparrows
-snowman snowmen
-centipede centipedes
-violin violins
-sheriff sheriffs
-door doors
-officer officers
-janitor janitors
-pitbull pitbulls
-pinecone pinecones
-paper papers
-mason masons
-thought thoughts
-window windows
-whisk whisks
-chainsaw chainsaws
-plague plagues
-card cards
-butler butlers
-general generals
-desk desks
-palm palms
-light lights
-tablet tablets
-pant pants
-dryad dryads
-association associations
-potato potatoes
-eraser erasers erasing
-toe toes
-folk folks
-pocket pockets
-rockstar rockstars
-puppy puppies
-soldier soldiers
-submarine submarines
-armchair armchairs
-bedroom bedrooms
-cylinder cylinders
-chick chicks
-vet vets
-meatball meatballs
-package packages
-Trump Trumps
-painting paintings
-llama llamas
-pepper peppers
-crustacean crustaceans
-councilor councilors
-ranger rangers
-blacksmith blacksmiths
-cigarette cigarettes
-inspector inspectors
-overseer overseers
-mom moms
-Paul Pauls
-toilet toilets
-latina latinas
-telephone telephones
-dandelion dandelions
-ostrich ostriches
-extremist extremists
-coffin coffins
-banknote banknotes
-laptop laptops
-jaguar jaguars
-seamstress seamstresses
-temple temples
-cannon cannons
-journalist journalists
-paladin paladins
-Jack Jacks
-heart hearts
-partner partners
-shoe shoes
-grandson grandsons
-cube cubes
-lawyer lawyers
-youtuber youtubers
-jackal jackals
-picture pictures
-knight knights
-pint pints
-rider riders riding
-scout scouts
-bookkeeper bookkeepers bookkeeping
-fork forks
-triangle triangles
-insect insects
-horn horns
-goddess goddesses
-smuggler smugglers smuggling
 DJ DJs
+Dutchman Dutchmen
+Dutchwoman Dutchwomen
+EMT EMTs
+Englishman Englishmen
+Englishwoman Englishwomen
+Ferrari Ferraris
+Frenchman Frenchmen
+Frenchwoman Frenchwomen
+George Georges
+Irishman Irishmen
+Irishwoman Irishwomen
+Italian Italians
+Jack Jacks
+Jeff Jeffs
+Jessica Jessicas
+John Johns
+Karen Karens
+Kevin Kevins
+Mexican Mexicans
+Mike Mikes
+PC PCs
+Paul Pauls
+Philip Philips
+Putin Putins
+Richard Richards
+Rick Ricks
+Russian Russians
+Sam Sams
+Steve Steves
+Susan Susans
+TV TVs
+TikToker TikTokers
+Tim Tims
+Tom Toms
+Trump Trumps
+UFO UFOs
+Ukrainian Ukrainians
+William Williams
+abductor abductors
+abolitionist abolitionists
+abomination abominations
+abuser abusers abusing
+abyss abysses
 accountant accountants
-brewer brewers
-princess princesses
-tuna tunas
-disease diseases
-zoomer zoomers
-barrel barrels
-superhero superheros
-bag bags
-robot robots
-leaf leaves
-baguette baguettes
+acorn acorns
+acrobat acrobats
+actor actors acting
 actress actresses
-disk disks
-skateboard skateboards
+administrator administrators
+admiral admirals
+admirer admirers admiring
+adolescent adolescents
+adoptee adoptees
+adorer adorers adoring
+adult adults
+adventurer adventurers adventuring
+advertiser advertisers advertising
+adviser advisers advising
+aeroplane aeroplanes
+agent agents
+aide aides
+airforce airforces
+airline airlines
+airman airmen
+airplane airplanes
+alchemist alchemists
+alien aliens
+alligator alligators
+almond almonds
+altar altars
+ambassador ambassadors
+amber ambers
+americano americanos
+amethyst amethysts
+amulet amulets
+analyst analysts
+analyzer analyzers analyzing
+anarchist anarchists
+anatomist anatomists
+ancestor ancestors
+anchor anchors
+anesthetist anesthetists
+angel angels
 animal animals
-person. people
+animator animators
+ant ants
+antagonist antagonists
+anteater anteaters
+antelope antelopes
+anti-vaxxer anti-vaxxers
+antimasker antimaskers
+apartment apartments
+ape apes
+apple apples
+appointee appointees
+appointer appointers
+appraiser appraisers appraising
+apprentice apprentices
+apron aprons
+archangel archangels
+archduchess archduchesses
+archduke archdukes
+archeologist archeologists
+archer archers
+architect architects
+aristocrat aristocrats
+arm arms
+armchair armchairs
+armor armors
+armpit armpits
+army armies
+artifact artifacts
+artisan artisans
+artist artists
+asexual asexuals
+ass asses
+assistant assistants
+association associations
+astronaut astronauts
+astronomer astronomers
+astrophysicist astrophysicists
+athlete athletes
+atom atoms
+attacker attackers attacking
+attendant attendants
+attire attires
+attorney attorneys
+augur augurs
+aunt aunts
+author authors
+autograph autographs
+aviator aviators
+avocado avocadoes
+axe axes
+azure azures
+baby babies
+babysitter babysitters babysitting
+bachelor bachelors
+bacteriologist bacteriologists
+badger badgers
+bag bags
+bagel bagels
+baguette baguettes
+bailiff bailiffs
+baker bakers baking
+bakery bakeries
+ball balls
+ballerina ballerinas
+ballerino ballerinos
+balloon balloons
+banana bananas
+band bands
+bandaid bandaids
+bandana bandanas
+bank banks
+banker bankers banking
+banknote banknotes
+banner banners
+bar bars
+barbecue barbecues
+barber barbers
+bard bards
+barista baristas
+baristo baristos
+baron barons
+baroness baronesses
+barrel barrels
+bartender bartenders bartending
+baseballer baseballers baseball
+basement basements
+basket baskets
+basketballer basketballers basketball
+bassist bassists
+bat bats
+bathroom bathrooms
+bathtub bathtubs
+batman batmen
+baton batons
+battle battles
+beach beaches
+beak beaks
+beaker beakers
+bean beans
+bear bears
+beard beards
+beast beasts
+beatboxer beatboxers beatboxing
+beauty beauties
+beaver beavers
+bed beds
+bedbug bedbugs
+bedgown bedgowns
+bedroom bedrooms
+bee bees
+beekeeper beekeepers beekeeping
+beetle beetles
+beetroot beetroots
+beggar beggars
+bell bells
+bellboy bellboys
+bellgirl bellgirls
+belly bellies
+belt belts
+bench benches
+bible bibles
+bicorne bicornes
+bicycle bicycles
+bike bikes
+biker bikers biking
+bikini bikinis
+billionaire billionaires
+bioengineer bioengineers
+biographer biographers
+biolab biolabs
+biologist biologists
+bioterrorist bioterrorists
+bird birds
+biscuit biscuits
+bisexual bisexuals
+bishop bishops
+bison bisons
+bite bites
+blackberry blackberries
+blacksmith blacksmiths
+blade blades
+bladesmith bladesmiths
+blanket blankets
+blender blenders
+blogger bloggers blogging
+bloodstone bloodstones
+blouse blouses
+blueberry blueberries
+boar boars
+board boards
+body bodies
+bodybuilder bodybuilders bodybuilding
+bodyguard bodyguards
+bodysuit bodysuits
+boiler boilers
+bolt bolts
+bomb bombs
+bomblet bomblets
+bone bones
+boneyard boneyards
+bong bongs
+boob boobs
+book books
+bookkeeper bookkeepers bookkeeping
+booklet booklets
+bookshelf bookshelves
+bookstore bookstores
+boomer boomers
+boot boots
+boss bosses
+botanist botanists
+bottle bottles
+boulder boulders
+bouncer bouncers
+bowl bowls
+bowler bowlers
+box boxes
+boxer boxers boxing
+boy boys
+boyfriend boyfriends
+bra bras
+brace braces
+bracelet bracelets
+brain brains
+brat brats
+breast breasts
+breastfeeder breastfeeders breastfeeding
+breastplate breastplates
+brewer brewers brewing
+brewery breweries
+brick bricks
+bride brides
+brigadier brigadiers
+bro bros
+brooch brooches
+brood broods
+broom brooms
+brother brothers
+brownie brownies
+bruise bruises
+brush brushes
+buck bucks
+buffalo buffalos
+buffoon buffoons
+bug bugs
+builder builders building
+bull bulls
+bulldog bulldogs
+bullfighter bullfighters bullfighting
+bully bullies
+bun buns
+bunker bunkers
+bureaucrat bureaucrats
+burglar burglars
+bus buses
+busboy busboys
+busgirl busgirls
+business businesses
+butch butches
+butcher butchers
+butler butlers
+butt butts
+butterfly butterflies
+buttock buttocks
+cabbage cabbages
+cadaver cadavers
+cafe cafes
+cage cages
+cake cakes
+calculator calculators
+calf calves
+calligrapher calligraphers
+camel camels
+camera cameras
+candidate candidates
+candie candies
+candle candles
+cannon cannons
+canoe canoes
+canoer canoers canoeing
+canyon canyons
+cap caps
+cape capes
+cappuccino cappuccinos
+captain captains
+car cars
+caramelizer caramelizers caramelizing
+card cards
+cardinal cardinals
+cardiologist cardiologists
+caregiver caregivers caregiving
+carer carers
+caretaker caretakers
+carnival carnivals
+carnivore carnivores
+carp carps
+carpenter carpenters
+carrier carriers carrying
+carrot carrots
+cart carts
+cartoonist cartoonists
+carver carvers carving
+case cases
+cashew cashews
+cashier cashiers
+casino casinos
+casket caskets
+castle castles
+cat cats
+caterpillar caterpillars
+catsitter catsitters catsitting
+caudron caudrons
+cauliflower cauliflowers
+cave caves
+cedar cedars
+celery celeries
+cellar cellars
+cello cellos
+centenarian centenarians
+centipede centipedes
+chain chains
+chainsaw chainsaws
+chair chairs
+chairlady chairladies
+chairman chairmen
+chairperson chairpersons
+chairwoman chairwomen
+chalice chalices
+chalk chalks
+chambermaid chambermaids
+champion champions
+chancellor chancellors
+channel channels
+character characters
+charger chargers charging
+cheater cheaters cheating
+cheek cheeks
+cheerleader cheerleaders cheerleading
+cheeseburger cheeseburgers
+cheesecake cheesecakes
+cheetah cheetahs
+chemist chemists
+cherry cherries
+chestnut chestnuts
+chick chicks
+chicken chickens
+chickpea chickpeas
+chief chiefs
+chieftain chieftains
+chihuahua chihuahuas
+child children
+chili chilies
+chimney chimneys
+chimpanzee chimpanzees
+chip chips
+chipmunk chipmunks
+chiropractor chiropractors
+choker chokers
+chopstick chopsticks
+church churches
+cigar cigars
+cigarette cigarettes
+cinema cinemas
+circle circles
+cisgender cisgenders
+citizen citizens
+citrine citrines
+city cities
+claw claws
+cleaner cleaners cleaning
+clergyman clergymen
+clergywoman clergywomen
+clerk clerks
+cliff cliffs
+climatologist climatologists
+climber climbers climbing
+clinician clinicians
+cloak cloaks
+clock clocks
+closet closets
+clown clowns
+club clubs
+cluster clusters
+coach coaches
+coalition coalitions
+coat coats
+coauthor coauthors
+cocktail cocktails
+coconut coconuts
+cod cods
+codebreaker codebreakers codebreaking
+coder coders coding
+coffin coffins
+collection collections
+collector collectors
+colonel colonels
+colony colonies
+columnist columnists
+comedian comedians
+commander commanders commanding
+commie commies
+commodore commodores
+commoner commoners
+communist communists
+company companies
+competitor competitors
+composer composers composing
+compositor compositors
+computer computers computing
+comrade comrades
+condo condos
+condom condoms
+condominium condominiums
+conductor conductors
+cone cones
+confectioner confectioners
+conqueror conquerors conquering
+conservator conservators
+constable constables
+consul consuls
+consultant consultants
+container containers
+continent continents
+contractor contractors
+contributor contributors
+cooker cookers cooking
+cookie cookies
+cop cops
+copilot copilots
+copywriter copywriters copywriting
+corndog corndogs
+corner corners
+corporal corporals
+corporation corporations
+corpse corpses
+corset corsets
+cosmologist cosmologists
+cosmonaut cosmonauts
+councilor councilors
+counselor counselors
+count counts
+counter counters counting
+countess countesses
+country countries
+couple couples
+coupon coupons
+court courts
+courtier courtiers
+cousin cousins
+covidiot covidiots
+cowboy cowboys
+cowgirl cowgirls
+coyote coyotes
+crab crabs
+craftsman craftsmen
+crane cranes
+crayon crayons
+creator creators
+creditor creditors
+creed creeds
+crematorium crematoriums
+cricket crickets
+criminal criminals
+crocodile crocodiles
+croissant croissants
+cross crosses
+crossbowman crossbowmen
+crow crows
+crown crowns
+cruiser cruisers
+crustacean crustaceans
+cryptologist cryptologists
+cub cubs
+cube cubes
+cucumber cucumbers
+cult cults
+cultist cultists
+cup cups
+cupcake cupcakes
+curse curses
+custodian custodians
+customer customers
+cut cuts
+cyclist cyclists
+cylinder cylinders
+dachshund dachshunds
+dad dads
+daddy daddies
+dagger daggers
+dancer dancers dancing
+dandelion dandelions
+dart darts
+daughter daughters
+dealer dealers
+dean deans
+deathbed deathbeds
+decathlete decathletes
+defender defenders
+deliveryman deliverymen
+deliverywoman deliverywomen
+demigod demigods
+demographer demographers
+demolitionist demolitionists
+demon demons
+demonstrator demonstrators demonstrating
+dentist dentists
+deputy deputies
+dermatologist dermatologists
+descendant descendants
+desert deserts
+deserter deserters
+designer designers designing
+desk desks
+destroyer destroyers
+detective detectives
+devil devils
+diagram diagrams
+diamond diamonds
+diaper diapers
+diaphragm diaphragms
+dictator dictators
+dictionary dictionaries
+digger diggers digging
+dinosaur dinosaurs
+diplomat diplomats
+director directors
+disease diseases
+dishwasher dishwashers dishwashing
+disinfectant disinfectants
+disk disks
+diver divers diving
+doctor doctors
+dodo dodos
+dog dogs
+dogsitter dogsitters dogsitting
+dogwalker dogwalkers dogwalking
+doll dolls
+dolphin dolphins
+domain domains
+dominatrix dominatrixes
+donkey donkeys
+donor donors
+donut donuts
+door doors
+douchebag douchebags
+dove doves
+dragon dragons
+drawing drawings
+dresser dressers
+drill drills
+drinker drinkers drinking
+driver drivers driving
+drone drones
+drop drops
+droplet droplets
+drugstore drugstores
+drum drums
+drummer drummers
+drumstick drumsticks
+dryad dryads
+duchess duchesses
+duck ducks
+duckling ducklings
+duke dukes
+dumpling dumplings
+durian durians
+dwarf dwarves
+eagle eagles
+ear ears
+earl earls
+earring earrings
+earthworm earthworms
+eaterie eateries
+ecologist ecologists
+economist economists
+ecosystem ecosystems
+editor editors
+educator educators
+eel eels
+egg eggs
+eggcup eggcups
+eggplant eggplants
+elder elders
+electrician electricians
+elephant elephants
+elevator elevators
+elf elves
+elk elks
+ellipse ellipses
+embalmer embalmers embalming
+embryo embryos
+emerald emeralds
+emigrant emigrants
+emissary emissaries
+emperor emperors
+employee employees
+employer employers
+enchanter enchanters enchanting
+encyclopedia encyclopedias
+enemy enemies
+engine engines
+engineer engineers
+engraver engravers engraving
+ensign ensigns
+entertainer entertainers entertaining
+entrepreneur entrepreneurs
+epidemiologist epidemiologists
+equation equations
+eraser erasers erasing
+executioner executioners executing
+executive executives
+exhibitionist exhibitionists
+expat expats
+extremist extremists
+extrovert extroverts
+eye eyes
+eyeglass eyeglasses
+eyelash eyelashes
+face faces
+facemask facemasks
+factory factories
+fairy fairies
+falcon falcons
+family families
+fan fans
+farm farms
+farmer farmers farming
+fatberg fatbergs
+father fathers
+felon felons
+femme femmes
+femur femurs
+fence fences
+fencer fencers fencing
+ferret ferrets
+ferry ferries
+festival festivals
+fetus fetuses
+field fields
+fight fights
+fighter fighters fighting
+figurine figurines
+filmmaker filmmakers filmmaking
+fin fins
+financier financiers financing
+finger fingers
+firefighter firefighters firefighting
+fireman firemen
+firewoman firewomen
+fish fishes
+fishmonger fishmongers fishmonging
+flag flags
+flashbang flashbangs
+flask flasks
+flat-earther flat-earthers
+flea fleas
+flip-flop flip-flops
+florist florists
+flower flowers
+flute flutes
+fly flies
+foal foals
+folk folks
+fool fools
+foot feet
+forest forests
+fork forks
+fort forts
+fortification fortifications
+fortuneteller fortunetellers fortunetelling
+fossil fossils
+fowl fowls
+fox foxes
+freelancer freelancers
+freezer freezers
+fridge fridges
+friend friends
+frog frogs
+fruit fruits
+fryer fryers frying
+funnel funnels
+gag gags
+gambler gamblers gambling
+gamer gamers gaming
+gangster gangsters
+gardener gardeners gardening
+garment garments
+gatekeeper gatekeepers gatekeeping
+gauntlet gauntlets
+gazelle gazelles
+geek geeks
+gem gems
+gemcutter gemcutters gemcutting
+general generals
+generator generators
+geneticist geneticists
+genius geniuses
+gentleman gentlemen
+geologist geologists
+german germans
+ghost ghosts
+ghostbuster ghostbusters ghostbusting
+ghostwriter ghostwriters ghostwriting
+giant giants
+giraffe giraffes
+girdle girdles
+girl girls
+girlfriend girlfriends
+gladiator gladiators
+glass glasses
+globe globes
+glove gloves
+goalie goalies
+goalkeeper goalkeepers goalkeeping
+goat goats
+goblet goblets
+god gods
+godchild godchildren
+goddess goddesses
+godfather godfathers
+goggle goggles
+goldsmith goldsmiths
+golfer golfers golfing
+goose geese
+gorilla gorillas
+government governments
+governor governors
+gown gowns
+grandaunt grandaunts
+grandbaby grandbabies
+grandchild grandchildren
+granddaughter granddaughters
+grandfather grandfathers
+grandkid grandkids
+grandma grandmas
+grandmaster grandmasters
+grandmother grandmothers
+grandnephew grandnephews
+grandniece grandnieces
+grandpa grandpas
+grandparent grandparents
+grandson grandsons
+granduncle granduncles
+grasshopper grasshoppers
+grave graves
+gravedigger gravediggers gravedigging
+graveyard graveyards
+grenade grenades
+grenadier grenadiers
+groom grooms
+groomer groomers grooming
+group groups
+guard guards
+guardian guardians
+guide guides
+guillotine guillotines
+guitar guitars
+guitarist guitarists
+gun guns
+gunner gunners
+gunsmith gunsmiths
+gymnasium gymnasiums
+gymnast gymnasts
+hacker hackers hacking
+hag hags
+hair hairs
+hairbrush hairbrushes
+hairdresser hairdressers hairdressing
+hairdrier hairdriers hairdrying
+hamburger hamburgers
+hammer hammers
+hammock hammocks
+hand hands
+handbag handbags
+handcuff handcuffs
+handgun handguns
+handiman handimen
+handiwoman handiwomen
+handmaid handmaids
+handwriting handwritings
+handyman handymen
+hare hares
+harpoon harpoons
+harvester harvesters harvesting
+hat hats
+hatchet hatchets
+hater haters hating
+hawk hawks
+hazelnut hazelnuts
+head heads
+headhunter headhunters headhunting
+headwear headwears
+heart hearts
+helicopter helicopters
+helm helms
+helmet helmets
+helper helpers helping
+hemlock hemlocks
+hen hens
+henchman henchmen
+henchwoman henchwomen
+heptagon heptagons
+herald heralds
+herb herbs
+herbalist herbalists
+herbivore herbivores
+herder herders herding
+hero heros
+heron herons
+hexagon hexagons
+highlighter highlighters highlighting
+hijab hijabs
+hill hills
+hippie hippies
+hippo hippos
+historian historians
+hitman hitmen
+hitwoman hitwomen
+hive hives
+hobo hobos
+hoe hoes
+hole holes
+homie homies
+homosexual homosexuals
+horn horns
+hornet hornets
+horse horses
+horserider horseriders horseriding
+hospital hospitals
+hotdog hotdogs
+hotel hotels
+hotpot hotpots
+hourglass hourglasses
+house houses
+housemaid housemaids
+housewife housewives
+humanoid humanoids
+hunter hunters hunting
+hurricane hurricanes
+husband husbands
+hut huts
+hydra hydras
+hydrant hydrants
+hyena hyenas
+hyperbola hyperbolas
+hypnotist hypnotists
+iceberg icebergs
+icecream icecreams
+icicle icicles
+idea ideas
+iguana iguanas
+illness illnesses
+illustrator illustrators
+immigrant immigrants
+incel incels
+incubus incubuses
+individual individuals
+infant infants
+infantryman infantrymen
+informant informants
+inkbrush inkbrushes
+innkeeper innkeepers innkeeping
+inquisitor inquisitors
+insect insects
+inspector inspectors
+installer installers
+instructor instructors
+insurer insurers insuring
+insurrectionist insurrectionists
+interpreter interpreters interpreting
+introvert introverts
+intruder intruders intruding
+invader invaders invading
+inventor inventors
+investor investors
+ironworker ironworkers ironworking
+jackal jackals
+jacket jackets
+jackfruit jackfruits
+jacuzzi jacuzzis
+jaguar jaguars
+jailer jailers jailing
+jailkeeper jailkeepers jailkeeping
+janitor janitors
+jar jars
+jaw jaws
+jawbone jawbones
+jedi jedis
+jersey jerseys
+jester jesters
+jeweler jewelers
+jewelry jewelries
+jogger joggers jogging
+joint joints
+journalist journalists
+joystick joysticks
+judge judges
+juggler jugglers juggling
+jumper jumpers jumping
+jurist jurists
+kaiser kaisers
+kaleidoscope kaleidoscopes
+kangaroo kangaroos
+katana katanas
+kettle kettles
+keyboard keyboards
+khan khans
+kickboxer kickboxers kickboxing
+kid kids
+kiddie kiddies
+kidnapper kidnappers kidnapping
+kidney kidneys
+killer killers killing
+kimono kimonos
+king kings
+kingdom kingdoms
+kingsman kingsmen
+kitchen kitchens
+kite kites
+kitten kittens
+kitty kitties
+kiwi kiwis
+knife knives
+knight knights
+knuckle knuckles
+koala koalas
+lab labs
+laboratory laboratories
+laborer laborers laboring
+ladybug ladybugs
+lake lakes
+lamb lambs
+lamp lamps
+lance lances
+land lands
+landfill landfills
+landmine landmines
+landscaper landscapers landscaping
+lantern lanterns
+laptop laptops
+larva larvas
+lasagna lasagnas
+latina latinas
+latino latinos
+laurel laurels
+lawmaker lawmakers lawmaking
+lawyer lawyers
+leader leaders leading
+leaf leaves
+leech leeches
+leg legs
+legion legions
+lemon lemons
+lemur lemurs
+lens lenses
+leopard leopards
+leotard leotards
+lepper leppers
+lesbian lesbians
+lettuce lettuces
+librarian librarians
+library libraries
+lieutenant lieutenants
+lifeform lifeforms
+lifeguard lifeguards
+light lights
+lighter lighters
+lilly lillies
+lily lilies
+limb limbs
+lime limes
+line lines
+lineage lineages
+linguist linguists
+lion lions
+lip lips
+liver livers
+lizard lizards
+llama llamas
+lobbyist lobbyists
+lobster lobsters
+lock locks
+lockpicker lockpickers lockpicking
+locksmith locksmiths
+locust locusts
+logician logicians
+lollipop lollipops
+longbowman longbowmen
+lord lords
+lotus lotuses
+louse lice
+lover lovers loving
+lumberjack lumberjacks
+lung lungs
+lynx lynxes
+lyricist lyricists
+macaroon macaroons
+machine machines
+machinist machinists
+mafia mafias
+magazine magazines
+maggot maggots
+magician magicians
+magistrate magistrates
+magpie magpies
+maid maids
+maiden maidens
+mailman mailmen
+mailwoman mailwomen
+mall malls
+mammal mammals
+mammoth mammoths
+manager managers managing
+mangaka mangakas
+mango mangos
+mangrove mangroves
+manhater manhaters manhating
+manhood manhoods
+maniac maniacs
+manicurist manicurists
 mansion mansions
+manufacturer manufacturers manufacturing
+map maps
+maple maples
+marathoner marathoners
+marine marines
+mariner mariners
+marker markers
+market markets
+marksman marksmen
+markswoman markswomen
+marshal marshals
+marshmallow marshmallows
+mask masks
+masochist masochists
+mason masons
+masseuse masseuses
+master masters
+mat mats
+matador matadors
+mathematician mathematicians
+mayor mayors
+mayoress mayoresses
+meal meals
+meatball meatballs
+meatloaf meatloaves
+mechanic mechanics
+medal medals
+medic medics
+megabank megabanks
+megacasino megacasinos
+megacelebrity megacelebrities
+megachurch megachurches
+megacity megacities
+megaclub megaclubs
+megacolony megacolonies
+megacompany megacompanies
+megacorporation megacorporations
+megacult megacults
+megafarm megafarms
+megafestival megafestivals
+megafossil megafossils
+megalake megalakes
+megamall megamalls
+megayacht megayachts
+melon melons
+mercenary mercenaries
+merchant merchants
+mermaid mermaids
+messenger messengers
+metallurgist metallurgists
+metropolis metropolises
+microbe microbes
+microchip microchips
+microphone microphones
+microscope microscopes
+microwave microwaves
+midwife midwives
+migrant migrants
+military militaries
+milkman milkmen
+milkshake milkshakes
+milkwoman milkwomen
+mill mills
+miller millers milling
+millionaire millionaires
+millipede millipedes
+mine mines
+miner miners mining
+minidress minidresses
+minigun miniguns
+minimalist minimalists
+miniskirt miniskirts
+minister ministers
+miniyacht miniyachts
+mink minks
+minor minors
+misandrist misandrists
+misogynist misogynists
+missile missiles
+mistake mistakes
+mistress mistresses
+mite mites
+mixer mixers mixing
+model models
+moderator moderators
+moissanite moissanites
+mole moles
+molly mollies
+molotov molotovs
+mom moms
+mommy mommies
+monarch monarchs
+monger mongers
+monk monks
+monkey monkeys
+monocle monocles
+moon moons
+mop mops
+mortar mortars
+mortician morticians
+mosquito mosquitoes
+moth moths
+mother mothers
+mountain mountains
+mouse mice
+mouth mouths
+muffin muffins
+mug mugs
+mugger muggers mugging
+mulberry mulberries
+mule mules
+mum mums
+murderer murderers murdering
+mushroom mushrooms
+musician musicians music
+musketeer musketeers
+mustache mustaches
+mycologist mycologists
+nanobiologist nanobiologists
+nanobot nanobots
+nanochip nanochips
+nanoparticle nanoparticles
+napkin napkins
+nation nations national
+nationalist nationalists
+naturalist naturalists
+navigator navigators
+navy navies
+nazi nazis
+nebula nebulas
+necklace necklaces
+necktie neckties
+necromancer necromancers necromancing
+necropolis necropolises
+needle needles
+neighborhood neighborhoods
+nephew nephews
+nerd nerds
+nest nests
+net nets
+neurologist neurologists
+newborn newborns
+newsagent newsagents
+newsboy newsboys
+newswoman newswomen
+niece nieces
+ninja ninjas
+nipple nipples
+nobleman noblemen
+noblewoman noblewomen
+normie normies
+nose noses
+nostril nostrils
+notary notaries
+nougat nougats
+novelist novelists
+nugget nuggets
+nuke nukes
+number numbers
+nun nuns
+nurse nurses
+nut nuts
+nymph nymphs
+oak oaks
+oarsman oarsmen
+octagon octagons
+octopus octopuses
+officer officers
+official officials
+offspring offsprings
+olive olives
+omelette omelettes
+omnivore omnivores
+onion onions
+onyx onyxes
+opal opals
+operator operators
+oppressor oppressors
+optician opticians
+oracle oracles
+orange oranges
+orangutan orangutans
+orca orcas
+organism organisms
+organizer organizers organizing
+orphan orphans
+ostrich ostriches
+otter otters
+oven ovens
+overlord overlords
+overseer overseers overseeing
+owl owls
+owner owners
+oyster oysters
+pack packs
+package packages
+pagoda pagodas
+painter painters painting
+paladin paladins
+palm palms
+pan pans
+panda pandas
+pangolin pangolins
+panty panties
+paper papers
+parabola parabolas
+paralegal paralegals
+paramedic paramedics
+parasite parasites
+parent parents
+park parks
+parka parkas
+parrot parrots
+partner partners
+party parties
+pastor pastors
+pathologist pathologists
+patriarch patriarchs
+patrol patrols
+patron patrons
+payload payloads
+pea peas
+peacock peacocks
+peanut peanuts
+pearl pearls
+peasant peasants
+pecan pecans
+pediatrician pediatricians
+pedophile pedophiles
+peer peers
+pen pens
+pencil pencils
+pendant pendants
+penguin penguins
+penman penmen
+pentagon pentagons
+pentagram pentagrams
+people peoples
+pepper peppers
+performer performers performing
+perpetrator perpetrators
+petticoat petticoats
+pharaoh pharaohs
+pharmacist pharmacists
+pharmacy pharmacies
+philanthropist philanthropists
+philosopher philosophers
+phone phones
+photographer photographers photographing
+physician physicians
+physicist physicists
+pianist pianists
+piano pianos
+pickaxe pickaxes
+picture pictures
+pie pies
+pig pigs
+pike pikes
+pikeman pikemen
+pile piles
+pill pills
+pillbox pillboxes
+pillow pillows
+pilot pilots
+pimple pimples
+pin pins
+pineapple pineapples
+pinecone pinecones
+pint pints
+pioneer pioneers pioneering
+pipe pipes
+pirate pirates
+pistol pistols
+pitbull pitbulls
+pizza pizzas
+pizzaria pizzarias
+plague plagues
+plane planes
+planet planets
+plate plates
+platform platforms
+platter platters
+player players playing
+plebeian plebeians
+plum plums
+plumber plumbers plumbing
+plunger plungers
+plushie plushies
+pocket pockets
+poem poems
+poet poets
+poison poisons
+polearm polearms
+policeman policemen
+policewoman policewomen
+politician politicians
+polygon polygons
+pomelo pomeloes
+pond ponds
+pope popes
+poplar poplars
+popsicle popsicles
+porcupine porcupines
+poster posters
+postlady postladies
+postman postmen
+pot pots
+potato potatoes
+potter potters
+prawn prawns
+preacher preachers preaching
+presenter presenters presenting
+president presidents
+priest priests
+priestess priestesses
+prince princes
+princess princesses
+principal principals
+prisoner prisoners
+private privates
+pro-vaxxer pro-vaxxers
+prodigy prodigies
+producer producers producing
+professor professors
+programmer programmers programming
+pronoun pronouns
+proofreader proofreaders proofreading
+prophet prophets
+prosecutor prosecutors
+prostitute prostitutes
+protagonist protagonists
+protester protesters protesting
+psychologist psychologists
+publisher publishers publishing
+puddle puddles
+puffin puffins
+pug pugs
+puma pumas
+pumpkin pumpkins
+punisher punishers punishing
+punk punks
+puppeteer puppeteers
+puppy puppies
+pyrotechnician pyrotechnicians
+quail quails
+quartermaster quartermasters
+quartz quartzes
+queen queens
+queer queers
+quill quills
+rabbi rabbis
+rabbit rabbits
+racer racers racing
+racetrack racetracks
+racewalker racewalkers racewalking
+racist racists
+rack racks
+racoon racoons
+radio radios
+radiographer radiographers
+radiologist radiologists
+radish radishes
+raincoat raincoats
+raisin raisins
+ranger rangers
+rapper rappers rapping
+rat rats
+realist realists
+realtor realtors
+receipt receipts
+receptionist receptionists
+recording recordings
+recruit recruits
+recruiter recruiters recruiting
+rectangle rectangles
+rectum rectums
+refrigerator refrigerators
+refugee refugees
+reporter reporters reporting
+representative representatives
+reptile reptiles
+restaurant restaurants
+retailer retailers
+revolutionary revolutionaries
+revolver revolvers
+rhino rhinos
+rhinoceros rhinoceroses
+rhombus rhombuses
+rib ribs
+rider riders riding
+rifle rifles
+rifleman riflemen
+ring rings
+ringleader ringleaders ringleading
+rioter rioters rioting
+river rivers
+roadworker roadworkers roadworking
+robber robbers robbing
+robe robes
+robot robots
+rock rocks
+rocket rockets
+rocketman rocketmen
+rockstar rockstars
+rod rods
+rollercoaster rollercoasters
+rook rooks
+room rooms
+rooster roosters
+rope ropes
+rose roses
+rower rowers rowing
+ruby rubies
+rug rugs
+ruler rulers ruling
+runner runners running
+saber sabers
+sadist sadists
+safecracker safecrackers safecracking
+sailboat sailboats
+sailor sailors sailing
+saint saints
+salad salads
+salaryman salarymen
+salesman salesmen
+saleswoman saleswomen
+salmon salmons
+samurai samurais
+sandal sandals
+sandbag sandbags
+sandbox sandboxes
+sandwich sandwiches
+sapphire sapphires
+sarcophagus sarcophaguses
+satellite satellites
+saucepan saucepans
+sausage sausages
+savior saviors
+saw saws
+saxophone saxophones
+scaffold scaffolds
+scalper scalpers scalping
+scarf scarfs
+scholar scholars
+school schools
+schoolboy schoolboys
+schoolchild schoolchildren
+schoolgirl schoolgirls
+scientist scientists
+scorpion scorpions
+scout scouts
+screenwriter screenwriters screenwriting
+screw screws
+screwdriver screwdrivers
+scribe scribes
+scriptwriter scriptwriters scriptwriting
+scrunchy scrunchies
+sculptor sculptors
+seal seals
+seaman seamen
+seamstress seamstresses
+secretary secretaries
+seed seeds
+seer seers
+seller sellers selling
+sellsword sellswords
+senator senators
+senior seniors
+sensor sensors
+sergeant sergeants
+servant servants
+serviceman servicemen
+servicewoman servicewomen
 sewer sewers
+shallot shallots
+shaman shamans
+shareholder shareholders shareholding
+shark sharks
+sharpie sharpies
+shell shells
+shelter shelters
+shepherd shepherds
+sheriff sheriffs
+shield shields
+ship ships
+shipwright shipwrights
+shirt shirts
+shoe shoes
+shoelace shoelaces
+shop shops
+shopkeeper shopkeepers shopkeeping
+shotgun shotguns
+shovel shovels
+showrunner showrunners showrunning
+shrapnel shrapnels
+shrimp shrimps
+shroom shrooms
+sibling siblings
+singer singers singing
+siren sirens
+sister sisters
+skate skates
+skateboard skateboards
+skater skaters skating
+skeleton skeletons
+skier skiers skiing
+skillet skillets
+skin skins
+skirt skirts
+skull skulls
+skunk skunks
+skyscraper skyscrapers skyscraping
+slave slaves
+slide slides
+slum slums
+smartphone smartphones
+smartwatch smartwatches
+smith smiths
+smuggler smugglers smuggling
+snake snakes
+snout snouts
+snowball snowballs
+snowboarder snowboarders snowboarding
+snowman snowmen
+society societies
+sock socks
+sofa sofas
+soldier soldiers
+solicitor solicitors soliciting
+son sons
+songwriter songwriters songwriting
+soothsayer soothsayers soothsaying
+sorcerer sorcerers
+sorceress sorceresses
+soul souls
+sow sows
+spaceman spacemen
+spaceship spaceships
+spacewoman spacewomen
+spammer spammers spamming
+sparrow sparrows
+spatula spatulas
+speaker speakers speaking
+spearman spearmen
+specialist specialists
+spectator spectators spectating
+specter specters
+spell spells
+sphere spheres
+sphinx sphinxes
+spider spiders
+spiderman spidermen
+spinach spinaches
+spine spines
+spirit spirits
+spoon spoons
+sportsman sportsmen
+sportswoman sportswomen
+sportswriter sportswriters sportswriting
+spouse spouses
+sprinter sprinters sprinting
+spy spies
+squad squads
+square squares
+squid squids
+squirrel squirrels
+staff staffs
+stag stags
+star stars
+state states
+statesman statesmen
+station stations
+statue statues
+statuette statuettes
+steak steaks
+steamer steamers steaming
+stew stews
+stick sticks
+stomach stomachs
+stone stones
+stonemason stonemasons
+stool stools
+store stores
+storekeeper storekeepers storekeeping
+strategist strategists
+stream streams
+streamer streamers streaming
+string strings
+structure structures
+student students
+stuntman stuntmen
+stuntwoman stuntwomen
+stylist stylists
+submarine submarines
+submariner submariners
+subordinate subordinates
+suit suits
+suitcase suitcases
+sultan sultans
+summit summits
+sumo sumos
+sun suns
+sundress sundresses
+superbeing superbeings
+superbomb superbombs
+superboy superboys
+superbrain superbrains
+superbug superbugs
+supercelebrity supercelebrities
+superchurch superchurches
+supercity supercities
+superclub superclubs
+supercolony supercolonies
+supercomputer supercomputers
+supercontinent supercontinents
+supercorporation supercorporations
+supergenius supergeniuses
+supergun superguns
+superhero superheros
+superhospital superhospitals
+superintendent superintendents
+superior superiors
+superlawyer superlawyers
+supermachine supermachines
+supermale supermales
+supermall supermalls
+superman supermen
+supermanager supermanagers
+supermarket supermarkets
+supermicrobe supermicrobes
+supermodel supermodels
+supermonster supermonsters
+superoverlord superoverlords
+superparasite superparasites
+superpill superpills
+superstar superstars
+supervillain supervillains
+supervillainess supervillainesses
+supervirus superviruses
+supervisor supervisors supervising
+supervolcano supervolcanos
+superweapon superweapons
+superwoman superwomen
+superyacht superyachts
+surfboard surfboards
+surfer surfers surfing
+surgeon surgeons
+surveyor surveyors
+survivor survivors surviving
+sushi sushis
+swamp swamps
+swan swans
+swimmer swimmers
+swimsuit swimsuits
+sword swords
+swordman swordmen
+t-shirt t-shirts
+table tables
+tablespoon tablespoons
+tablet tablets
+taco tacos
+tactician tacticians
+tag tags
+tail tails
+tailor tailors
+tank tanks
+tanner tanners
+tapeworm tapeworms
+tattooist tattooists
+taxi taxis
+taxidermist taxidermists
+teacher teachers teaching
+teacup teacups
+team teams
+teapot teapots
+teardrop teardrops
+teaspoon teaspoons
+technician technicians
+teenager teenagers
+teetotaller teetotallers
+telegrapher telegraphers telegraphing
+telemarketer telemarketers telemarketing
+telephone telephones
+telescope telescopes
+television televisions
+temple temples
+tendie tendies
+tendril tendrils
+tent tents
+terminator terminators
+termite termites
+terrorist terrorists
+tester testers testing
+testicle testicles
+theater theaters
+theologian theologians
+therapist therapists
+thief thieves
+thong thongs
+thought thoughts
+thrower throwers throwing
+thumb thumbs
+tibia tibias
+tick ticks
+ticket tickets
+tie ties
+tiger tigers
+tigress tigresses
+timebomb timebombs
+tissue tissues
+titty titties
+toad toads
+toaster toasters
+toddler toddlers
+toe toes
+toilet toilets
+tomato tomatoes
+tomb tombs
+tombstone tombstones
+tongue tongues
+tool tools
+toolmaker toolmakers toolmaking
+tooth teeth
+toothbrush toothbrushes
+toothpick toothpicks
+tophat tophats
+tortoise tortoises
+tourist tourists
+towel towels
+tower towers
+town towns
+trader traders trading
+train trains
+trainer trainers training
+traitor traitors
+transgender transgenders
+transgressor transgressors transgressing
+translator translators
+transporter transporters transporting
+trap traps
+trashman trashmen
+tray trays
+treasurer treasurers
+tree trees
+triangle triangles
+triathlete triathletes
+tribe tribes
+triceps tricepses
+trickster tricksters
+trillionaire trillionaires
+trinket trinkets
+trolley trolleys
+trooper troopers
+truck trucks
+trumpet trumpets
+trunk trunks
+tsar tsars
+tsarina tsarinas
+tub tubs
+tube tubes
+tulip tulips
+tumor tumors
+tuna tunas
+tunnel tunnels
+turban turbans
+turd turds
+turkey turkeys
+turnip turnips
+turtle turtles
+tusk tusks
+tutor tutors
+twin twins
+typewriter typewriters
+tzar tzars
+umbrella umbrellas
+umpire umpires
+uncle uncles
+undergarment undergarments
+underskirt underskirts
+undertaker undertakers
+unicorn unicorns
+uniform uniforms
+unionist unionists
+unitard unitards
+user users
+vaccine vaccines
+vagina vaginas
+valley valleys
+vampire vampires
+van vans
+vaulter vaulters vaulting
+vegan vegans
+vegetarian vegetarians
+vehicle vehicles
+vendor vendors
+venom venoms
+vest vests
+vet vets
+viceroy viceroys
+victim victims
+victor victors
+viewer viewers viewing
+vigilante vigilantes
+village villages
+villager villagers
+villain villains
+villainess villainesses
+vine vines
+violin violins
+violinist violinists
+viper vipers
+virgin virgins
+virologist virologists
+virus viruses
+visa visas
+viscount viscounts
+viscountess viscountesses
+vlogger vloggers vlogging
+volcano volcanos
+vulture vultures
+waistcoat waistcoats
+waiter waiters
+waitress waitresses
+wall walls
+wallet wallets
+walnut walnuts
+wanderer wanderers wandering
+war wars
+warden wardens
+wardress wardresses
+warhead warheads
+warlock warlocks
+warmonger warmongers warmonging
+warrior warriors
+washtub washtubs
+wasp wasps
+watch watches
+waterfall waterfalls
+watermelon watermelons
+wave waves
+webpage webpages
+weightlifter weightlifters weightlifting
+werewolf werewolves
+whale whales
+wheel wheels
+whisk whisks
+whore whores
+wife wives
+willow willows
+windmill windmills
+window windows
+windsurfer windsurfers windsurfing
+winetaster winetasters winetasting
+wing wings
+winterberry winterberries
+witch witches
+wizard wizards
+wolf wolves
+wombat wombats
+woodpecker woodpeckers
+worker workers working
+world worlds
+worm worms
+wraith wraiths
+wrench wrenches
+wrestler wrestlers wrestling
+writer writers writing
+wyvern wyverns
+yacht yachts
+yam yams
+yellowjacket yellowjackets
+youngling younglings
+youtuber youtubers
+zebra zebras
+zircon zircons
+zombie zombies
+zoo zoos
+zookeeper zookeepers zookeeping
+zoologist zoologists
+zoomer zoomers
 # singular quantity
-the final
-the third
+a
 a single
-the only
-the first
 one
 the
-the second
-the last
-a
-# plural quantity
-a few
-three
-400
-five
-55
-75
-111
-99
+the final
 the first
-the
-hundreds of
-80
-50
-420
-a dozen
-ten
+the last
+the only
+the second
+the third
+# plural quantity
+100
+1000
+11
+111
+12
+123
+128
+13
+14
+15
+16
+17
+18
+19
+20
+200
+2000
 22
 222
 25
-six
-66
-32
-200
+250
 256
+30
+300
+3000
+32
 33
-500
-eight
-77
 333
+40
+400
 4000
-15
+420
 44
-20
-many
-100
-90
-999
-thousands of
+444
+50
+500
+5000
+512
+55
 555
 60
-3000
-64
-444
-all
-a billion
-1000
-69
-750
-17
-2000
-nine
-12
-some
-7000
-88
-700
-666
-every
-250
-a million
-123
-the last
-19
-777
-billions of
-11
 600
-300
-70
-888
 6000
-13
-128
-40
-millions of
+64
+66
+666
+69
+70
+700
+7000
+75
+750
+77
+777
+80
 800
-9000
-30
-four
-16
-5000
-18
-two
 8000
+88
+888
+90
+9000
+99
+999
+a billion
+a dozen
+a few
 a gazillion of
-512
 a lot of
-the final
+a million
+a trillion
+all
+billions of
+eight
+every
+five
+four
+hundreds of
+many
+millions of
+nine
 seven
-14
+six
+some
+ten
+the
+thousands of
+three
+trillions of
+two

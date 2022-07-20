@@ -22,11 +22,11 @@ for item in list(wordlist['plural noun']):
         if definition['partOfSpeech'] == 'noun':
           for text in definition['text']:
             if text.startswith('plural of '):
-              return text[len('plural of '):]
+              return text[len('plural of '):].replace('.', '')
     return None
   singular = find_singular()
+  count += 1
   if singular:
-    count += 1
     print(str(count) + '/' + str(len(wordlist['plural noun'])), 'Singular of', item, 'is', singular)
     if not singular in singular_nouns:
       nouns.append(singular + ' ' + item)
@@ -37,23 +37,16 @@ for item in list(wordlist['plural noun']):
 
 print('errors', errors)
 wordlist['plural noun'] = []
+print_stat(wordlist)
 with open('wordlist.md', 'wt') as wordlist_file:
   for category in wordlist:
     print('#', category, file=wordlist_file)
+    wordlist[category] = list(wordlist[category])
+    wordlist[category].sort()
     for word in wordlist[category]:
       print(word, file=wordlist_file)
+
+prep_wordlist(wordlist)
 with open('wordlist.json', 'wt') as wordlist_file:
   print('const wordlist=', end='', file=wordlist_file,flush=True)
-  for i in range(len(wordlist['noun'])):
-    split = wordlist['noun'][i].split()
-    wordlist['noun'][i] = split if len(split) >= 3 else split + [split[0]]
-  wordlist.pop('plural noun', None)
-  wordlist['verb'] = list(wordlist['verb']) + list(wordlist['nocap verb'])
-  wordlist['adjective'] = list(wordlist['adjective']) + list(wordlist['nocap adjective'])
-  wordlist.pop('nocap verb', None)
-  wordlist.pop('nocap adjective', None)
-  def serialize_sets(obj):
-    if isinstance(obj, set):
-      return list(obj)
-  json.dump(wordlist, wordlist_file, default=serialize_sets)
-print_stat(wordlist)
+  json.dump(wordlist, wordlist_file)

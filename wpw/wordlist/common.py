@@ -19,27 +19,14 @@ def load_wordlist(path):
   print('Loaded wordlist')
   return wordlist
 
-def save_wordlist(path, wordlist):
-  with open(path, 'wt') as wordlist_file:
-    if path.endswith('.md'):
-      for category in wordlist:
-        print('#', category, file=wordlist_file)
-        for word in wordlist[category]:
-          print(word, file=wordlist_file)
-    if path.endswith('.json'):
-      print('const wordlist=', end='', file=wordlist_file,flush=True)
-      for i in range(len(wordlist['noun'])):
-        split = wordlist['noun'][i].split()
-        wordlist['noun'][i] = split if len(split) >= 3 else split + [split[0]]
-      wordlist.pop('plural noun', None)
-      wordlist['verb'] = list(wordlist['verb']) + list(wordlist['nocap verb'])
-      wordlist['adjective'] = list(wordlist['adjective']) + list(wordlist['nocap adjective'])
-      wordlist.pop('nocap verb', None)
-      wordlist.pop('nocap adjective', None)
-      def serialize_sets(obj):
-        if isinstance(obj, set):
-          return list(obj)
-      json.dump(wordlist, wordlist_file, default=serialize_sets)
+def prep_wordlist(wordlist):
+  wordlist['noun'] = list(wordlist['noun'])
+  wordlist['firstnoun'] = list(wordlist['firstnoun'])
+  wordlist.pop('plural noun', None)
+  for i in range(len(wordlist['noun'])):
+    split = wordlist['noun'][i].split()
+    wordlist['firstnoun'].append(split[0] if len(split) <= 2 else split[2])
+    wordlist['noun'][i] = split[:2]
 
 def print_stat(wordlist):
   print(len(wordlist), 'categories')

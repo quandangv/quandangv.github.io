@@ -5,8 +5,8 @@ html {
   -moz-osx-font-smoothing:grayscale;
   --ihatethis:187,0,0;
   --animTime:0.2s;
-  --medAnimTime:0.3s;
-  --longAnimTime:1.5s;
+  --medAnimTime:0.35s;
+  --longAnimTime:2s;
   stroke-linecap:round;
   stroke-linejoin:round;
   font-variation-settings: 'CASL' 1;
@@ -15,14 +15,17 @@ html {
   color:var(--colorFg);
   transition:all var(--animTime) ease;
 }
+body{
+  margin:0;
+}
 
+@keyframes fadeIn {
+  0% {opacity:0}
+  100% {opacity:1}
+}
 @keyframes growIn {
   0% {font-size:0;opacity:0}
   100% {font-size:1em;opacity:1}
-}
-@keyframes shrinkOut {
-  0% {font-size:1em;opacity:1}
-  100% {font-size:0;opacity:0}
 }
 @keyframes fadeInDown {
   0% {transform:translateX(-10rem);font-size:0;opacity:0}
@@ -34,20 +37,18 @@ html {
 }
 ::-webkit-scrollbar-track {
   background:transparent;
-  border:1px solid transparent;
   border-radius: 1em;
 }
 ::-webkit-scrollbar-thumb {
-  background:var(--color1);
+  background: linear-gradient(45deg, var(--color1) 25%, var(--color1Hover) 25%, var(--color1Hover) 50%, var(--color1) 50%, var(--color1) 75%, var(--color1Hover) 75%, var(--color1Hover));
   border-radius: 1em;
+  outline:1px solid var(--color1);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background:var(--color1Hover);
-  border-radius: 1em;
+  background: linear-gradient(45deg, var(--color1Focus) 25%, var(--color1Hover) 25%, var(--color1Hover) 50%, var(--color1Focus) 50%, var(--color1Focus) 75%, var(--color1Hover) 75%, var(--color1Hover));
 }
 ::-webkit-scrollbar-thumb:active {
   background:var(--color1Focus);
-  border-radius: 1em;
 }
 ::selection {
   color:white;
@@ -55,7 +56,9 @@ html {
 }
 #shell {
   width:max-content;
+  max-width:100%;
   font-variation-settings: 'MONO' 1;
+  padding:0 0.3em;
 }
 #shellPrefix {
   transition:all var(--animTime) ease;
@@ -63,9 +66,10 @@ html {
 }
 #shellPrefix:hover {
   font-variation-settings: 'CASL' 1;
+  color:var(--color1Hover);
 }
 #shellPrefix > .hidden {
-  transition:all var(--animTime) ease;
+  transition:all var(--medAnimTime) ease;
   font-size:0;
 }
 #shellPrefix:hover > .hidden {
@@ -75,26 +79,32 @@ html {
   margin: 0.5rem 0;
 }
 .suggestions {
-  padding:0.3em 0;
+  padding:0.3em;
   overflow-x:scroll;
   white-space:nowrap;
   font-variation-settings: 'CASL' 1;
 }
 .suggestions > span > span {
   animation: var(--medAnimTime) ease-out 0s 1 growIn;
-  transition:all var(--animTime) ease;
+  transition:all var(--medAnimTime) ease;
   color:var(--color1);
   border-radius:0.3em;
   border:0.1em solid var(--color1);
   cursor:pointer;
   background-color:transparent;
-  padding:0.2em;
-  margin:0 0.3em;
+  padding:0.2em 0 0.2em 0.2em;
   background:transparent;
+  margin:0 0.2em;
+}
+@keyframes shrinkOut {
+  0% {font-size:1em;opacity:1}
+  100% {font-size:0;opacity:0}
 }
 .suggestions > span > span.hidden {
   animation: var(--medAnimTime) ease-out 0s 1 shrinkOut;
+  user-select:none;
   font-size:0;
+  opacity:0;
 }
 .suggestions > span > span:hover {
   color:var(--color1Hover);
@@ -106,19 +116,46 @@ html {
   border-color:var(--color1Focus);
   font-weight:900;
 }
-.suggestions > span > span:first-child {
-  margin-left:0;
+.suggestions > span > span > #hidden {
+  transition:font-size var(--medAnimTime) ease;
+  font-size:0;
+  user-select:none;
 }
-.suggestions > span > span:last-child {
-  margin-right:0;
+.suggestions > span > span > #abbrev {
+  transition:font-size var(--medAnimTime) ease;
+  font-size:1em;
+}
+.suggestions > span > span > #input {
+  transition:font-size var(--animTime) ease;
+  outline:0;
+  font-size:0;
+  color:var(--colorFg);
+}
+.suggestions > span > span.active > #input {
+  font-size:1em;
+}
+.suggestions > span > span > #text {
+  transition:font-size var(--animTime) ease;
+  font-size:1em;
+}
+.suggestions > span > span.active > #text {
+  font-size:0;
+}
+.suggestions > span > span > #enter {
+  background-repeat:no-repeat;
+  background-position:right;
+  user-select:none;
+  display:none;
+}
+.suggestions > span > span.active > #enter {
+  display:unset;
 }
 .suggestions > span > span.active {
   font-weight:800;
 }
 .suggestions > span > span.strong {
-  transition:all var(--animTime) ease;
   color:var(--colorBg);
-  padding:0.3em;
+  padding:0.3em 0.1em 0.3em 0.3em;
   border:0;
   background:var(--color1);
 }
@@ -126,36 +163,30 @@ html {
   border:0;
   outline:0;
 }
-.button.active {
-  transition:all var(--animTime) ease;
-  opacity:1;
-}
 .button {
   transition:all var(--animTime) ease;
-  color:var(--colorBg);
+  color:var(--color1);
   border-radius:0.3em;
   cursor:pointer;
-  background-color:var(--color1);
-  padding:0.3em;
-  opacity:0.3;
+  background-color:transparent;
+  padding:0.1em;
+  border:0.1em solid transparent;
+}
+.button.hidden {
+  opacity:0;
+  pointer-events:none;
 }
 .button:hover {
-  transition:all var(--animTime) ease;
-  opacity:1;
-  background-color:var(--color1Hover);
+  border-color:var(--color1Hover);
 }
 .button:active {
-  opacity:1;
   background-color:var(--color1Focus);
+  border-color:var(--color1Focus);
 }
 .icon {
   background-repeat:no-repeat;
   background-position:center;
   user-select:none;
-}
-.inactive {
-  transition:all var(--animTime) ease;
-  opacity:0.1;
 }
 .title {
   color:var(--color1);
@@ -169,9 +200,8 @@ html {
 .shellBuffer > div {
   animation: var(--medAnimTime) ease-out 0s 1 fadeInDown;
   transition:all var(--animTime) ease;
-  padding:0.5rem;
+  padding:0.3rem;
   overflow-wrap:anywhere;
-  opacity:1;
 }
 .shellBuffer > div:hover {
   font-weight:550;
@@ -193,6 +223,7 @@ html {
 
 #doubleBuffer {
   display:flex;
+  color:var(--color1);
 }
 .hsep {
   border-left:1px solid var(--colorFg);
@@ -201,4 +232,9 @@ html {
 #cmdBuffer {
   min-width:7em;
   font-variation-settings: 'MONO' 1, 'CASL' 1;
+}
+.subtext {
+  font-variation-settings: 'slnt' -15;
+  font-weight:300;
+  cursor:help;
 }
