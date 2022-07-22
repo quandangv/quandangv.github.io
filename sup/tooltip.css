@@ -2,35 +2,39 @@ html{
   --tooltipFont:0.8em;
 }
 .tooltip {
-  user-select:none;
-  transition-property:opacity, font-size;
+  transition-property:all;
   transition-duration:var(--medAnimTime);
   transition-timing-function:ease;
+  user-select:none;
   font-size:0;
-  opacity:0;
   background:var(--colorBg);
   z-index:1000;
   position:absolute;
-  padding:0.3rem;
+  padding:0;
   color:var(--colorFg);
   border-radius:0.3rem;
-  border:1px dashed var(--colorFg);
+  border:1px dashed transparent;
   pointer-events:none;
   font-weight:400;
   font-variation-settings: 'CASL' 1, 'slnt' -15;
   white-space:break-spaces;
   display:block;
+  line-height:1;
+  opacity:0;
+  max-width:10em;
 }
-.tooltiptrigger:hover > .tooltip {
+.tooltiptrigger:hover > .tooltip, .triggered > .tooltip {
   transition-duration:var(--longAnimTime);
-  transition-timing-function:cubic-bezier(0.8, 0, 0.2, 1);
+  transition-timing-function:var(--longTransition);
   font-size:var(--tooltipFont);
+  padding:0.3rem;
+  border-color:var(--colorFg);
   opacity:1;
+  max-width:10000em;
 }
 .triggered > .tooltip {
-  animation: var(--medAnimTime) ease-out 0s 1 fadeIn;
-  opacity:1;
-  font-size:0.75em;
+  transition-duration:var(--medAnimTime);
+  transition-timing-function:ease-out;
   z-index:1001;
 }
 .tooltiptrigger {

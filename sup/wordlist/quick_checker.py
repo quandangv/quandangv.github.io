@@ -47,6 +47,6 @@ with open('wordlist.md', 'wt') as wordlist_file:
       print(word, file=wordlist_file)
 
 prep_wordlist(wordlist)
-with open('wordlist.json', 'wt') as wordlist_file:
+with open('wordlist.js', 'wt') as wordlist_file:
   print('const wordlist=', end='', file=wordlist_file,flush=True)
   json.dump(wordlist, wordlist_file)

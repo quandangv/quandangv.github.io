@@ -11,15 +11,8 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-      const iconTemplate = '<svg width="{size}" height="{size}" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path style="fill:none;stroke:{stroke};stroke-width:{strokeWidth};stroke-linecap:round;stroke-linejoin:round" d="{path}"/></svg>'
-      const inlineIconTemplate = iconTemplate.replaceAll('{size}', '12').replaceAll('{stroke}','#fff').replaceAll('{strokeWidth}', '6')
-      const iconPaths = {enter:'M23,28 9,42 23,56 M52,9 V42 H9'}
-      const getIconUrl = (templateStr, pathStr) => `url("data:image/svg+xml,${encodeURIComponent(templateStr.replace('{path}', pathStr))}")`
-      const inlineIcons = structuredClone(iconPaths)
-      for (const name in inlineIcons)
-        inlineIcons[name] = getIconUrl(inlineIconTemplate, iconPaths[name])
-    </script>
+    <script src='tooltip.js'></script>
+    <script src='icon.js'>/*This depends on rootStyle in tooltip.js*/</script>
     <script>
       function selectElement(elem) {
         const range = document.createRange();
@@ -76,7 +69,6 @@
         return result
       }
     </script>
-    <script src='tooltip.js'></script>
     <div id="root">
       <div class='suggestions'>
         <span><script>
@@ -107,15 +99,16 @@
               elem.range = [item.start, item.end]
             }
             errors.list = []
-            let suffix = ' '
+            let suffix = nonbreakSpace
             errors.update = function(list) {
               this.list = list
               let listI = list.length - 1
               let i = this.childElementCount - 1
-              for (; i >= 0 && listI >= 0; i--) {
+              for (; i >= 0 && listI >= 0; i--) /*pick-existing*/ {
                 const elem = this.children[i]
-                if (elem.classList.contains('hidden') || similar(elem.textElem.innerText, list[listI].text+suffix, 1)) {
+                if (elem.classList.contains('hidden') || similar(elem.textElem.innerText, list[listI].text+suffix)) /*pick-criteria*/ {
                   elem.classList.toggle('hidden', false)
+                  elem.tooltip.updatePos() // mobile-tooltip
                   elem.style.display = null
                   this.setItem(elem, list[listI], suffix)
                   listI--
@@ -125,12 +118,15 @@
               }
               for (; i >= 0; i--)
                 this.children[i].classList.toggle('hidden', true)
-              for (;listI >= 0; listI--) {
+              for (;listI >= 0; listI--) /*create new children for the remaining items*/ {
                 const elem = this.createElement()
                 this.prepend(elem)
                 elem.classList.toggle('hidden', false)
                 this.setItem(elem, list[listI], suffix)
               }
+              // pick-existing: pick available existing children to display list element
+              // pick-criteria: don't pick already visible children to avoid sudden text blinking when the new text is set, but still pick visible children that have similar text
+              // mobile-tooltip: on mobile, the tooltip would unwantedly appear if it was previously triggered on a hidden element. We can't stop it from appearing, so we remedy by updating its position
             }
             function appendCmd(text) {
               let cmd = input.innerText
@@ -194,15 +190,13 @@
               }
               param.enterBtn = enterBtn
               param.appendChild(enterBtn)
-              input.onmousedown = function(e) {
-                e.inputClick = true
-              }
-              param.onmousedown = function(e) {
+              input.onmousedown = e => e.inputClick = true
+              param.onmousedown = function(e) /*hold-focus*/ {
                 if (this.classList.contains('active') && !e.inputClick)
                   e.preventDefault()
               }
               param.onclick = function() {
-                if (!this.classList.contains('active')) {
+                if (!this.classList.contains('active')) /*param-deploy*/ {
                   input.innerText = this.suggestion
                   this.classList.toggle('active', true)
                   this.classList.toggle('tooltiptrigger', false)
@@ -216,6 +210,8 @@
                 param.enterBtn.classList.toggle('triggered', false)
               }
               return param
+              // param-deploy: check if the parameter is not already deployed. If so, deploy its content
+              // hold-focus: if the parameter is deployed and a click lands outside the input but inside the param, cancel that click and keep the focus of the input so that the undeploy listener isn't triggered
             }
             paramOptions.update = errors.update
         </script></span><span><script>
@@ -242,8 +238,10 @@
             }
           }
         </script>
-        <span id='shellPrefix' class='title' onclick='input.resetSelection()'>M<span class='hidden'>eaningful</span>Passwords&gt; </span><span class="unstyled" contenteditable spellcheck='false'><script>
+        <span id='shellPrefix' class='title' onclick='input.resetSelection()'><span class='hidden'>Slightly Understandable </span>Password&gt; </span><span id='shellInput' class="unstyled" contenteditable spellcheck='false'><script>
           const input = document.scripts[document.scripts.length - 1].parentNode
+          input.shellPrefix= document.getElementById('shellPrefix')
+          console.log(input.shellPrefix, document.getElementById('shellPrefix'))
           // Tie parent's command with input content
           input.parentNode.input = input
           input.resetSelection = function () {
@@ -290,13 +288,13 @@
           input.onblur = function() {
             this.onchange(input.innerText)
           }
-        </script></span><span onclick='input.resetSelection()'>&nbsp;</span><span class='icon button' onclick='this.parentNode.sendCommand()'>&nbsp;
+        </script></span><span onclick='input.resetSelection()'>&nbsp;</span><span class='icon button' onclick='this.parentNode.sendCommand()'><span class='hidden'>run</span>&nbsp;&nbsp;&nbsp;
         <script>
           input.enterBtn = document.scripts[document.scripts.length - 1].parentNode
           input.enterBtn.style.backgroundImage = inlineIcons.enter
-          makeTooltipTrigger(input.enterBtn, 'execute the command')
         </script></span>
       </div>
+      <hr/>
       <div id='doubleBuffer'>
         <div id='cmdBuffer' class='shellBuffer'>
           <script>
@@ -344,7 +342,11 @@
               const elem = document.createElement('div')
               elem.innerText = text
               if (subtext) {
-                const subElem = document.createElement('span')
+                let subElem = document.createElement('span')
+                subElem.className = 'subtext'
+                subElem.innerText = ' - '
+                elem.appendChild(subElem)
+                subElem = document.createElement('span')
                 subElem.className = 'subtext'
                 subElem.innerText = subtext
                 if (tooltip != null) {
@@ -378,8 +380,8 @@
           </script>
         </div>
       </div>
-      <script type="text/javascript" src='wordlist/wordlist.json'></script>
-      <script type="text/javascript" src='wordlist/generator.js'></script>
+      <script src='wordlist/wordlist.js'></script>
+      <script src='wordlist/generator.js'></script>
       <script>
         paramType = {
           int: {
@@ -406,9 +408,10 @@
         })
         commands = {children:{
           generate:{
-            help:'generate random meaningful passwords',
+            help:'generate random meaningful passwords from a number of noun groups and connecting words',
             base:generator.phrase.combined,
-            exclusions:[[['groupCount', 'groupSize', 'firstGroupSize'], 'entropy']],
+            exclusions:[[['groupCount', 'groupSize', 'firstGroupSize'], 'size']],
+            prioritizedParam:['size'],
             defaultParam:{groupCount:2, groupSize:2, firstGroupSize:null},
             param:{
               groupCount:{
@@ -429,7 +432,7 @@
               },
             },
             children:{
-              entropy:{
+              size:{
                 base:generator.minEntropy,
                 help:'set a target number of bits of entropy',
                 param:{
@@ -469,6 +472,10 @@
               for (let i = 0; i < group.length; i++)
                 if (typeof group[i] === 'string')
                   group[i] = [group[i]]
+          if (command.prioritizedParam)
+            command.prioritizedParam.reverse()
+          else
+            command.prioritizedParam = []
           if (command.param)
             for (let name in command.param)
               command.param[name].suggestion = command.param[name].suggestion || command.defaultParam[name] || name
@@ -497,6 +504,7 @@
           if (text.trim() == input.oldCmd?.trim()) return
           input.oldCmd = text
           input.enterBtn.classList.toggle('hidden', !text.trim())
+          input.shellPrefix.classList.toggle('blur', !!text.trim())
           input.currentCmd = null
           input.paramValues = {}
           let noSuggestions = false
@@ -515,8 +523,10 @@
           input.errorArr = []
           let position = 0
           let start = 0
-          function addError(text, longText) {
-            input.errorArr.push({text, longText, start, end:position})
+          let commandStart = 0
+          let commandEnd = 0
+          function addError(text, longText, collapsed) {
+            input.errorArr.push({text, longText, start, end:position, collapsed})
           }
           text.split(/\s/).forEach((word, i) => {
             start = position
@@ -539,6 +549,8 @@
                 addError(`expecting value for "${expectingParamName}"`)
             }
             if (input.currentCmd.children && word in input.currentCmd.children) {
+              commandStart = start
+              commandEnd = position
               excludedParams.push(...getExclusions(input.currentCmd, word))
               setCurrentCmd(input.currentCmd.children[word])
               return
@@ -576,6 +588,11 @@
             }
             addError(`unexpected "${word}"`)
           })
+          start = commandStart
+          position = commandEnd
+          for (const param in input.currentCmd.param)
+            if (!(param in input.paramValues) && input.currentCmd.param[param].required)
+              addError('expecting value for ' + param)
           let childArr = []
           let paramArr = []
           if (!noSuggestions) {
@@ -586,7 +603,17 @@
               )
             if (input.currentCmd.param != null) {
               let firstPositional = true
-              paramArr.push(...[...Object.keys(input.currentCmd.param)]
+              const paramNames = [...Object.keys(input.currentCmd.param)]
+              for (const prioritized of input.currentCmd.prioritizedParam) {
+                const index = paramNames.indexOf(prioritized)
+                if (index >= 0) {
+              console.log(paramNames)
+                  paramNames.unshift(...param.splice(index, 1))
+              console.log(paramNames)
+                }
+              }
+              console.log(paramNames)
+              paramArr.push(...paramNames
                 .map(item => {
                   let param = input.currentCmd.param[item]
                   if ('variantOf' in param || item in input.paramValues || excludedParams.includes(item))
@@ -604,8 +631,13 @@
                 })
                 .filter(item => item != null)
               )
+              console.log(paramArr)
             }
           }
+          input.paramValues = {...input.currentCmd.defaultParam, ...input.paramValues}
+          const noError = input.errorArr.length === 0
+          input.enterBtn.classList.toggle('active', noError)
+          input.enterBtn.style.backgroundImage = noError ? bgInlineIcons.enter : inlineIcons.enter
           errors.update(input.errorArr)
           paramOptions.update(paramArr)
           childOptions.update(childArr)
@@ -618,8 +650,8 @@
             outputs.add(input.errorArr.map(item => item.text).join(', '))
           else {
             try {
-              const output = input.currentCmd.base({...input.currentCmd.defaultParam, ...input.paramValues})
-              outputs.add(output[0], ` - ${Math.round(log2(output[1], 16)*100)/100} bits`, `that's out of ${output[1].toLocaleString()} posible passwords`)
+              const output = input.currentCmd.base(input.paramValues)
+              outputs.add(output[0], `${Math.round(log2(output[1], 16)*100)/100} bits`, `that's out of ${output[1].toLocaleString()} posible passwords`)
             } catch (error) {
               console.error(error)
               outputs.add('unknown error, see console')

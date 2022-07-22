@@ -51,11 +51,11 @@ generator.nounGroup.rand = function(size) {
 }
 
 generator.nounGroup.choices = [1]
-generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.noun.length)
-generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.firstnoun.length)
-generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.adjective.length)
-generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * wordlist.adverb.length)
-generator.nounGroup.choices.splice(0, 0, generator.nounGroup.choices[0] * generator.quantityCount)
+generator.nounGroup.choices.unshift(generator.nounGroup.choices[0] * wordlist.noun.length)
+generator.nounGroup.choices.unshift(generator.nounGroup.choices[0] * wordlist.firstnoun.length)
+generator.nounGroup.choices.unshift(generator.nounGroup.choices[0] * wordlist.adjective.length)
+generator.nounGroup.choices.unshift(generator.nounGroup.choices[0] * wordlist.adverb.length)
+generator.nounGroup.choices.unshift(generator.nounGroup.choices[0] * generator.quantityCount)
 generator.nounGroup.choices = generator.nounGroup.choices.map(num => BigInt(num)).reverse()
 console.log(generator.nounGroup.choices)
 

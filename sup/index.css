@@ -7,6 +7,7 @@ html {
   --animTime:0.2s;
   --medAnimTime:0.35s;
   --longAnimTime:2s;
+  --longTransition:cubic-bezier(0.8, 0, 0.2, 1);
   stroke-linecap:round;
   stroke-linejoin:round;
   font-variation-settings: 'CASL' 1;
@@ -27,9 +28,13 @@ body{
   0% {font-size:0;opacity:0}
   100% {font-size:1em;opacity:1}
 }
-@keyframes fadeInDown {
+@keyframes fadeInLeft {
   0% {transform:translateX(-10rem);font-size:0;opacity:0}
   100% {transform:translateX(0);font-size:1em;opacity:1}
+}
+@keyframes whiteToColor {
+  0% {color:white}
+  100% {color:var(--color1)}
 }
 ::-webkit-scrollbar {
   width: 0.5em;
@@ -40,18 +45,18 @@ body{
   border-radius: 1em;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, var(--color1) 25%, var(--color1Hover) 25%, var(--color1Hover) 50%, var(--color1) 50%, var(--color1) 75%, var(--color1Hover) 75%, var(--color1Hover));
+  background-image: linear-gradient(45deg, transparent 25%, var(--color1Hover) 25%, var(--color1Hover) 50%, transparent 50%, transparent 75%, var(--color1Hover) 75%, var(--color1Hover));
+  background-color: var(--color1);
   border-radius: 1em;
-  outline:1px solid var(--color1);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, var(--color1Focus) 25%, var(--color1Hover) 25%, var(--color1Hover) 50%, var(--color1Focus) 50%, var(--color1Focus) 75%, var(--color1Hover) 75%, var(--color1Hover));
+  background-color: var(--color1Hover);
 }
 ::-webkit-scrollbar-thumb:active {
-  background:var(--color1Focus);
+  background-color: var(--color1Focus);
 }
 ::selection {
-  color:white;
+  color:var(--colorBg);
   background:var(--selColor);
 }
 #shell {
@@ -61,28 +66,39 @@ body{
   padding:0 0.3em;
 }
 #shellPrefix {
+  color:var(--colorFg);
   transition:all var(--animTime) ease;
   font-variation-settings: 'CASL' 0;
 }
-#shellPrefix:hover {
-  font-variation-settings: 'CASL' 1;
-  color:var(--color1Hover);
+hr {
+  border-color:var(--color1);
+  margin:1em 0;
+}
+#shellPrefix.blur {
+  color:var(--color1);
 }
 #shellPrefix > .hidden {
   transition:all var(--medAnimTime) ease;
   font-size:0;
+  font-variation-settings: 'CASL' 1, 'slnt' -15;
 }
 #shellPrefix:hover > .hidden {
+  transition-duration:var(--longAnimTime);
+  transition-timing-function:var(--longTransition);
   font-size:1em;
 }
 #root > * {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+  margin-top:0.3em;
+}
+#shellInput {
+  transition:width var(--longAnimTime) ease;
 }
 .suggestions {
-  padding:0.3em;
-  overflow-x:scroll;
-  white-space:nowrap;
+  padding:0.3em 0;
+  overflow-x:auto;
   font-variation-settings: 'CASL' 1;
+  white-space:nowrap;
 }
 .suggestions > span > span {
   animation: var(--medAnimTime) ease-out 0s 1 growIn;
@@ -164,17 +180,36 @@ body{
   outline:0;
 }
 .button {
+  font-variation-settings: 'CASL' 1;
   transition:all var(--animTime) ease;
-  color:var(--color1);
   border-radius:0.3em;
   cursor:pointer;
   background-color:transparent;
   padding:0.1em;
   border:0.1em solid transparent;
+  background-position:right;
+  background-origin:content-box;
+}
+.button.active {
+  background-color:var(--color1);
+  color:var(--colorBg);
+}
+.button.active:hover {
+  background-color:var(--color1Hover);
+}
+.button.active:active {
+  background-color:var(--color1Focus);
 }
 .button.hidden {
   opacity:0;
   pointer-events:none;
+}
+.button > .hidden {
+  transition:all var(--medAnimTime) ease;
+  font-size:0;
+}
+.button.active > .hidden {
+  font-size:1em;
 }
 .button:hover {
   border-color:var(--color1Hover);
@@ -185,7 +220,6 @@ body{
 }
 .icon {
   background-repeat:no-repeat;
-  background-position:center;
   user-select:none;
 }
 .title {
@@ -198,25 +232,20 @@ body{
   width: fit-content;
 }
 .shellBuffer > div {
-  animation: var(--medAnimTime) ease-out 0s 1 fadeInDown;
+  animation: var(--medAnimTime) ease-out 0s 1 fadeInLeft, var(--longAnimTime) linear 0s 1 whiteToColor;
   transition:all var(--animTime) ease;
-  padding:0.3rem;
+  padding:1em 0.3rem;
+  padding-top:0;
   overflow-wrap:anywhere;
 }
 .shellBuffer > div:hover {
-  font-weight:550;
+  font-weight:600;
+  color:var(--color1Hover)
+  font-variation-settings: 'CASL' 0;
 }
 .shellBuffer > div.selected {
   font-weight:800;
 }
-#cmdBuffer > div.selected {
-  font-variation-settings: 'MONO' 1, 'CASL' 0;
-}
-
-#resultBuffer > div.selected {
-  font-variation-settings: 'CASL' 0;
-}
-
 .bufferMap {
   width:1rem;
 }
@@ -224,6 +253,7 @@ body{
 #doubleBuffer {
   display:flex;
   color:var(--color1);
+  font-variation-settings: 'CASL' 0;
 }
 .hsep {
   border-left:1px solid var(--colorFg);
@@ -231,10 +261,12 @@ body{
 }
 #cmdBuffer {
   min-width:7em;
-  font-variation-settings: 'MONO' 1, 'CASL' 1;
+  font-variation-settings: 'MONO' 1;
 }
 .subtext {
-  font-variation-settings: 'slnt' -15;
+  font-variation-settings: 'slnt' -15, 'CASL' 1;
   font-weight:300;
+}
+.subtext.tooltiptrigger {
   cursor:help;
 }

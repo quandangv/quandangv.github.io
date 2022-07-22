@@ -2347,7 +2347,6 @@ apprehended
 approached
 armed
 arrested
-asked
 assailed
 assassinated
 assaulted
@@ -2925,6 +2924,7 @@ vassalized
 venerated
 vibrated
 vilified
+violated
 visited
 vomited
 wakened
@@ -3531,7 +3531,6 @@ dogwalker dogwalkers dogwalking
 doll dolls
 dolphin dolphins
 domain domains
-dominatrix dominatrixes
 donkey donkeys
 donor donors
 donut donuts
