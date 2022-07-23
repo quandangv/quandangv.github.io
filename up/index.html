@@ -70,9 +70,10 @@
       }
     </script>
     <div id="root">
-      <div class='suggestions'>
+      <div id='suggestions'>
         <span><script>
             const errors = document.scripts[document.scripts.length - 1].parentNode;
+            const suggestions = errors.parentNode;
             errors.removeChild(errors.lastChild)
             errors.createElement = function() {
               const elem = document.createElement('span')
@@ -504,7 +505,7 @@
           if (text.trim() == input.oldCmd?.trim()) return
           input.oldCmd = text
           input.enterBtn.classList.toggle('hidden', !text.trim())
-          input.shellPrefix.classList.toggle('blur', !!text.trim())
+          suggestions.classList.toggle('hot', !text.trim())
           input.currentCmd = null
           input.paramValues = {}
           let noSuggestions = false

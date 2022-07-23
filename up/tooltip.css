@@ -7,7 +7,7 @@ html{
   transition-timing-function:ease;
   user-select:none;
   font-size:0;
-  background:var(--colorBg);
+  background:transparent;
   z-index:1000;
   position:absolute;
   padding:0;
@@ -20,7 +20,6 @@ html{
   white-space:break-spaces;
   display:block;
   line-height:1;
-  opacity:0;
   max-width:10em;
 }
 .tooltiptrigger:hover > .tooltip, .triggered > .tooltip {
@@ -28,9 +27,9 @@ html{
   transition-timing-function:var(--longTransition);
   font-size:var(--tooltipFont);
   padding:0.3rem;
-  border-color:var(--colorFg);
-  opacity:1;
   max-width:10000em;
+  border-color:var(--colorFg);
+  background:var(--colorBg);
 }
 .triggered > .tooltip {
   transition-duration:var(--medAnimTime);

@@ -66,16 +66,13 @@ body{
   padding:0 0.3em;
 }
 #shellPrefix {
-  color:var(--colorFg);
+  color:var(--color1);
   transition:all var(--animTime) ease;
   font-variation-settings: 'CASL' 0;
 }
 hr {
   border-color:var(--color1);
   margin:1em 0;
-}
-#shellPrefix.blur {
-  color:var(--color1);
 }
 #shellPrefix > .hidden {
   transition:all var(--medAnimTime) ease;
@@ -94,18 +91,22 @@ hr {
 #shellInput {
   transition:width var(--longAnimTime) ease;
 }
-.suggestions {
+#suggestions {
   padding:0.3em 0;
   overflow-x:auto;
   font-variation-settings: 'CASL' 1;
   white-space:nowrap;
+  --localColor:var(--color1);
 }
-.suggestions > span > span {
+#suggestions.hot {
+  --localColor:var(--colorFg);
+}
+#suggestions > span > span {
   animation: var(--medAnimTime) ease-out 0s 1 growIn;
   transition:all var(--medAnimTime) ease;
-  color:var(--color1);
+  color:var(--localColor);
   border-radius:0.3em;
-  border:0.1em solid var(--color1);
+  border:0.1em solid var(--localColor);
   cursor:pointer;
   background-color:transparent;
   padding:0.2em 0 0.2em 0.2em;
@@ -116,64 +117,60 @@ hr {
   0% {font-size:1em;opacity:1}
   100% {font-size:0;opacity:0}
 }
-.suggestions > span > span.hidden {
+#suggestions > span > span.hidden {
   animation: var(--medAnimTime) ease-out 0s 1 shrinkOut;
   user-select:none;
   font-size:0;
   opacity:0;
 }
-.suggestions > span > span:hover {
-  color:var(--color1Hover);
-  border-color:var(--color1Hover);
-  font-weight:800;
+#suggestions > span > span:hover {
+  font-weight:700;
 }
-.suggestions > span > span:active {
-  color:var(--color1Focus);
-  border-color:var(--color1Focus);
+#suggestions > span > span:active {
   font-weight:900;
 }
-.suggestions > span > span > #hidden {
+#suggestions > span > span > #hidden {
   transition:font-size var(--medAnimTime) ease;
   font-size:0;
   user-select:none;
 }
-.suggestions > span > span > #abbrev {
+#suggestions > span > span > #abbrev {
   transition:font-size var(--medAnimTime) ease;
   font-size:1em;
 }
-.suggestions > span > span > #input {
+#suggestions > span > span > #input {
   transition:font-size var(--animTime) ease;
   outline:0;
   font-size:0;
   color:var(--colorFg);
 }
-.suggestions > span > span.active > #input {
+#suggestions > span > span.active > #input {
   font-size:1em;
 }
-.suggestions > span > span > #text {
+#suggestions > span > span > #text {
   transition:font-size var(--animTime) ease;
   font-size:1em;
 }
-.suggestions > span > span.active > #text {
+#suggestions > span > span.active > #text {
   font-size:0;
 }
-.suggestions > span > span > #enter {
+#suggestions > span > span > #enter {
   background-repeat:no-repeat;
   background-position:right;
   user-select:none;
   display:none;
 }
-.suggestions > span > span.active > #enter {
+#suggestions > span > span.active > #enter {
   display:unset;
 }
-.suggestions > span > span.active {
+#suggestions > span > span.active {
   font-weight:800;
 }
-.suggestions > span > span.strong {
+#suggestions > span > span.strong {
   color:var(--colorBg);
   padding:0.3em 0.1em 0.3em 0.3em;
   border:0;
-  background:var(--color1);
+  background:var(--localColor);
 }
 .unstyled {
   border:0;
@@ -185,10 +182,11 @@ hr {
   border-radius:0.3em;
   cursor:pointer;
   background-color:transparent;
-  padding:0.1em;
+  padding:0 0.2em;
   border:0.1em solid transparent;
   background-position:right;
   background-origin:content-box;
+  font-weight:400;
 }
 .button.active {
   background-color:var(--color1);
@@ -205,18 +203,20 @@ hr {
   pointer-events:none;
 }
 .button > .hidden {
-  transition:all var(--medAnimTime) ease;
+  transition:all var(--animTime) ease;
   font-size:0;
 }
 .button.active > .hidden {
   font-size:1em;
 }
 .button:hover {
-  border-color:var(--color1Hover);
+  border-color:var(--color1);
+  font-weight:700;
 }
 .button:active {
-  background-color:var(--color1Focus);
-  border-color:var(--color1Focus);
+  background-color:var(--color1);
+  border-color:var(--color1);
+  font-weight:900;
 }
 .icon {
   background-repeat:no-repeat;
