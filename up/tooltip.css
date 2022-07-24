@@ -2,7 +2,7 @@ html{
   --tooltipFont:0.8em;
 }
 .tooltip {
-  transition-property:all;
+  transition-property:font-size, padding, border-color, max-width, background;
   transition-duration:var(--medAnimTime);
   transition-timing-function:ease;
   user-select:none;

@@ -14,6 +14,19 @@
     <script src='tooltip.js'></script>
     <script src='icon.js'>/*This depends on rootStyle in tooltip.js*/</script>
     <script>
+      const colorList = ['pink', 'blue', 'red', 'lightBlue', 'cyan']
+      const theme = document.documentElement.style
+      function setTheme({color, dark}={}) {
+        dark = dark && dark !== 'light' ? 'dark-' : ''
+        theme.setProperty('--color1', `var(--${dark}${color})`)
+        theme.setProperty('--color1Hover', `var(--${dark}${color}Hover)`)
+        theme.setProperty('--color1Focus', `var(--${dark}${color}Focus)`)
+        theme.setProperty('--selColor', `var(--${dark}${color}Sel)`)
+        theme.setProperty('--colorBg', `var(--${dark}${color}Bg)`)
+        theme.setProperty('--colorFg', `var(--${dark?'dark':'light'}Fg)`)
+        updateIcons()
+        return 'Theme changed!'
+      }
       function selectElement(elem) {
         const range = document.createRange();
         range.selectNodeContents(elem);
@@ -153,11 +166,15 @@
               param.textElem.innerText = item.text + suffix
               param.tooltip.innerText = item.help || ''
               param.suggestion = item.suggestion
-              let inputHelp = ''
+              console.log(item)
               const type = item.type
-              inputHelp = 'enter ' + type.desc
-              param.enterBtn.tooltip.innerText = inputHelp
-              param.enterBtn.classList.toggle('tooltiptrigger', !!inputHelp)
+              if (!type.noInput) {
+                let inputHelp = ''
+                inputHelp = 'enter ' + type.desc
+                param.enterBtn.tooltip.innerText = inputHelp
+                param.enterBtn.classList.toggle('tooltiptrigger', !!inputHelp)
+              } else
+                param.noInput = type.noInput
             }
             paramOptions.createElement = function() {
               const param = createSuggestion()
@@ -198,11 +215,15 @@
               }
               param.onclick = function() {
                 if (!this.classList.contains('active')) /*param-deploy*/ {
-                  input.innerText = this.suggestion
-                  this.classList.toggle('active', true)
-                  this.classList.toggle('tooltiptrigger', false)
-                  setTimeout(() => this.enterBtn.triggerTooltip(2500), medAnimTime)
-                  selectElement(input)
+                  if (this.noInput) {
+                    appendCmd(this.textElem.innerText)
+                  } else {
+                    input.innerText = this.suggestion
+                    this.classList.toggle('active', true)
+                    this.classList.toggle('tooltiptrigger', false)
+                    setTimeout(() => this.enterBtn.triggerTooltip(2500), medAnimTime)
+                    selectElement(input)
+                  }
                 }
               }
               input.onblur = function() {
@@ -385,11 +406,20 @@
       <script src='wordlist/generator.js'></script>
       <script>
         paramType = {
-          int: {
+          int:{
             desc:'an integer',
             shortDesc:'int',
             check:num => !isNaN(num),
             parse:str => Number(str),
+          },
+          none:{
+            noInput:true,
+            parse:val => val,
+            check:val => false,
+          },
+          string:{
+            parse:val => val,
+            check:val => false,
           },
         }
         paramType.intFrom = min => ({...paramType.int,
@@ -406,6 +436,11 @@
           desc:`an integer between ${min} and ${max}`,
           shortDesc:`intBetween(${min}, ${max})`,
           check:num => isNaN(num) || num < min || num > max,
+        })
+        paramType.choices = (name, choices) => ({...paramType.string,
+          desc:'one of '+choices.join(', '),
+          shortDesc:name,
+          check:val => !choices.includes(val),
         })
         commands = {children:{
           generate:{
@@ -466,6 +501,21 @@
               },
             },
           },
+          theme:{
+            base:setTheme,
+            help:'set the theme of the page',
+            param:{
+              color:{
+                type:paramType.choices('a color', colorList),
+                positional:true,
+                options:colorList.map(name => ({text:name, color:name})),
+                help:'the color scheme for the theme',
+              },
+              dark:{
+                help:'activate dark mode',
+              },
+            },
+          },
         }}
         function prepCommand(command) {
           if (command.exclusions)
@@ -477,9 +527,15 @@
             command.prioritizedParam.reverse()
           else
             command.prioritizedParam = []
+          if (command.defaultParam == null)
+            command.defaultParam = {}
           if (command.param)
-            for (let name in command.param)
-              command.param[name].suggestion = command.param[name].suggestion || command.defaultParam[name] || name
+            for (let name in command.param) {
+              const param = command.param[name]
+              param.suggestion = param.suggestion || command.defaultParam[name] || name
+              if (param.type == null)
+                param.type = paramType.none
+            }
           for (let child in command.children)
             prepCommand(command.children[child])
         }
@@ -539,7 +595,6 @@
             if (expectingParamName) {
               if (!word.startsWith('-')) {
                 const param = input.currentCmd.param[expectingParamName]
-                console.log(word)
                 word = param.type.parse(word)
                 if (param.type.check(word))
                   addError(`${expectingParamName} must be ${param.type.shortDesc}`, `parameter ${expectingParamName} must be ${param.type.desc}`)
@@ -566,14 +621,16 @@
                   const param = input.currentCmd.param[word]
                   if (word in input.currentCmd.defaultParam || param.required)
                     expectingParamName = word
-                  return
                 } else addError(`unknown switch --${word}`)
+                return
               } else {
                 for (; paramIndex < paramNames.length; paramIndex++) {
                   const paramName = paramNames[paramIndex]
                   const param = input.currentCmd.param[paramName]
                   if (param.positional) {
+                    console.log(param.type)
                     word = param.type.parse(word)
+                    console.log(param.type.check(word), word, colorList.includes(word))
                     if (param.type.check(word))
                       addError(`$${paramIndex+1} must be ${param.type.shortDesc}`, `parameter ${paramIndex+1} must be ${param.type.desc}`)
                     else
@@ -613,7 +670,7 @@
               console.log(paramNames)
                 }
               }
-              console.log(paramNames)
+              console.log(paramNames, input.paramValues, excludedParams)
               paramArr.push(...paramNames
                 .map(item => {
                   let param = input.currentCmd.param[item]
@@ -651,8 +708,12 @@
             outputs.add(input.errorArr.map(item => item.text).join(', '))
           else {
             try {
+              console.log(input.paramValues)
               const output = input.currentCmd.base(input.paramValues)
-              outputs.add(output[0], `${Math.round(log2(output[1], 16)*100)/100} bits`, `that's out of ${output[1].toLocaleString()} posible passwords`)
+              if (typeof output === 'string')
+                outputs.add(output)
+              else
+                outputs.add(output[0], `${Math.round(log2(output[1], 16)*100)/100} bits`, `that's out of ${output[1].toLocaleString()} posible passwords`)
             } catch (error) {
               console.error(error)
               outputs.add('unknown error, see console')
