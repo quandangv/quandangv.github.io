@@ -1,4 +1,4 @@
-const rootStyle = getComputedStyle(document.documentElement)
+'use strict';
 const rem2px = parseFloat(rootStyle.fontSize)
 const minTooltipWidth = 6*rem2px
 const maxTooltipHeight = 10*rem2px
