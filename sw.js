@@ -5,6 +5,7 @@ var cacheStorageKey = 'notes-1'
 var cacheList = [
   '/',
   "index.html",
+  "favicon.svg",
 ]
 
 self.addEventListener('install', function(e) {

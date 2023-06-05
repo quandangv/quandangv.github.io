@@ -2,7 +2,7 @@
   "name": "Notes PWA",
   "short_name": "Notes",
   "display": "standalone",
-  "start_url": "/notes",
+  "start_url": "/",
   "theme_color": "#313131",
   "background_color": "#313131",
   "icons": [
