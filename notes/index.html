@@ -1,0 +1,106 @@
+<html>
+<head>
+  <style>
+    .title {
+      font-size:1.5em;
+    }
+  </style>
+  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml"/>
+</head>
+<body>
+  <h1>Notes</h1>
+  <div id="toolbar" style="display:flex; flex-direction:row"></div>
+  <div id="notes"></div>
+  <script>
+    if (navigator.serviceWorker != null) {
+      navigator.serviceWorker.register('sw.js')
+      .then(function(registration) {
+        // Registered events at scope: registration.scope
+      });
+    }
+
+    const noteList = document.getElementById('notes')
+    const toolbar = document.getElementById('toolbar')
+    const texts = {newNote:'New Note', deleteNote:'Delete Note', changeText:'Change Text', changeDesc:'Change Description'}
+    const nulls = [
+      ['newNote', _=>{
+        const text = prompt('Enter a title')
+        if(text == null)
+          return
+        const desc = prompt('Enter a description (optional)')
+        notes.push({text, desc})
+        updNotes()
+      }],
+    ]
+    const uiMatch = (ui, data, create, update) => {
+      for(let i = ui.children.length; i --> data.length;)
+        ui.removeChild(ui.children[i])
+      for(; data.length != ui.children.length;)
+        ui.appendChild(create())
+      for(let i = data.length; i --> 0;) {
+        update(ui.children[i], data[i])
+      }
+    }
+    const updToolbar = actions => {
+      toolbar.pulldown?.()
+      toolbar.pulldown = null
+      uiMatch(toolbar, actions, _=>document.createElement('button'), (btn, a) => {
+        btn.innerText = texts[a[0]]
+        btn.onclick = a[1]
+      })
+    }
+    updToolbar(nulls)
+    let tmp
+    try {
+      tmp = JSON.parse(localStorage.getItem('notes')).filter(item => item?.text)
+    } catch(_) {
+      tmp = null
+    }
+    if(!Array.isArray(tmp))
+      tmp = []
+    const notes = tmp
+    const updNotes = _=> {
+      localStorage.setItem('notes', JSON.stringify(notes))
+      uiMatch(noteList, notes, _=>{
+        const box = document.createElement('div')
+        const text = document.createElement('p')
+        text.className = 'title'
+        const desc = document.createElement('p')
+        box.appendChild(text)
+        box.appendChild(desc)
+        box.text = text
+        box.desc = desc
+        return box
+      }, (elem, note) => {
+        elem.text.innerText = note.text
+        elem.desc.innerText = note.desc
+        const elemActions = [
+          ['deleteNote', _=>{
+            notes.splice(notes.indexOf(note), 1)
+            updToolbar(nulls)
+            updNotes()
+          }],
+          ['changeText', _=>{
+            note.text = prompt('Enter a note')
+            updNotes()
+          }],
+          ['changeDesc', _=>{
+            note.desc = prompt('Enter a description')
+            updNotes()
+          }],
+        ]
+        elem.onclick = _=> {
+          if(elem.text.style.fontWeight == '600')
+            updToolbar(nulls)
+          else {
+            updToolbar(elemActions)
+            toolbar.pulldown = _=> elem.text.style.fontWeight = '400'
+            elem.text.style.fontWeight = '600'
+          }
+        }
+      })
+    }
+    updNotes()
+  </script>
+</body>
+</html>
