@@ -1,0 +1,354 @@
+<html>
+<head>
+ <style>
+  :root {
+   font-size:1.5vmax;
+   touch-action: manipulation;
+  }
+  @font-face {
+   font-family: "iosevkanerd";
+   src: url("font.ttf");
+  }
+  * {
+   font-family: "iosevkanerd";
+  }
+  body {
+   font-size: 3rem;
+   height: calc(100vh - 0.5rem - 0.5rem);
+   background-color: black;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   padding: 0.5rem 0;
+  }
+  body > * {
+   flex: 1;
+   margin: 0.5rem;
+   display: flex;
+   flex-direction: row;
+  }
+  body > div > * {
+   flex: 1 0;
+   margin: 0 0.5rem;
+  }
+  body > textarea {
+   resize:none;
+   color:white;
+   background-color: #0000;
+   border:0;
+   outline:0;
+   word-break:break-all;
+  }
+  body > span {
+   color:#fff8;
+  }
+  .main {
+   font-size:1.5em;
+   flex:1.5;
+   transition-property: flex, font-size, color, text-shadow;
+   transition-duration: 1s;
+  }
+  .long {
+   font-size:1em;
+  }
+  button.long {
+   font-size:0.7em;
+  }
+  .hint {
+   font-size:0.5em;
+   flex:0 0 1.3em;
+   min-height:1.3em;
+   transition-property: flex, font-size;
+   transition-duration: 1s;
+  }
+  button {
+   border: 0;
+   border-radius: 0.5em;
+   font-size:1em;
+   background-color: #fb06;
+   color: #bbb;
+   transition-property: background-color, border-color;
+   transition-duration: 2s;
+   border-left: #0000 0.3rem solid;
+   border-right: #0000 0.3rem solid;
+  }
+  button:hover, .hit {
+   color: #fff;
+   text-shadow: #fffa 0 0 0.3rem;
+  }
+  .hit {
+   transition-property:flex, font-size;
+  }
+  button.clear {
+   background-color:#0000;
+   border: #0000 0.3rem solid;
+  }
+  button.light {
+   background-color:#fb03;
+   border: #fb02 0.3rem solid;
+   border-top:0;
+   border-bottom:0;
+  }
+  button:active {
+   transition-duration: 0s;
+   background-color: #fb08;
+   border-color:#fb00;
+  }
+  button.light:active {
+   background-color: #fb05;
+  }
+  button.clear:active {
+   background-color: #fb03;
+  }
+  script {display:none}
+  .left {
+   margin-right: 0;
+   border-radius: 0.5em 0 0 0.5em;
+   border-left: #fb02 0.3rem solid;
+   flex:0.5;
+  }
+  .right {
+   margin-left: 0;
+   border-radius: 0 0.5em 0.5em 0;
+   border-right: #fb02 0.3rem solid;
+   flex:0.5;
+  }
+  .mid {
+   margin: 0;
+   border-radius: 0;
+  }
+ </style
+</head>
+<body>
+ <script src='calc.js'></script>
+ <script>
+  function createElem(type, parent) {
+   const elem = document.createElement(type)
+   parent.appendChild(elem)
+   return elem
+  }
+  const createBtn = parent => createElem('button', parent)
+  let controls = createElem('div', document.body)
+  controls.className = 'hint'
+  let cell = createBtn(controls)
+  cell.className = 'light'
+  cell.innerText = ' result'
+  cell = createBtn(controls)
+  cell.className = 'light'
+  cell.innerText = ' formula'
+  cell = createBtn(controls)
+  cell.className = 'light'
+  cell.innerText = 'clear'
+  cell.onclick = _=> {
+   txt.value = ''
+   txt.oninput()
+  }
+  const hint = createElem('span', document.body)
+  hint.className = 'hint'
+  const txt = createElem('textarea', document.body)
+  txt.setAttribute('spellcheck', false)
+  txt.className = 'main'
+  const cells = []
+  for(let i = 5; i --> 0;) {
+   const row = document.createElement('div')
+   document.body.appendChild(row)
+   for(let j = 4; j --> 0;) {
+    cells.push(createBtn(row))
+   }
+  }
+  controls = document.createElement('div')
+  document.body.appendChild(controls)
+  cell = createBtn(controls)
+  cell.className = 'left'
+  cell.innerText = '⟨'
+  cell.onclick = _=> {
+   page--
+   if(page == -1)
+    page = pages.length-1
+   pageupdate()
+  }
+  cell = createBtn(controls)
+  cell.className = 'mid'
+  cell.innerText = '󰭜'
+  cell.onclick = _=> {
+    txt.value = txt.value.slice(0, txt.selectionStart - (txt.selectionEnd > txt.selectionStart ? 0 : 1)) + txt.value.slice(txt.selectionEnd, Infinity)
+    txt.oninput()
+  }
+  cell = createBtn(controls)
+  cell.className = 'mid'
+  cell.innerText = '='
+  const showResult = _=> {
+   hint.innerText = evaluate().join(', ')
+   hint.classList.add('hit')
+   setTimeout(_=>hint.classList.remove('hit'))
+   txt.classList.add('hint')
+   txt.classList.remove('main')
+   hint.classList.add('main')
+   hint.classList.remove('hint')
+  }
+  cell.onclick = showResult
+  txt.onkeypress = e=> {
+   if(e.keyCode == '13') {
+    showResult()
+    e.preventDefault()
+   }
+  }
+  cell = createBtn(controls)
+  cell.className = 'right'
+  cell.innerText = '⟩'
+  cell.onclick = _=> {
+   page++
+   if(page == pages.length)
+    page = 0
+   pageupdate()
+  }
+  let pages = [
+   [
+    {label:'√', cmd:'"4" "()sqrt" ()hintinsert', style:'light'},
+    {label:'π', cmd:'"pi" ()insert', style:'light'},
+    {label:'󱅖', cmd:'"6" "()rand" ()hintinsert', style:'light'},
+    {label:'xⁿ', cmd:'"^" ()insert', style:'light'},
+    {label:'7', cmd:'"7" ()insert', style:'clear'},
+    {label:'8', cmd:'"8" ()insert', style:'clear'},
+    {label:'9', cmd:'"9" ()insert', style:'clear'},
+    {label:'÷', cmd:'"/" ()insert', style:'light'},
+    {label:'4', cmd:'"4" ()insert', style:'clear'},
+    {label:'5', cmd:'"5" ()insert', style:'clear'},
+    {label:'6', cmd:'"6" ()insert', style:'clear'},
+    {label:'×', cmd:'"*" ()insert', style:'light'},
+    {label:'1', cmd:'"1" ()insert', style:'clear'},
+    {label:'2', cmd:'"2" ()insert', style:'clear'},
+    {label:'3', cmd:'"3" ()insert', style:'clear'},
+    {label:'-', cmd:'"-" ()insert', style:'light'},
+    {label:'␣', cmd:'" " ()insert', style:'clear'},
+    {label:'0', cmd:'"0" ()insert', style:'clear'},
+    {label:'.', cmd:'"." ()insert', style:'clear'},
+    {label:'+', cmd:'"+" ()insert', style:'light'},
+   ],
+   [
+    {label:'sin', cmd:'~radian if{ "45" "*pi/180()sin" , "pi/4" "()sin" } ()hintinsert', style:'light'},
+    {label:'cos', cmd:'~radian if{ "45" "*pi/180()cos" , "pi/4" "()cos" } ()hintinsert', style:'light'},
+    {label:'tan', cmd:'~radian if{ "45" "*pi/180()tan" , "pi/4" "()tan" } ()hintinsert', style:'light'},
+    {label:'rad', cmd:'radian ~ =_ _ if{ "rad" , "deg" } label()', style:''},
+    {label:'arc\nsin', cmd:'"0.5" "()arcsin" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ncos', cmd:'"0.5" "()arccos" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ntan', cmd:'"0.5" "()arctan" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'exp', cmd:'"2" "()exp" ()hintinsert', style:'light'},
+    {label:'sinh', cmd:'~radian if{ "45" "*pi/180()sinh" , "pi/4" "()sinh" } ()hintinsert', style:'light long'},
+    {label:'cosh', cmd:'~radian if{ "45" "*pi/180()cosh" , "pi/4" "()cosh" } ()hintinsert', style:'light long'},
+    {label:'tanh', cmd:'~radian if{ "45" "*pi/180()tanh" , "pi/4" "()tanh" } ()hintinsert', style:'light long'},
+    {label:'ln', cmd:'"10" "()ln" ()hintinsert', style:'light'},
+    {label:'arc\nsinh', cmd:'"0.5" "()arcsinh" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ncosh', cmd:'"0.5" "()arccosh" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ntanh', cmd:'"0.5" "()arctanh" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'logx', cmd:'"10()ln " ()insert "x" "()ln/" hintedinsert()', style:'light long'},
+   ]
+  ]
+  let page = 0
+  function txtinsert(word) {
+   const pos = txt.selectionStart
+   txt.value = txt.value.slice(0, txt.selectionStart) + word + txt.value.slice(txt.selectionEnd, Infinity)
+   return pos
+  }
+  const buttonscope = {
+   radian:true,
+   insert:function(word) {
+    const pos = txtinsert(word) + word.length
+    txt.setSelectionRange(pos, pos)
+   },
+   wordinsert:function(word) {
+    const separators = [' ', undefined, null]
+    if(!separators.includes(txt.value[txt.selectionStart-1]))
+     word = ' ' + word
+    if(!separators.includes(txt.value[txt.selectionEnd]))
+     word += ' '
+    const pos = txtinsert(word) + word.length
+    txt.setSelectionRange(pos, pos)
+   },
+   hintinsert:function(hint, word) {
+    const pos = txtinsert(word) + word.length
+    if(txt.value.length == word.length) {
+     txt.value = hint + word
+     txt.setSelectionRange(0, hint.length)
+    } else
+     txt.setSelectionRange(pos, pos)
+   },
+   hintedinsert:function(hint, word) {
+    const pos = txtinsert(hint + word)
+    txt.setSelectionRange(pos, pos + hint.length)
+   },
+  }
+  const evalscope = {
+   pi:Math.PI, e:Math.E,
+   sqrt:a=>Math.sqrt(a),
+   sin:a=>Math.sin(a),
+   cos:a=>Math.cos(a),
+   tan:a=>Math.tan(a),
+   sinh:a=>Math.sinh(a),
+   cosh:a=>Math.cosh(a),
+   tanh:a=>Math.tanh(a),
+   arcsin:a=>Math.asin(a),
+   arccos:a=>Math.acos(a),
+   arctan:a=>Math.atan(a),
+   arcsinh:a=>Math.asinh(a),
+   arccosh:a=>Math.acosh(a),
+   arctanh:a=>Math.atanh(a),
+   ln:a=>Math.log(a),
+   log10:a=>Math.log10(a),
+   log2:a=>Math.log2(a),
+   cbrt:a=>Math.cbrt(a),
+   exp:a=>Math.exp(a),
+   rand:lim=>Math.floor(Math.random() * lim),
+  }
+  const evaluate = _=> {
+   const exe = compile(txt.value)
+   const stack = []
+   execute(exe, stack, evalscope)
+   return stack
+  }
+  const run = (script, cell) => {
+   const exe = compile(script)
+   const debug = compile(script, false)
+   return _=> {
+    buttonscope.label = name => cell.innerText = name
+    execute(exe, [], buttonscope)
+    txt.oninput()
+   }
+  }
+  txt.oninput = _=> {
+   hint.innerText = evaluate().join(', ')
+   if(txt.value.length > 10)
+    txt.classList.add('long')
+   if(txt.value.length == 0)
+    txt.classList.remove('long')
+   txt.onclick()
+   txt.focus()
+  }
+  txt.onclick = _=> {
+   txt.classList.add('main')
+   txt.classList.remove('hint')
+   hint.classList.add('hint')
+   hint.classList.remove('main')
+  }
+  const pageupdate = _=> {
+   const current = pages[page]
+   for(let i = cells.length; i --> 0;) {
+    let c = current[i]
+    const cell = cells[i]
+    if(!c) {
+     cell.style.display = 'none'
+    } else {
+     cell.style.display = null
+     cell.innerText = c.label
+     cell.className = c.style
+     cell.onclick = run(c.cmd, cell)
+     cell.style.transitionDuration = '0s'
+     setTimeout(_=>cell.style.transitionDuration = null)
+    }
+   }
+  }
+  pageupdate()
+  txt.focus()
+ </script>
+</body>
+</html>

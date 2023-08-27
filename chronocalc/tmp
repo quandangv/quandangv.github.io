@@ -1,0 +1,14 @@
+{ 0=$i <init> $i <len> < -> i <loop> i+1=i <- } rmod{
+ stack.0 .isnum if{
+  :0 .isconst iftmpl{
+   :r "len" <len> ()$replace <init> :0 .append() ,
+   :0 .value , { ()discard } ,
+   { $l } , { =$l }
+  }
+ }
+}
+
+{ 0=$i <init> $i <len> < -> i <loop> i+1=i <- } rmod{
+ 0.stack if,isnum.
+  iftmp,isconst.:0{
+   ()$replace,<>,"len",:r ()append,:0,<> ,
