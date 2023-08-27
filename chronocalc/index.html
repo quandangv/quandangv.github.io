@@ -226,21 +226,21 @@
     {label:'+', cmd:'"+" ()insert', style:'light'},
    ],
    [
-    {label:'sin', cmd:'~radian if{ "45" "*pi/180()sin" , "pi/4" "()sin" } ()hintinsert', style:'light'},
-    {label:'cos', cmd:'~radian if{ "45" "*pi/180()cos" , "pi/4" "()cos" } ()hintinsert', style:'light'},
-    {label:'tan', cmd:'~radian if{ "45" "*pi/180()tan" , "pi/4" "()tan" } ()hintinsert', style:'light'},
-    {label:'rad', cmd:'radian ~ =_ _ if{ "rad" , "deg" } label()', style:''},
-    {label:'arc\nsin', cmd:'"0.5" "()arcsin" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
-    {label:'arc\ncos', cmd:'"0.5" "()arccos" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
-    {label:'arc\ntan', cmd:'"0.5" "()arctan" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'sin', cmd:'~radian ?{ "45" "*pi/180()sin" , "pi/4" "()sin" } ()hintinsert', style:'light'},
+    {label:'cos', cmd:'~radian ?{ "45" "*pi/180()cos" , "pi/4" "()cos" } ()hintinsert', style:'light'},
+    {label:'tan', cmd:'~radian ?{ "45" "*pi/180()tan" , "pi/4" "()tan" } ()hintinsert', style:'light'},
+    {label:'rad', cmd:'radian ~ =_ _ ?{ "rad" , "deg" } label()', style:''},
+    {label:'arc\nsin', cmd:'"0.5" "()arcsin" ~radian ?{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ncos', cmd:'"0.5" "()arccos" ~radian ?{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ntan', cmd:'"0.5" "()arctan" ~radian ?{ +"*180/pi" } ()hintinsert', style:'light long'},
     {label:'exp', cmd:'"2" "()exp" ()hintinsert', style:'light'},
-    {label:'sinh', cmd:'~radian if{ "45" "*pi/180()sinh" , "pi/4" "()sinh" } ()hintinsert', style:'light long'},
-    {label:'cosh', cmd:'~radian if{ "45" "*pi/180()cosh" , "pi/4" "()cosh" } ()hintinsert', style:'light long'},
-    {label:'tanh', cmd:'~radian if{ "45" "*pi/180()tanh" , "pi/4" "()tanh" } ()hintinsert', style:'light long'},
+    {label:'sinh', cmd:'~radian ?{ "45" "*pi/180()sinh" , "pi/4" "()sinh" } ()hintinsert', style:'light long'},
+    {label:'cosh', cmd:'~radian ?{ "45" "*pi/180()cosh" , "pi/4" "()cosh" } ()hintinsert', style:'light long'},
+    {label:'tanh', cmd:'~radian ?{ "45" "*pi/180()tanh" , "pi/4" "()tanh" } ()hintinsert', style:'light long'},
     {label:'ln', cmd:'"10" "()ln" ()hintinsert', style:'light'},
-    {label:'arc\nsinh', cmd:'"0.5" "()arcsinh" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
-    {label:'arc\ncosh', cmd:'"0.5" "()arccosh" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
-    {label:'arc\ntanh', cmd:'"0.5" "()arctanh" ~radian if{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\nsinh', cmd:'"0.5" "()arcsinh" ~radian ?{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ncosh', cmd:'"0.5" "()arccosh" ~radian ?{ +"*180/pi" } ()hintinsert', style:'light long'},
+    {label:'arc\ntanh', cmd:'"0.5" "()arctanh" ~radian ?{ +"*180/pi" } ()hintinsert', style:'light long'},
     {label:'logx', cmd:'"10()ln " ()insert "x" "()ln/" hintedinsert()', style:'light long'},
    ]
   ]
@@ -322,7 +322,6 @@
    if(txt.value.length == 0)
     txt.classList.remove('long')
    txt.onclick()
-   txt.focus()
   }
   txt.onclick = _=> {
    txt.classList.add('main')
