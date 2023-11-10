@@ -13,7 +13,7 @@ export default function Home() {
   const [example, setexample] = useState<string>("")
   return (<>
     <h1 className="text-4xl mx-auto my-6 text-logo">
-      <Favicon className="inline h-7 mb-[0.3rem] mr-[0.1rem] w-[unset] fill-logo" viewBox="0 0 512 512"/>umb Passphrase
+      <Favicon className="inline h-7 mb-[0.3rem] mr-[0.1rem] w-[unset] fill-logo" viewBox="0 0 512 512"/>umb Passphrase Maker
     </h1>
     <Generator className='mx-auto' onGenerate={
       useCallback((_:any, count:number) => setexample(generateChars(count)), [])
