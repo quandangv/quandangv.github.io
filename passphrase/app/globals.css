@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]{
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-light active:bg-primary-dark text-white transition-all myshadow
+  }
+  .btn-primary:disabled {
+    @apply opacity-50 pointer-events-none
+  }
+  .btn-minor {
+    @apply underline decoration-black/50 decoration-dotted decoration-2 underline-offset-4 text-black text-black/70 active:bg-black/20 hover:text-black focus:bg-black/10 p-2 rounded-lg transition-colors outline-none
+  }
+  .btn-minor:disabled {
+    @apply pointer-events-none no-underline
+  }
+  .icon {
+    @apply h-6 w-6 mx-auto
+  }
+  .myshadow {
+    @apply shadow-lg outline-none transition-shadow focus:shadow-primary/50;
+  }
+  .txt-minor {
+    @apply border-b border-black text-black opacity-70 hover:opacity-100 active:bg-black/10 focus:bg-gray-600/10 px-2 outline-none rounded-t-lg bg-none rounded-b-none
+  }
+
+  input[type="range"] {
+    @apply w-full h-1 appearance-none transition-colors h-8 outline-none;
+    /* Use a gradient to make the slider body look smaller than it actually is */
+    --bg: theme(colors.black/10%);
+    background: linear-gradient(transparent 40%, var(--bg) 40%, var(--bg) 60%, transparent 60%);
+  }
+  input[type="range"]:hover {
+    --bg: theme(colors.black/20%);
+  }
+  input[type="range"]:focus {
+    --bg: theme(colors.primary.DEFAULT/30%);
+  }
+
+  input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-range-thumb {
+    @apply appearance-none w-4 h-4 rounded-full bg-primary border-none opacity-100
+  }
+
+  .tooltip {
+    @apply absolute text-white bg-black/50 p-1 rounded-lg animate-transient
+  }
+
+  input, textarea, button {
+    @apply rounded-lg
+  }
+  .footnote {
+    @apply text-black/60 py-1 italic
+  }
+}
