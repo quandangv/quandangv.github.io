@@ -14,7 +14,7 @@
     @apply opacity-50 pointer-events-none
   }
   .btn-minor {
-    @apply underline decoration-black/50 decoration-dotted decoration-2 underline-offset-4 text-black text-black/70 active:bg-black/20 hover:text-black focus:bg-black/10 p-2 rounded-lg transition-colors outline-none
+    @apply underline decoration-black/50 decoration-dotted decoration-2 underline-offset-4 text-black text-black/70 active:bg-black/20 hover:text-black focus-visible:bg-black/10 p-2 rounded-lg transition-colors outline-none
   }
   .btn-minor:disabled {
     @apply pointer-events-none no-underline
@@ -23,10 +23,10 @@
     @apply h-6 w-6 mx-auto
   }
   .myshadow {
-    @apply shadow-lg outline-none transition-shadow focus:shadow-primary/50;
+    @apply shadow-lg outline-none transition-shadow focus-visible:shadow-primary/50;
   }
   .txt-minor {
-    @apply border-b border-black text-black opacity-70 hover:opacity-100 active:bg-black/10 focus:bg-gray-600/10 px-2 outline-none rounded-t-lg bg-none rounded-b-none
+    @apply border-b border-black text-black opacity-70 hover:opacity-100 active:bg-black/10 focus-visible:bg-gray-600/10 px-2 outline-none rounded-t-lg bg-none rounded-b-none
   }
 
   input[type="range"] {
