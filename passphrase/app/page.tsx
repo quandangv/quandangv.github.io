@@ -27,7 +27,7 @@ export default function Home() {
     <Generator className='mx-auto' onGenerate={
       useCallback((_:any, count:number) => setRndOpt(item => ({...item, count})), [])
     }/>
-    <div className={(RndOpt.count ? "opacity-100" : "opacity-0") + " w-full max-w-xl mx-auto my-6 transition-opacity duration-1000"}>
+    <div className={(RndOpt.count ? "opacity-100" : "opacity-0") + " w-full max-w-xl mx-auto my-8 transition-opacity duration-1000"}>
       <h2 className="text-xl w-fit px-2 bg-secondary shadow-lg rounded-t-lg text-white">
         Equivalent<button className="btn-minor btn-white" onClick={nextType}>{alphabets[RndOpt.type].name}</button>Password
       </h2>

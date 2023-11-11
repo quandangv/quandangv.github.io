@@ -81,7 +81,7 @@ function Controls({bitCount:oldBitCount}: {bitCount:number}) {
 
   return (
     <div className="flex flex-row gap-2 pr-4" ref={parentRef} title="AES encryption keys are equivalent to strength 128-256">
-      <button className="btn-minor" type="button" disabled={ShowBoth} onClick={_=>setSlider(a=>!a)}>Strength</button>
+      <button className="btn-minor text-black/70" type="button" disabled={ShowBoth} onClick={_=>setSlider(a=>!a)}>Strength</button>
       <input type="number" name="bitCount" value={BitCount} onChange={(e:any) => setBitCount(e.target.value)} className={(ShowBoth ? "" : Slider ? "hidden " : "w-full ") + "my-auto txt-minor"} size={2}/>
       <input type="range" name="bitCount" min="0" max="1" step="0.001" className={"my-auto" + (Slider || ShowBoth ? "" : " hidden")}
         // Use log scale to suggest that passwords with strength over 100 are overkill
