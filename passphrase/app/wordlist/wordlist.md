@@ -28,6 +28,7 @@ basalt
 beef
 beer
 bile
+bio
 blood
 bolero
 bowling
@@ -81,6 +82,7 @@ glass
 goatmilk
 gold
 golf
+grand
 granite
 graphene
 grass
@@ -119,6 +121,7 @@ marijuana
 matcha
 mead
 meat
+mega
 menthol
 mercury
 metal
@@ -131,6 +134,7 @@ morphine
 mucus
 mud
 mustard
+nano
 nectar
 nicotine
 nutmeg
@@ -187,6 +191,7 @@ soup
 spaghetti
 sponge
 sugar
+super
 sweat
 syrup
 taekwondo
@@ -571,7 +576,7 @@ humble
 hungry
 hurtful
 hydrophobic
-hypersexual
+hyper
 hypothetical
 icy
 ideal
@@ -1531,7 +1536,6 @@ superb
 superficial
 superhuman
 superior
-supermasculine
 supernatural
 supersonic
 superstitious
@@ -2951,17 +2955,8 @@ CEO CEOs
 Canadian Canadians
 Carl Carls
 DJ DJs
-Dutchman Dutchmen
-Dutchwoman Dutchwomen
-EMT EMTs
-Englishman Englishmen
-Englishwoman Englishwomen
 Ferrari Ferraris
-Frenchman Frenchmen
-Frenchwoman Frenchwomen
 George Georges
-Irishman Irishmen
-Irishwoman Irishwomen
 Italian Italians
 Jack Jacks
 Jeff Jeffs
@@ -3038,7 +3033,6 @@ animal animals
 animator animators
 ant ants
 antagonist antagonists
-anteater anteaters
 antelope antelopes
 anti-vaxxer anti-vaxxers
 antimasker antimaskers
@@ -3087,7 +3081,6 @@ avocado avocadoes
 axe axes
 azure azures
 baby babies
-babysitter babysitters babysitting
 bachelor bachelors
 bacteriologist bacteriologists
 badger badgers
@@ -3145,7 +3138,6 @@ bedbug bedbugs
 bedgown bedgowns
 bedroom bedrooms
 bee bees
-beekeeper beekeepers beekeeping
 beetle beetles
 beetroot beetroots
 beggar beggars
@@ -3153,6 +3145,7 @@ bell bells
 belly bellies
 belt belts
 bench benches
+berry berries
 bible bibles
 bicorne bicornes
 bicycle bicycles
@@ -3160,18 +3153,14 @@ bike bikes
 biker bikers biking
 bikini bikinis
 billionaire billionaires
-bioengineer bioengineers
 biographer biographers
-biolab biolabs
 biologist biologists
-bioterrorist bioterrorists
 bird birds
 biscuit biscuits
 bisexual bisexuals
 bishop bishops
 bison bisons
 bite bites
-blackberry blackberries
 blacksmith blacksmiths
 blade blades
 bladesmith bladesmiths
@@ -3181,7 +3170,6 @@ blob blobs
 blogger bloggers blogging
 bloodstone bloodstones
 blouse blouses
-blueberry blueberries
 boar boars
 board boards
 body bodies
@@ -3197,7 +3185,6 @@ boneyard boneyards
 bong bongs
 boob boobs
 book books
-bookkeeper bookkeepers bookkeeping
 booklet booklets
 bookshelf bookshelves
 bookstore bookstores
@@ -3305,7 +3292,6 @@ casket caskets
 castle castles
 cat cats
 caterpillar caterpillars
-catsitter catsitters catsitting
 caudron caudrons
 cauliflower cauliflowers
 cave caves
@@ -3318,9 +3304,6 @@ centipede centipedes
 chain chains
 chainsaw chainsaws
 chair chairs
-chairlady chairladies
-chairman chairmen
-chairperson chairpersons
 chalice chalices
 chalk chalks
 chambermaid chambermaids
@@ -3424,7 +3407,6 @@ cooker cookers cooking
 cookie cookies
 cop cops
 copilot copilots
-copywriter copywriters copywriting
 corndog corndogs
 corner corners
 corporal corporals
@@ -3447,6 +3429,7 @@ cousin cousins
 covidiot covidiots
 coyote coyotes
 crab crabs
+cracker crackers cracking
 craftsman craftsmen
 crane cranes
 crayon crayons
@@ -3529,8 +3512,6 @@ diver divers diving
 doctor doctors
 dodo dodos
 dog dogs
-dogsitter dogsitters dogsitting
-dogwalker dogwalkers dogwalking
 doll dolls
 dolphin dolphins
 domain domains
@@ -3568,6 +3549,7 @@ ear ears
 earl earls
 earring earrings
 earthworm earthworms
+eater eaters eating
 eaterie eateries
 ecologist ecologists
 economist economists
@@ -3599,6 +3581,7 @@ enemy enemies
 engine engines
 engineer engineers
 engraver engravers engraving
+enjoyer enjoyers enjoying
 ensign ensigns
 entertainer entertainers entertaining
 entrepreneur entrepreneurs
@@ -3639,7 +3622,6 @@ field fields
 fight fights
 fighter fighters fighting
 figurine figurines
-filmmaker filmmakers filmmaking
 fin fins
 financier financiers financing
 finger fingers
@@ -3663,6 +3645,7 @@ fool fools
 foot feet
 forest forests
 fork forks
+form forms
 fort forts
 fortification fortifications
 fortuneteller fortunetellers fortunetelling
@@ -3684,7 +3667,6 @@ gangster gangsters
 gardener gardeners gardening
 garment garments
 gate gates
-gatekeeper gatekeepers gatekeeping
 gauntlet gauntlets
 gazelle gazelles
 geek geeks
@@ -3698,7 +3680,6 @@ gentleman gentlemen
 geologist geologists
 ghost ghosts
 ghostbuster ghostbusters ghostbusting
-ghostwriter ghostwriters ghostwriting
 giant giants
 giraffe giraffes
 girdle girdles
@@ -3709,7 +3690,6 @@ glass glasses
 globe globes
 glove gloves
 goalie goalies
-goalkeeper goalkeepers goalkeeping
 goat goats
 goblet goblets
 goblin goblins
@@ -3725,21 +3705,10 @@ gorilla gorillas
 government governments
 governor governors
 gown gowns
-grandaunt grandaunts
-grandbaby grandbabies
 grandchild grandchildren
-granddaughter granddaughters
-grandfather grandfathers
 grandkid grandkids
 grandma grandmas
-grandmaster grandmasters
-grandmother grandmothers
-grandnephew grandnephews
-grandniece grandnieces
 grandpa grandpas
-grandparent grandparents
-grandson grandsons
-granduncle granduncles
 grasshopper grasshoppers
 grave graves
 gravedigger gravediggers gravedigging
@@ -3764,7 +3733,6 @@ hacker hackers hacking
 hag hags
 hair hairs
 hairbrush hairbrushes
-hairdresser hairdressers hairdressing
 hairdrier hairdriers hairdrying
 hamburger hamburgers
 hammer hammers
@@ -3855,7 +3823,6 @@ infant infants
 infantryman infantrymen
 informant informants
 inkbrush inkbrushes
-innkeeper innkeepers innkeeping
 inquisitor inquisitors
 insect insects
 inspector inspectors
@@ -3876,7 +3843,6 @@ jackfruit jackfruits
 jacuzzi jacuzzis
 jaguar jaguars
 jailer jailers jailing
-jailkeeper jailkeepers jailkeeping
 janitor janitors
 jar jars
 jaw jaws
@@ -3898,6 +3864,7 @@ kaiser kaisers
 kaleidoscope kaleidoscopes
 kangaroo kangaroos
 katana katanas
+keeper keepers keeping
 kettle kettles
 keyboard keyboards
 khan khans
@@ -3926,6 +3893,7 @@ koala koalas
 lab labs
 laboratory laboratories
 laborer laborers laboring
+lady ladies
 ladybug ladybugs
 lake lakes
 lamb lambs
@@ -3942,7 +3910,6 @@ lasagna lasagnas
 latina latinas
 latino latinos
 laurel laurels
-lawmaker lawmakers lawmaking
 lawyer lawyers
 leader leaders leading
 leaf leaves
@@ -3987,7 +3954,6 @@ locksmith locksmiths
 locust locusts
 logician logicians
 lollipop lollipops
-longbowman longbowmen
 lord lords
 lotus lotuses
 louse lice
@@ -4007,8 +3973,6 @@ magistrate magistrates
 magpie magpies
 maid maids
 maiden maidens
-mailman mailmen
-mailwoman mailwomen
 mall malls
 mammal mammals
 mammoth mammoths
@@ -4043,12 +4007,9 @@ mathematician mathematicians
 mayor mayors
 mayoress mayoresses
 meal meals
-meatball meatballs
-meatloaf meatloaves
 mechanic mechanics
 medal medals
 medic medics
-megachurch megachurches
 melon melons
 mercenary mercenaries
 merchant merchants
@@ -4068,7 +4029,6 @@ migrant migrants
 military militaries
 milkman milkmen
 milkshake milkshakes
-milkwoman milkwomen
 mill mills
 miller millers milling
 millionaire millionaires
@@ -4094,6 +4054,7 @@ model models
 moderator moderators
 moissanite moissanites
 mole moles
+molestor molestors molesting
 molly mollies
 molotov molotovs
 mom moms
@@ -4117,7 +4078,6 @@ mouth mouths
 muffin muffins
 mug mugs
 mugger muggers mugging
-mulberry mulberries
 mule mules
 mum mums
 murderer murderers murdering
@@ -4127,7 +4087,6 @@ musketeer musketeers
 mustache mustaches
 mycologist mycologists
 nail nails
-nanobiologist nanobiologists
 nanobot nanobots
 nanochip nanochips
 nanoparticle nanoparticles
@@ -4155,8 +4114,6 @@ newsagent newsagents
 niece nieces
 ninja ninjas
 nipple nipples
-nobleman noblemen
-noblewoman noblewomen
 normie normies
 nose noses
 nostril nostrils
@@ -4183,8 +4140,8 @@ omnivore omnivores
 onion onions
 onyx onyxes
 opal opals
-operator operators
-oppressor oppressors
+operator operators operating
+oppressor oppressors oppressing
 optician opticians
 oracle oracles
 orange oranges
@@ -4248,7 +4205,6 @@ people peoples
 pepper peppers
 performer performers performing
 perpetrator perpetrators
-petticoat petticoats
 pharaoh pharaohs
 pharmacist pharmacists
 pharmacy pharmacies
@@ -4266,7 +4222,6 @@ pie pies
 piece pieces
 pig pigs
 pike pikes
-pikeman pikemen
 pile piles
 pill pills
 pillbox pillboxes
@@ -4301,8 +4256,6 @@ poem poems
 poet poets
 poison poisons
 polearm polearms
-policeman policemen
-policewoman policewomen
 politician politicians
 polygon polygons
 pomelo pomeloes
@@ -4312,8 +4265,6 @@ poplar poplars
 popsicle popsicles
 porcupine porcupines
 poster posters
-postlady postladies
-postman postmen
 pot pots
 potato potatoes
 potter potters
@@ -4333,7 +4284,6 @@ prodigy prodigies
 producer producers producing
 professor professors
 programmer programmers programming
-proofreader proofreaders proofreading
 prophet prophets
 prosecutor prosecutors
 prostitute prostitutes
@@ -4352,15 +4302,12 @@ puppeteer puppeteers
 puppy puppies
 pyrotechnician pyrotechnicians
 quail quails
-quartermaster quartermasters
 queen queens
 queer queers
 quill quills
 rabbi rabbis
 rabbit rabbits
 racer racers racing
-racetrack racetracks
-racewalker racewalkers racewalking
 racist racists
 rack racks
 racoon racoons
@@ -4368,11 +4315,11 @@ radio radios
 radiographer radiographers
 radiologist radiologists
 radish radishes
-raincoat raincoats
 raisin raisins
 ranger rangers
 rapper rappers rapping
 rat rats
+reader readers reading
 realist realists
 realtor realtors
 receipt receipts
@@ -4398,7 +4345,6 @@ rib ribs
 ribbon ribbons
 rider riders riding
 rifle rifles
-rifleman riflemen
 ring rings
 ringleader ringleaders ringleading
 rioter rioters rioting
@@ -4409,7 +4355,6 @@ robe robes
 robot robots
 rock rocks
 rocket rockets
-rocketman rocketmen
 rockstar rockstars
 rod rods
 rollercoaster rollercoasters
@@ -4425,14 +4370,10 @@ ruler rulers ruling
 runner runners running
 saber sabers
 sadist sadists
-safecracker safecrackers safecracking
 sailboat sailboats
 sailor sailors sailing
 saint saints
 salad salads
-salaryman salarymen
-salesman salesmen
-saleswoman saleswomen
 salmon salmons
 samurai samurais
 sandal sandals
@@ -4456,16 +4397,14 @@ schoolboy schoolboys
 schoolgirl schoolgirls
 scientist scientists
 scorpion scorpions
-scout scouts
-screenwriter screenwriters screenwriting
+scout scouts scouting
 screw screws
 screwdriver screwdrivers
 scribe scribes
-scriptwriter scriptwriters scriptwriting
 scrunchy scrunchies
 sculptor sculptors
+sea seas
 seal seals
-seaman seamen
 seamstress seamstresses
 secretary secretaries
 seed seeds
@@ -4477,8 +4416,6 @@ senior seniors
 sensor sensors
 sergeant sergeants
 servant servants
-serviceman servicemen
-servicewoman servicewomen
 sewer sewers
 shallot shallots
 shaman shamans
@@ -4496,10 +4433,8 @@ shirt shirts
 shoe shoes
 shoelace shoelaces
 shop shops
-shopkeeper shopkeepers shopkeeping
 shotgun shotguns
 shovel shovels
-showrunner showrunners showrunning
 shrapnel shrapnels
 shrimp shrimps
 shroom shrooms
@@ -4507,6 +4442,7 @@ sibling siblings
 singer singers singing
 siren sirens
 sister sisters
+sitter sitters sitting
 skate skates
 skateboard skateboards
 skater skaters skating
@@ -4529,27 +4465,22 @@ snake snakes
 snout snouts
 snowball snowballs
 snowboarder snowboarders snowboarding
-snowman snowmen
 society societies
 sock socks
 sofa sofas
 soldier soldiers
 solicitor solicitors soliciting
 son sons
-songwriter songwriters songwriting
 soothsayer soothsayers soothsaying
 sorcerer sorcerers
 sorceress sorceresses
 soul souls
 sow sows
-spaceman spacemen
 spaceship spaceships
-spacewoman spacewomen
 spammer spammers spamming
 sparrow sparrows
 spatula spatulas
 speaker speakers speaking
-spearman spearmen
 specialist specialists
 spectator spectators spectating
 specter specters
@@ -4557,14 +4488,10 @@ spell spells
 sphere spheres
 sphinx sphinxes
 spider spiders
-spiderman spidermen
 spinach spinaches
 spine spines
 spirit spirits
 spoon spoons
-sportsman sportsmen
-sportswoman sportswomen
-sportswriter sportswriters sportswriting
 spot spots
 spouse spouses
 sprinter sprinters sprinting
@@ -4577,7 +4504,6 @@ staff staffs
 stag stags
 star stars
 state states
-statesman statesmen
 station stations
 statue statues
 statuette statuettes
@@ -4590,7 +4516,6 @@ stone stones
 stonemason stonemasons
 stool stools
 store stores
-storekeeper storekeepers storekeeping
 strap straps
 strategist strategists
 stream streams
@@ -4598,7 +4523,6 @@ streamer streamers streaming
 string strings
 structure structures
 student students
-stuntman stuntmen
 stylist stylists
 submarine submarines
 submariner submariners
@@ -4610,16 +4534,7 @@ summit summits
 sumo sumos
 sun suns
 sundress sundresses
-superbeing superbeings
-supercomputer supercomputers
-superhero superheros
-superior superiors
-superman supermen
-supermarket supermarkets
-superstar superstars
-supervillain supervillains
-supervisor supervisors supervising
-supervolcano supervolcanos
+supremacist supremacists
 surfboard surfboards
 surfer surfers surfing
 surgeon surgeons
@@ -4631,7 +4546,6 @@ swan swans
 swimmer swimmers
 swimsuit swimsuits
 sword swords
-swordman swordmen
 t-shirt t-shirts
 table tables
 tablespoon tablespoons
@@ -4645,6 +4559,7 @@ tampon tampons
 tank tanks
 tanner tanners
 tapeworm tapeworms
+taster tasters tasting
 tattooist tattooists
 taxi taxis
 taxidermist taxidermists
@@ -4701,9 +4616,6 @@ tomb tombs
 tombstone tombstones
 tongue tongues
 tool tools
-toolmaker toolmakers toolmaking
-tooth teeth
-toothbrush toothbrushes
 toothpick toothpicks
 tophat tophats
 tortoise tortoises
@@ -4712,6 +4624,7 @@ tourist tourists
 towel towels
 tower towers
 town towns
+track tracks
 trader traders trading
 train trains
 trainer trainers training
@@ -4721,7 +4634,6 @@ transgressor transgressors transgressing
 translator translators
 transporter transporters transporting
 trap traps
-trashman trashmen
 tray trays
 treasurer treasurers
 tree trees
@@ -4753,7 +4665,6 @@ turtle turtles
 tusk tusks
 tutor tutors
 twin twins
-typewriter typewriters
 tzar tzars
 umbrella umbrellas
 umpire umpires
@@ -4803,9 +4714,9 @@ viscountess viscountesses
 vlogger vloggers vlogging
 volcano volcanos
 vulture vultures
-waistcoat waistcoats
 waiter waiters
 waitress waitresses
+walker walkers walking
 wall walls
 wallet wallets
 walnut walnuts
@@ -4835,9 +4746,7 @@ willow willows
 windmill windmills
 window windows
 windsurfer windsurfers windsurfing
-winetaster winetasters winetasting
 wing wings
-winterberry winterberries
 witch witches
 wizard wizards
 wolf wolves
@@ -4860,6 +4769,6 @@ zebra zebras
 zircon zircons
 zombie zombies
 zoo zoos
-zookeeper zookeepers zookeeping
 zoologist zoologists
 zoomer zoomers
+# plural noun

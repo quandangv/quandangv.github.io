@@ -11,7 +11,7 @@ export function makePassphrase(bitCount) {
 
   // Try every setting from the smallest until we reach the desired bit count
   // This is to ensure we generate the most compact passphrase
-  while(calculateBitCount(groupCount, 3) < bitCount)
+  while(calculateBitCount(groupCount, 4) < bitCount)
     groupCount += 1
   // Check from the smallest group sizes
   let currentBitCount
@@ -29,8 +29,8 @@ export function makePassphrase(bitCount) {
 }
 // Calculates the number of possible passphrases in a specific format
 export function calculateBitCount(groupCount, groupSize, miniGroupSize) {
-  if(groupSize > 3)
-    throw Error('invalid groupSize')
+  if(groupSize > 4)
+    throw Error('invalid groupSize: ' + groupSize)
   if (miniGroupSize == null) miniGroupSize = groupSize
   if (groupCount <= 1)
     return groupBitCount[miniGroupSize]
@@ -110,19 +110,21 @@ for (let i = 0; i < wordlist.noun.length; i++) {
 
 // We create word groups by successively adding 2 nouns, an adjective, and an adverb
 // This is the number of choices for each group size
-const groupBitCount = [0, wordlist.noun, wordlist.firstnoun, wordlist.adjective, wordlist.adverb]
+const groupBitCount = [0, wordlist.noun, wordlist.firstnoun, wordlist.adjective, wordlist.noun, wordlist.adverb]
 for(let i = 1, p = 1; i < groupBitCount.length; i++)
   groupBitCount[i] = Math.log2(p *= groupBitCount[i].length)
 // This generates a random group
 function rndGroup(size:number) {
-  if(size < 1 || size > 4)
+  if(size < 1 || size > 5)
     throw Error('invalid size')
   let group = rndChoice(wordlist.noun)[1]
   if (size === 1) return group
-  group = rndChoice(wordlist.firstnoun) + '-' + group
+  group = rndChoice(wordlist.firstnoun) + ' ' + group
   if (size === 2) return group
-  group = rndChoice(wordlist.adjective) + ' ' + group
+  group = rndChoice(wordlist.firstnoun) + '-' + group
   if (size === 3) return group
+  group = rndChoice(wordlist.adjective) + ' ' + group
+  if (size === 4) return group
   group = rndChoice(wordlist.adverb) + ' ' + group
   return group
 }

@@ -30,25 +30,6 @@ for item in wordlist['noun']:
 wordlist['noun'] = nouns
 errors = []
 count = 0
-for item in list(wordlist['plural noun']):
-  def find_singular():
-    for info in parser.fetch(item):
-      for definition in info['definitions']:
-        if definition['partOfSpeech'] == 'noun':
-          for text in definition['text']:
-            if text.startswith('plural of '):
-              return text[len('plural of '):].replace('.', '')
-    return None
-  singular = find_singular()
-  count += 1
-  if singular:
-    print(str(count) + '/' + str(len(wordlist['plural noun'])), 'Singular of', item, 'is', singular)
-    if not singular in singular_nouns:
-      nouns.append(singular + ' ' + item)
-      singular_nouns.add(singular)
-  else:
-    errors.append(item)
-    print("Can't find singular of", item)
 
 print('errors', errors)
 wordlist['plural noun'] = []
