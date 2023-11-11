@@ -19,6 +19,9 @@
   .btn-minor:disabled {
     @apply pointer-events-none no-underline
   }
+  .btn-minor.btn-white{
+    @apply decoration-white/50 text-white
+  }
   .icon {
     @apply h-6 w-6 mx-auto
   }
