@@ -4,12 +4,14 @@ import { useState, useCallback } from 'react'
 import Favicon from './favicon.svg'
 
 // Generates dumb random password
-class RandomOptions { count:number; type:number }
+class RandomOptions { count:number = 0; type:number = 0 }
 function generateChars(opt:RandomOptions) {
   const alphabet = alphabets[opt.type].str
   return Array.from({length:Math.ceil(opt.count / Math.log2(alphabet.length))}, (_,item) => alphabet[Math.floor(Math.random() * alphabet.length)]).join("")
 }
-const alphabets = [[26, 'Lowercase'], [52, 'Alphabetic'], [62, 'Alphanumeric'], [96, 'Random']].map(item => ({name:item[1], str:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`~!@#$%^&*()_+-=[]\\{};\':",./<>? '.slice(0, item[0])}))
+const alphabetBase = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`~!@#$%^&*()_+-=[]\\{};\':",./<>? '
+const alphabets = ([[26, 'Lowercase'], [52, 'Alphabetic'], [62, 'Alphanumeric'], [96, 'Random']] as Array<[number, string]>)
+  .map(item => ({name:item[1], str:alphabetBase.slice(0, item[0])}))
 
 // Monitors the `Generator` component and render a dumb password example when a passphrase is generated
 export default function Home() {
@@ -29,7 +31,7 @@ export default function Home() {
       <h2 className="text-xl w-fit px-2 bg-secondary shadow-lg rounded-t-lg text-white">
         Equivalent<button className="btn-minor btn-white" onClick={nextType}>{alphabets[RndOpt.type].name}</button>Password
       </h2>
-      <input className="w-full p-2 rounded-tl-none myshadow text-3xl" key={RndOpt} defaultValue={generateChars(RndOpt)}/>
+      <input className="w-full p-2 rounded-tl-none myshadow text-3xl" key={RndOpt.toString()} defaultValue={generateChars(RndOpt)}/>
       <div className="footnote">Seriously, try memorizing this random password. It will take you way longer than the passphrase!</div>
     </div>
   </>);
