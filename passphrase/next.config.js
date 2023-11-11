@@ -1,7 +1,11 @@
-module.exports = {
-  output: 'export',
+const isProd = process.env.NODE_ENV === 'production'
+
+const prodOptions = {
+  output: 'export', // this option seems to mess with the favicon rendering in dev
   basePath: '/passphrase/out',
-  webpack(config) {
+}
+module.exports = {
+  webpack: (config) => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
@@ -28,6 +32,5 @@ module.exports = {
 
     return config
   },
-
-  // ...other config
+  ...(isProd ? prodOptions : {})
 }

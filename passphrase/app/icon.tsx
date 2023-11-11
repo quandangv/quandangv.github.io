@@ -1,7 +1,9 @@
 import { ImageResponse } from 'next/og'
 import Favicon from './favicon.svg'
-//@ts-ignore
+//@ts-ignore since tailwind classes are not available here, import its colors directly
 import { theme } from '../tailwind.config.ts'
+
+export const runtime = 'edge'
  
 export const size = {
   width: 32,
